@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6649550328410713421}
   - component: {fileID: 8465223251461560752}
   m_Layer: 0
-  m_Name: Homing
+  m_Name: Homing_dm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

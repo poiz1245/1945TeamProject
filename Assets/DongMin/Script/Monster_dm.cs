@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster_dm : MonoBehaviour
 {
     int hp = 50;
     float speed = 2;

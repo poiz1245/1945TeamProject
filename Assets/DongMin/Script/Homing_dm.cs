@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Homing : MonoBehaviour
+public class Homing_dm : MonoBehaviour
 {
     public GameObject target;
     public float speed = 3f;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossArm : MonoBehaviour
+public class BossArm_dm : MonoBehaviour
 {
     public int hp = 500;
     float Delay = 0.5f;

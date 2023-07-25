@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet_dm : MonoBehaviour
 {
     public float speed = 4.0f;
     [SerializeField]
@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
 
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
-            collision.GetComponent<Monster>().Damage(attack);
+            collision.GetComponent<Monster_dm>().Damage(attack);
             //미사일 지우기
             Destroy(gameObject);
 

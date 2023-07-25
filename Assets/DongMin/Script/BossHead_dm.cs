@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHead : MonoBehaviour
+public class BossHead_dm : MonoBehaviour
 {
     [SerializeField]
     GameObject bossBullet; //보스미사일
@@ -22,18 +22,18 @@ public class BossHead : MonoBehaviour
     public void RightDownLaunch()
     {
         GameObject go = Instantiate(bossBullet, transform.position, Quaternion.identity);
-        go.GetComponent<MonsterBullet>().Move(new Vector2(1, -1));
+        go.GetComponent<MonsterBullet_dm>().Move(new Vector2(1, -1));
     }
 
     public void DownLaunch()
     {
         GameObject go = Instantiate(bossBullet, transform.position, Quaternion.identity);
-        go.GetComponent<MonsterBullet>().Move(new Vector2(0, -1));
+        go.GetComponent<MonsterBullet_dm>().Move(new Vector2(0, -1));
     }
 
     public void LeftDownLaunch()
     {
         GameObject go = Instantiate(bossBullet, transform.position, Quaternion.identity);
-        go.GetComponent<MonsterBullet>().Move(new Vector2(-1, -1));
+        go.GetComponent<MonsterBullet_dm>().Move(new Vector2(-1, -1));
     }
 }
