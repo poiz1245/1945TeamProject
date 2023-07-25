@@ -9,6 +9,8 @@ public class WayPointManagerSJ : MonoBehaviour
     public Transform[] RightWayPoint;
     public Transform[] LeftStopWayPoint;
     public Transform[] RightStopWayPoint;
+    public Transform[] RightCornerWayPoint;
+    public Transform[] LeftCornerWayPoint;
     // Start is called before the first frame update
     void Start()
     {

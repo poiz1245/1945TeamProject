@@ -13,6 +13,9 @@ public class SpawnerSJ : MonoBehaviour
     public Transform RightSpawnPoint;
     public Transform RightStopSpawnPoint;
     public Transform LeftStopSpawnPoint;
+    public Transform LeftCornerSpawnPoint;
+    public Transform RightCornerSpawnPoint;
+
 
     bool swi4;
     bool swi3;

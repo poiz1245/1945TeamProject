@@ -11,6 +11,8 @@ public class PlayerSJ : MonoBehaviour
     public int AttackPower = 10;
     public int Hp = 100;
 
+
+
     bool check = false;
     // Start is called before the first frame update
     void Start()

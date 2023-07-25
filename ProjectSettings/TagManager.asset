@@ -13,6 +13,7 @@ TagManager:
   - Item
   - SideWall
   - UpDownWall
+  - LeftCornerWayPoint
   layers:
   - Default
   - TransparentFX

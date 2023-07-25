@@ -33,6 +33,7 @@ public class Enemy2SJ : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(gameObject);
+            Instantiate(item, transform.position, Quaternion.identity);
         }
 
 
@@ -74,13 +75,5 @@ public class Enemy2SJ : MonoBehaviour
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
     }
-
-    private void OnDestroy()
-    {
-        Instantiate(item, transform.position, Quaternion.identity);
-    }
-
-
-
 }
 
