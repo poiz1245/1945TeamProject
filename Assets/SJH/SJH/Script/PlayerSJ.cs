@@ -11,6 +11,7 @@ public class PlayerSJ : MonoBehaviour
     public int AttackPower = 10;
     public int Hp = 100;
 
+    bool check = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +25,13 @@ public class PlayerSJ : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
         transform.Translate(moveHorizontal, moveVertical , 0);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !check)
         {
             StartCoroutine(CreatBullet());
+            Instantiate(bullet, gunPos.position, Quaternion.identity);
+            Instantiate(bullet, gunPos2.position, Quaternion.identity);
             transform.Find("LShot").gameObject.SetActive(true);
             transform.Find("RShot").gameObject.SetActive(true);
-
         }
         else
         {
@@ -40,8 +42,9 @@ public class PlayerSJ : MonoBehaviour
 
     IEnumerator CreatBullet()
     {
-        yield return new WaitForSeconds(1);
-        Instantiate(bullet, gunPos.position, Quaternion.identity);
-        Instantiate(bullet, gunPos2.position, Quaternion.identity);
+        check = true;
+        yield return new WaitForSeconds(0.1f);
+        check = false;
+
     }
 }

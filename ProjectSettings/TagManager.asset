@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - EnemyBullet
+  - PlayerBullet
+  - Monster
+  - BossArm
+  - Lazer
+  - Item
+  - SideWall
+  - UpDownWall
   layers:
   - Default
   - TransparentFX

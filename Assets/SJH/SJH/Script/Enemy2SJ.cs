@@ -13,6 +13,7 @@ public class Enemy2SJ : MonoBehaviour
     public Transform gunPos1;
     public Transform gunPos2;
     public GameObject bullet;
+    public GameObject item;
 
 
 
@@ -73,6 +74,12 @@ public class Enemy2SJ : MonoBehaviour
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
     }
+
+    private void OnDestroy()
+    {
+        Instantiate(item, transform.position, Quaternion.identity);
+    }
+
 
 
 }
