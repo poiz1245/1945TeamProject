@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   rotationSpeed: 5
-  AttackSpeed: 1
+  AttackSpeed: 0.7
   bullet: {fileID: 6612812784078740228, guid: 2c9f336ab9581ee418e22ea7481dfac0, type: 3}
   target: {fileID: 4420007127888458917, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
   gunPos: {fileID: 7127451261939782534}

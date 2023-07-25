@@ -67,7 +67,7 @@ public class SpawnerSJ : MonoBehaviour
     {
         while (swi)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = LeftSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(0);
             monster.transform.position = spawnSpot; 
@@ -77,7 +77,7 @@ public class SpawnerSJ : MonoBehaviour
     {
         while (swi2)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = RightSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(1);
             monster.transform.position = spawnSpot;
