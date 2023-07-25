@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss_dm : MonoBehaviour
 {
     public int hp = 1000;
     float speed = 1; 
@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
                 //Sin(각도), 라디안 단위의 각도 표현을 위해 PI/180을 곱함
                 float y = Mathf.Sin(angle * Mathf.PI / 180.0f);
                 //발사체 이동 방향 설정
-                clone.GetComponent<MonsterBullet>().Move(new Vector2(x, y));
+                clone.GetComponent<MonsterBullet_dm>().Move(new Vector2(x, y));
             }
             //발사체가 생성되는 시작 각도 설정을 위한 변수
             weightAngle += 1;

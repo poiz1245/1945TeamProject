@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterBullet : MonoBehaviour
+public class MonsterBullet_dm : MonoBehaviour
 {
     //public GameObject target;
     public float speed = 3f;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lazer : MonoBehaviour
+public class Lazer_dm : MonoBehaviour
 {
     [SerializeField]
     Animator lazerBodyAnim;
@@ -45,12 +45,12 @@ public class Lazer : MonoBehaviour
             {
                 //Debug.Log("Æ½¹ßµ¿µÊ");
                 curTime = 0;
-                if (collision.GetComponent<Monster>() != null)
-                    collision.GetComponent<Monster>().Damage(attack);
-                else if(collision.GetComponent<Boss>() != null)
-                    collision.GetComponent<Boss>().Damage(attack);
-                else if (collision.GetComponent<BossArm>() != null)
-                    collision.GetComponent<BossArm>().Damage(attack);
+                if (collision.GetComponent<Monster_dm>() != null)
+                    collision.GetComponent<Monster_dm>().Damage(attack);
+                else if(collision.GetComponent<Boss_dm>() != null)
+                    collision.GetComponent<Boss_dm>().Damage(attack);
+                else if (collision.GetComponent<BossArm_dm>() != null)
+                    collision.GetComponent<BossArm_dm>().Damage(attack);
                 
                     
             }

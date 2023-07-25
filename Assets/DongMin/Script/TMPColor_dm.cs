@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TMPColor : MonoBehaviour
+public class TMPColor_dm : MonoBehaviour
 {
     [SerializeField]
     float lerpTime = 0.1f;

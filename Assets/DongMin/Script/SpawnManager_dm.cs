@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager_dm : MonoBehaviour
 {
     float ss = -2.3f; //몬스터 생성 x값 처음
     float es = 2.3f; //몬스터 생성 y값 처음

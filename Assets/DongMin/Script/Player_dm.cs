@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player_dm : MonoBehaviour
 {
     [SerializeField]
     Animator ani;
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
                 {
                     isLazer = true;
                     lazer = Instantiate(lazerPrefab, pos.position, Quaternion.identity);
-                    lazer.GetComponent<Lazer>().playerFireTransform = pos;
+                    lazer.GetComponent<Lazer_dm>().playerFireTransform = pos;
                 }
                 
             }
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             if (isLazer)
             {
                 isLazer = false;
-                lazer.GetComponent<Lazer>().isLazer = false;
+                lazer.GetComponent<Lazer_dm>().isLazer = false;
                 lazer = null;
             }
             

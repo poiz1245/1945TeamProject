@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemMove : MonoBehaviour
+public class ItemMove_dm : MonoBehaviour
 {
     float limitX = 2.556f;
     float limitY = 4.826f;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Background : MonoBehaviour
+public class Background_dm : MonoBehaviour
 {
     public float scrollSpeed = 0.03f;
     Material myMaterial;
