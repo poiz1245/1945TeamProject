@@ -16,6 +16,7 @@ public class SpawnerSJ : MonoBehaviour
     public Transform LeftCornerSpawnPoint;
     public Transform RightCornerSpawnPoint;
 
+    bool swi6;
     bool swi5;
     bool swi4;
     bool swi3;
@@ -70,10 +71,19 @@ public class SpawnerSJ : MonoBehaviour
 
     void LeftCornerStop()
     {
-        swi2 = true;
-        swi = true;
+        swi6 = true;
         swi5 = false;
         StopCoroutine(LeftCornerSpawn());
+        StartCoroutine(RightCornerSpawn());
+        
+        Invoke("RightCornerStop", 5);
+    }
+    void RightCornerStop()
+    {
+        swi = true;
+        swi2 = true;
+        swi6 = false;
+        StopCoroutine(RightCornerSpawn());
         StartCoroutine(LeftArcSpawn());
         StartCoroutine(RightArcSpawn());
 
@@ -81,7 +91,7 @@ public class SpawnerSJ : MonoBehaviour
     }
     IEnumerator LeftArcSpawn()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         while (swi)
         {
             yield return new WaitForSeconds(0.5f);
@@ -92,7 +102,7 @@ public class SpawnerSJ : MonoBehaviour
     }
     IEnumerator RightArcSpawn()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         while (swi2)
         {
             yield return new WaitForSeconds(0.5f);
@@ -133,6 +143,17 @@ public class SpawnerSJ : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = LeftCornerSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(5);
+            monster.transform.position = spawnSpot;
+        }
+    }
+    IEnumerator RightCornerSpawn()
+    {
+        yield return new WaitForSeconds(2.5f);
+        while (swi6)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnSpot = RightCornerSpawnPoint.position;
+            GameObject monster = GameManagerSJ.Instance.pool.Get(6);
             monster.transform.position = spawnSpot;
         }
     }

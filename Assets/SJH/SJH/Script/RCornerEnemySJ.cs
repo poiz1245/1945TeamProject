@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class LeftCornerEnemySJ : MonoBehaviour
+public class RCornerEnemySJ : MonoBehaviour
 {
     public float Speed = 3f;
     public int AttackPower = 10;
@@ -20,15 +19,15 @@ public class LeftCornerEnemySJ : MonoBehaviour
     void Start()
     {
         StartCoroutine(CreatBullet());
-        target = GameObject.FindWithTag("LeftCornerWayPoint");
+        target = GameObject.FindWithTag("RightCornerWayPoint");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentWayPoint < WayPointManagerSJ.instance.LeftCornerWayPoint.Length)
+        if (currentWayPoint < WayPointManagerSJ.instance.RightCornerWayPoint.Length)
         {
-            Transform targetWayPoint = WayPointManagerSJ.instance.LeftCornerWayPoint[currentWayPoint];
+            Transform targetWayPoint = WayPointManagerSJ.instance.RightCornerWayPoint[currentWayPoint];
             transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, Speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, targetWayPoint.position) < 0.01f)
             {
@@ -57,9 +56,10 @@ public class LeftCornerEnemySJ : MonoBehaviour
             yield return new WaitForSeconds(AttackSpeed);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("PlayerBullet"))
             Destroy(gameObject);
     }
 }

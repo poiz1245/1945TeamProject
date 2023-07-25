@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6078242382003974237}
-  - component: {fileID: 8326595150625038013}
   - component: {fileID: 3429743343483276175}
   - component: {fileID: 9009672208720668764}
   - component: {fileID: 4857375093128071432}
+  - component: {fileID: 8326595150625038013}
   m_Layer: 0
   m_Name: CornerDown
   m_TagString: EnemyBullet
@@ -35,19 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8326595150625038013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6612812784078740228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa9792f068d45a4ab4fb503ab121888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
 --- !u!212 &3429743343483276175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,3 +143,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31249997
+--- !u!114 &8326595150625038013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612812784078740228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa9792f068d45a4ab4fb503ab121888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
