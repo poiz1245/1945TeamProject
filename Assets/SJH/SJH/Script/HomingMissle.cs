@@ -10,34 +10,31 @@ public class HomingMissle : MonoBehaviour
     public float rotationSpeed = 5f;
 
     public LayerMask targetLayer;
-    public RaycastHit2D[] targets;
-
-    public Transform nearestTarget;
-    Vector2 dir;
-    Vector2 dirno;
-
-    bool isScanning = true;
+    //public GameObject effect;
+    private Transform nearestTarget;
+    private bool isScanning = true;
 
     void Start()
     {
-        //nearestTarget = GetNearest();
-        //target = GameObject.FindWithTag("Enemy");
+        ScanTargets();
     }
 
     void Update()
     {
-        targets = Physics2D.CircleCastAll(transform.position, ScanRange, Vector2.zero, 0, targetLayer);
-        nearestTarget = GetNearest();
+        if (isScanning)
+        {
+            nearestTarget = GetNearest();
+            isScanning = false;
+        }
 
-        dir = nearestTarget.transform.position - transform.position;
-
-        dirno = dir.normalized;
-        
         if (nearestTarget != null)
         {
-            transform.Translate(dir.normalized*Speed*Time.deltaTime);
-            Vector2 direction = new Vector2(transform.position.x - nearestTarget.transform.position.x,
-                                     transform.position.y - nearestTarget.transform.position.y);
+            Vector2 dir = nearestTarget.position - transform.position;
+            Vector2 dirno = dir.normalized;
+
+            transform.Translate(dir.normalized * Speed * Time.deltaTime);
+            Vector2 direction = new Vector2(transform.position.x - nearestTarget.position.x,
+                                            transform.position.y - nearestTarget.position.y);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
@@ -46,37 +43,59 @@ public class HomingMissle : MonoBehaviour
         }
         else
         {
-            transform.Translate(dirno * Speed * Time.deltaTime);
+            ScanTargets();
+            transform.Translate(Vector2.up*Speed*Time.deltaTime);
         }
-
-       
     }
 
-    public Transform GetNearest()
+    void ScanTargets()
     {
-        Transform result = null;
-        float diff = 100;
-
-        foreach (RaycastHit2D target in targets)
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, ScanRange, targetLayer);
+        if (targets.Length > 0)
         {
-            Vector3 mypos = transform.position;
-            Vector3 targetpos = target.transform.position;
-            float curdiff = Vector3.Distance(mypos, targetpos);
+            float closestDistance = Mathf.Infinity;
+            Transform closestTarget = null;
 
-            if (curdiff < diff)
+            foreach (Collider2D target in targets)
             {
-                diff = curdiff;
-                result = target.transform;
+                float distance = Vector3.Distance(transform.position, target.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestTarget = target.transform;
+                }
             }
+
+            nearestTarget = closestTarget;
         }
-        return result;
+        else
+        {
+            nearestTarget = null;
+        }
+
+        isScanning = false;
+    }
+    Transform GetNearest()
+    {
+        return nearestTarget;
     }
 
-    
+    private void OnEnable()
+    {
+        isScanning = true;
+    }
+
+    private void OnDisable()
+    {
+        isScanning = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
+            //Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
     }
+    
 
 }

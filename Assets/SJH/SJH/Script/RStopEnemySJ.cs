@@ -7,7 +7,7 @@ public class RStopEnemy3SJ : MonoBehaviour
     public float Speed = 5;
     public float AttackSpeed = 1;
     public float rotationSpeed = 5f;
-
+    public int Hp = 100;
 
     bool fire = false;
     bool moveEnd = false;
@@ -15,6 +15,7 @@ public class RStopEnemy3SJ : MonoBehaviour
 
     public Transform gunPos;
     public GameObject bullet;
+    public GameObject Effect;
     GameObject target;
 
     void Start()
@@ -53,6 +54,12 @@ public class RStopEnemy3SJ : MonoBehaviour
         {
             Destroy(gameObject, 2);
         }
+
+        if(Hp <= 0)
+        {
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
         
     }
     void MoveEndPoint()
@@ -76,7 +83,12 @@ public class RStopEnemy3SJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            Destroy(gameObject);
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Hp -= GameManagerSJ.Instance.player.AttackPower;
+        }
+        if (collision.CompareTag("HomingMissle"))
+        {
+            Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }
 

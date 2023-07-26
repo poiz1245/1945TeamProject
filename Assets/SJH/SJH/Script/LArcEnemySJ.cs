@@ -12,6 +12,7 @@ public class LArcEnemySJ : MonoBehaviour
     public Transform player;
     public Transform gunPos1;
     public GameObject bullet;
+    public GameObject Effect;
     int currentWayPoint = 0;
 
     void Start()
@@ -56,7 +57,13 @@ public class LArcEnemySJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-                Destroy(gameObject);
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("HomingMissle"))
+        {
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

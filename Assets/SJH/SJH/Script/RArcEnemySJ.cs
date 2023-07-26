@@ -12,6 +12,7 @@ public class RArcEnemySJ : MonoBehaviour
     public Transform player;
     public Transform gunPos1;
     public GameObject bullet;
+    public GameObject Effect;
     int currentWayPoint = 0;
 
     // Start is called before the first frame update
@@ -56,6 +57,12 @@ public class RArcEnemySJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("HomingMissle"))
+        {
+            Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

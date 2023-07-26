@@ -16,6 +16,7 @@ public class PlayerSJ : MonoBehaviour
     public Transform SgunPos3;
     public Transform SgunPos4;
     public Transform SgunPos5;
+    GameObject effect;
 
     public int AttackPower = 10;
     public int Hp = 100;
@@ -30,9 +31,10 @@ public class PlayerSJ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameObject.Find("razor").transform.Find("lazerhead").gameObject.SetActive(false);
 
+        
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +42,15 @@ public class PlayerSJ : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
         transform.Translate(moveHorizontal, moveVertical , 0);
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(false);
+        }
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
@@ -72,14 +83,13 @@ public class PlayerSJ : MonoBehaviour
                     Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
                 }
             }
-            
+
 
             if (ItemCount == 0)
             {
                 StartCoroutine(CreatBullet());
                 GameObject clone1 = Instantiate(bullet, gunPos.position, Quaternion.identity);
                 clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
-                transform.Find("CShot").gameObject.SetActive(true);
             }
             else if (ItemCount == 1)
             {
@@ -88,9 +98,6 @@ public class PlayerSJ : MonoBehaviour
                 GameObject clone2 = Instantiate(bullet, gunPos3.position, Quaternion.identity);
                 clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
-                transform.Find("LShot").gameObject.SetActive(true);
-                transform.Find("RShot").gameObject.SetActive(true);
-                transform.Find("CShot").gameObject.SetActive(false);
             }
             else if (ItemCount == 2)
             {
@@ -101,9 +108,6 @@ public class PlayerSJ : MonoBehaviour
                 clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
-                transform.Find("LShot").gameObject.SetActive(true);
-                transform.Find("RShot").gameObject.SetActive(true);
-                transform.Find("CShot").gameObject.SetActive(true);
             }
             else if (ItemCount == 3)
             {
@@ -117,9 +121,6 @@ public class PlayerSJ : MonoBehaviour
                 clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone4.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.25f, 1));
-                transform.Find("LShot").gameObject.SetActive(true);
-                transform.Find("RShot").gameObject.SetActive(true);
-                transform.Find("CShot").gameObject.SetActive(true);
             }
             else if (ItemCount == 4)
             {
@@ -134,16 +135,15 @@ public class PlayerSJ : MonoBehaviour
                 clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(-0.25f, 1));
                 clone4.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.25f, 1));
                 clone5.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.5f, 1));
-                transform.Find("LShot").gameObject.SetActive(true);
-                transform.Find("RShot").gameObject.SetActive(true);
-                transform.Find("CShot").gameObject.SetActive(true);
             }
 
-            else
-            {
-                transform.Find("LShot").gameObject.SetActive(false);
-                transform.Find("RShot").gameObject.SetActive(false);
-            }
+
+        }
+        else
+        {
+            transform.Find("CShot").gameObject.SetActive(false);
+            transform.Find("LShot").gameObject.SetActive(false);
+            transform.Find("RShot").gameObject.SetActive(false);
         }
     }
 

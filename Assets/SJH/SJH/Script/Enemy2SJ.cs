@@ -87,6 +87,10 @@ public class Enemy2SJ : MonoBehaviour
         {
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
+        if (collision.CompareTag("HomingMissle"))
+        {  
+            Hp -= GameManagerSJ.Instance.player.AttackPower * 2; 
+        }
     }
 }
 

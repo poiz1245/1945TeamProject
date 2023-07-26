@@ -18,6 +18,7 @@ TagManager:
   - Item1
   - Item2
   - ItemPower
+  - HomingMissle
   layers:
   - Default
   - TransparentFX
