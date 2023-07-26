@@ -6,8 +6,7 @@ public class PlayerSJ : MonoBehaviour
 {
     public float Speed = 1f;
     public GameObject bullet;
-    public GameObject RBullet;
-    public GameObject LBullet;
+
     public Transform gunPos;
     public Transform gunPos2;
     public Transform gunPos3;
@@ -20,7 +19,8 @@ public class PlayerSJ : MonoBehaviour
     public int AttackPower = 10;
     public int Hp = 100;
     public int MaxItemCount = 4;
-    int ItemCount = 0;
+    public int ItemCount = 0;
+    public int ItemCount2 = 0;
 
 
     bool check = false;
@@ -40,24 +40,20 @@ public class PlayerSJ : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
-            int count = 3;
-            float intervalAngle = 90 / count;
-            float weightAngle = 0;
-
             if (ItemCount ==0)
             {
-                    StartCoroutine(CreatBullet());
-                    GameObject clone1 = Instantiate(bullet, gunPos.position, Quaternion.identity);
-                    clone1.GetComponent<ArcBulletSJ>().Move(new Vector2(0,1));
-                    transform.Find("CShot").gameObject.SetActive(true);
+                StartCoroutine(CreatBullet());
+                GameObject clone1 = Instantiate(bullet, gunPos.position, Quaternion.identity);
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0,1));
+                transform.Find("CShot").gameObject.SetActive(true);
             }
             else if(ItemCount ==1)
             {
                 StartCoroutine(CreatBullet());
                 GameObject clone1 = Instantiate(bullet, gunPos2.position, Quaternion.identity);
                 GameObject clone2 = Instantiate(bullet, gunPos3.position, Quaternion.identity);
-                clone1.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 transform.Find("LShot").gameObject.SetActive(true);
                 transform.Find("RShot").gameObject.SetActive(true);
                 transform.Find("CShot").gameObject.SetActive(false);
@@ -68,9 +64,9 @@ public class PlayerSJ : MonoBehaviour
                 GameObject clone1 = Instantiate(bullet, gunPos.position, Quaternion.identity);
                 GameObject clone2 = Instantiate(bullet, gunPos2.position, Quaternion.identity);
                 GameObject clone3 = Instantiate(bullet, gunPos3.position, Quaternion.identity);
-                clone1.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone3.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 transform.Find("LShot").gameObject.SetActive(true);
                 transform.Find("RShot").gameObject.SetActive(true);
                 transform.Find("CShot").gameObject.SetActive(true);
@@ -82,10 +78,11 @@ public class PlayerSJ : MonoBehaviour
                 GameObject clone2 = Instantiate(bullet, SgunPos3.position, Quaternion.identity);
                 GameObject clone3 = Instantiate(bullet, SgunPos4.position, Quaternion.identity);
                 GameObject clone4 = Instantiate(bullet, SgunPos5.position, Quaternion.identity);
-                clone1.GetComponent<ArcBulletSJ>().Move(new Vector2(-1, 1));
-                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone3.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone4.GetComponent<ArcBulletSJ>().Move(new Vector2(1, 1));
+                    
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(-0.25f, 1));
+                clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone4.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.25f, 1));
                 transform.Find("LShot").gameObject.SetActive(true);
                 transform.Find("RShot").gameObject.SetActive(true);
                 transform.Find("CShot").gameObject.SetActive(true);
@@ -94,15 +91,15 @@ public class PlayerSJ : MonoBehaviour
             {
                 StartCoroutine(CreatBullet());
                 GameObject clone1 = Instantiate(bullet, SgunPos1.position, Quaternion.identity);
-                GameObject clone2 = Instantiate(bullet, SgunPos3.position, Quaternion.identity);
-                GameObject clone3 = Instantiate(bullet, SgunPos4.position, Quaternion.identity);
-                GameObject clone4 = Instantiate(bullet, SgunPos5.position, Quaternion.identity);
+                GameObject clone2 = Instantiate(bullet, SgunPos2.position, Quaternion.identity);
+                GameObject clone3 = Instantiate(bullet, SgunPos3.position, Quaternion.identity);
+                GameObject clone4 = Instantiate(bullet, SgunPos4.position, Quaternion.identity);
                 GameObject clone5 = Instantiate(bullet, SgunPos5.position, Quaternion.identity);
-                clone1.GetComponent<ArcBulletSJ>().Move(new Vector2(0, 1));
-                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(-1, 0.5f));
-                clone3.GetComponent<ArcBulletSJ>().Move(new Vector2(-1, 1));
-                clone4.GetComponent<ArcBulletSJ>().Move(new Vector2(1, 1));
-                clone5.GetComponent<ArcBulletSJ>().Move(new Vector2(1, -0.5f));
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
+                clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(-0.5f, 1));
+                clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(-0.25f, 1));
+                clone4.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.25f, 1));
+                clone5.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0.5f, 1));
                 transform.Find("LShot").gameObject.SetActive(true);
                 transform.Find("RShot").gameObject.SetActive(true);
                 transform.Find("CShot").gameObject.SetActive(true);
@@ -132,6 +129,16 @@ public class PlayerSJ : MonoBehaviour
             if(ItemCount >= MaxItemCount)
             {
                 ItemCount = MaxItemCount;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Item2"))
+        {
+            ItemCount2++;
+
+            if (ItemCount2 >= MaxItemCount)
+            {
+                ItemCount2 = MaxItemCount;
             }
         }
     }
