@@ -14,36 +14,42 @@ public class HomingMissle : MonoBehaviour
 
     public Transform nearestTarget;
     Vector2 dir;
+    Vector2 dirno;
+
+    bool isScanning = true;
 
     void Start()
     {
-        nearestTarget = GetNearest();
+        //nearestTarget = GetNearest();
+        //target = GameObject.FindWithTag("Enemy");
     }
 
-    // Update is called once per frame
     void Update()
     {
         targets = Physics2D.CircleCastAll(transform.position, ScanRange, Vector2.zero, 0, targetLayer);
-       
+        nearestTarget = GetNearest();
 
         dir = nearestTarget.transform.position - transform.position;
+
+        dirno = dir.normalized;
         
         if (nearestTarget != null)
         {
             transform.Translate(dir.normalized*Speed*Time.deltaTime);
+            Vector2 direction = new Vector2(transform.position.x - nearestTarget.transform.position.x,
+                                     transform.position.y - nearestTarget.transform.position.y);
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+            Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotationSpeed * Time.deltaTime);
+            transform.rotation = rotation;
         }
-        else if(nearestTarget == null) 
+        else
         {
-            transform.Translate(Vector2.up * Speed * Time.deltaTime);
+            transform.Translate(dirno * Speed * Time.deltaTime);
         }
 
-        Vector2 direction = new Vector2(transform.position.x - nearestTarget.transform.position.x,
-                                      transform.position.y - nearestTarget.transform.position.y);
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
-        Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotationSpeed * Time.deltaTime);
-        transform.rotation = rotation;
+       
     }
 
     public Transform GetNearest()
@@ -51,13 +57,13 @@ public class HomingMissle : MonoBehaviour
         Transform result = null;
         float diff = 100;
 
-        foreach(RaycastHit2D target in targets)
+        foreach (RaycastHit2D target in targets)
         {
             Vector3 mypos = transform.position;
             Vector3 targetpos = target.transform.position;
             float curdiff = Vector3.Distance(mypos, targetpos);
 
-            if(curdiff < 100)
+            if (curdiff < diff)
             {
                 diff = curdiff;
                 result = target.transform;
@@ -66,6 +72,7 @@ public class HomingMissle : MonoBehaviour
         return result;
     }
 
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))

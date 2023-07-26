@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
-  ScanRange: 100
+  ScanRange: 500
   rotationSpeed: 10
   targetLayer:
     serializedVersion: 2
