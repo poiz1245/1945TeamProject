@@ -82,4 +82,3 @@ public class RStopEnemy3SJ : MonoBehaviour
 
     
 }
-
