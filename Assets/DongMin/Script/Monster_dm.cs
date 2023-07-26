@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monster_dm : MonoBehaviour
 {
-    int hp = 50;
+    public int hp = 50;
     float speed = 2;
     float Delay = 1.5f;
     public Transform ms;
@@ -12,6 +12,7 @@ public class Monster_dm : MonoBehaviour
     public GameObject bullet;
     //아이템 가져오기
     public GameObject Item = null;
+    public GameObject exprosion;
     //Rigidbody2D rb;
 
     float dis = 0;
@@ -19,6 +20,9 @@ public class Monster_dm : MonoBehaviour
     float curTime = 0;
     float endTime = 5;
     bool end = false;
+
+    [SerializeField]
+    MonsterCanvas_dm monCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -67,9 +71,12 @@ public class Monster_dm : MonoBehaviour
     {
         hp -= attack;
 
+        monCanvas.Damage(hp);
+
         if (hp <= 0)
         {
             ItemDrop();
+            Destroy(Instantiate(exprosion, transform.position, Quaternion.identity), 0.4f);
             Destroy(gameObject);
         }
     }
@@ -119,5 +126,10 @@ public class Monster_dm : MonoBehaviour
             
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }

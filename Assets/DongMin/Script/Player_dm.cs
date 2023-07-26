@@ -15,7 +15,7 @@ public class Player_dm : MonoBehaviour
     public Transform pos = null; //미사일 발사
     float limitX = 2.556f;
     float limitY = 4.47f;
-    public int power = 0;
+    int power = 10;
     public float curTime = 0;
     public bool isLazer = false;
     GameObject lazer = null;
@@ -66,7 +66,8 @@ public class Player_dm : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(curBullet, pos.position, Quaternion.identity);
+            Instantiate(curBullet, pos.position, Quaternion.identity).GetComponent<Bullet_dm>().attack = power; 
+
         }
         //스페이스바를 누르고 있을 때
         else if (Input.GetKey(KeyCode.Space))
@@ -139,10 +140,10 @@ public class Player_dm : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ItemPower"))
         {
-            power += 1;
+            power += 10;
 
-            if (power >= 3)
-                power = 3;
+            if (power >= 20)
+                power = 20;
 
             curBullet = bullet3;
             Destroy(collision.gameObject);
