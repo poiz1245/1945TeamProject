@@ -7,13 +7,16 @@ public class SpawnerSJ : MonoBehaviour
 
     float startPos = -4;
     float endPos = 4;
-    int stage;
 
     public Transform LeftSpawnPoint;
     public Transform RightSpawnPoint;
     public Transform RightStopSpawnPoint;
     public Transform LeftStopSpawnPoint;
+    public Transform LeftCornerSpawnPoint;
+    public Transform RightCornerSpawnPoint;
 
+    bool swi6;
+    bool swi5;
     bool swi4;
     bool swi3;
     bool swi2;
@@ -21,71 +24,61 @@ public class SpawnerSJ : MonoBehaviour
 
     void Start()
     {
-        swi2 = true;
         swi = true;
-        swi3 = true;
+        swi2 = true;
+
+        StartCoroutine(Enemy1Spawn());
         StartCoroutine(Enemy2Spawn());
-        StartCoroutine(LeftArcSpawn());
-        StartCoroutine(RightArcSpawn());
-        Invoke("StopEnemy2Spawn", 15);
-        Invoke("StopArcSpaw", 5);
+
+        Invoke("StopEnemy1Spawn", 7);
     }
 
-    void StopArcSpaw()
+    void StopEnemy1Spawn()
     {
         swi = false;
-        swi2 = false;
+        swi3 = true;
         swi4 = true;
-        StopCoroutine(LeftArcSpawn());
-        StopCoroutine(RightArcSpawn());
-        StartCoroutine(LeftEnemy3Spawn());
-        Invoke("ArcSpawnCreat", 10);
-    }
-    void StopEnemy2Spawn() 
-    {
-        swi3 = false;
-        StopCoroutine(Enemy2Spawn());
-        Invoke("Enemy2SpawnCreat", 7);
-    }
-    void ArcSpawnCreat()
-    {
-        swi4 = false;
-        swi= true;
-        swi2= true;
+        StopCoroutine(Enemy1Spawn());
         StartCoroutine(LeftArcSpawn());
         StartCoroutine(RightArcSpawn());
-        StopCoroutine (LeftEnemy3Spawn());
-        Invoke("StopArcSpaw", 5);
+
+        Invoke("StopArcSpawn", 5);
     }
-    void Enemy2SpawnCreat()
+
+    void StopArcSpawn()
     {
-        swi3 = true;
-        StartCoroutine(Enemy2Spawn());
-        Invoke("StopEnemy2Spawn", 15);
+        swi5 = true;
+        swi3 = false;
+        swi4 = false;
+        StopCoroutine(LeftArcSpawn());
+        StopCoroutine(RightArcSpawn());
+        StartCoroutine(LeftCornerSpawn());
+        
+        Invoke("StopLeftCornerSpawn", 5);
     }
-    IEnumerator LeftArcSpawn()
+
+    void StopLeftCornerSpawn()
     {
-        while (swi)
-        {
-            yield return new WaitForSeconds(1);
-            Vector2 spawnSpot = LeftSpawnPoint.position;
-            GameObject monster = GameManagerSJ.Instance.pool.Get(0);
-            monster.transform.position = spawnSpot; 
-        }
+        swi6 = true;
+        swi5 = false;
+        StopCoroutine(LeftCornerSpawn());
+        StartCoroutine(RightCornerSpawn());
+
+        Invoke("StopRightCorner", 5);
     }
-    IEnumerator RightArcSpawn()
+    void StopRightCorner()
     {
-        while (swi2)
-        {
-            yield return new WaitForSeconds(1);
-            Vector2 spawnSpot = RightSpawnPoint.position;
-            GameObject monster = GameManagerSJ.Instance.pool.Get(1);
-            monster.transform.position = spawnSpot;
-        }
+        swi = true;
+        swi6 = false;
+        StopCoroutine(RightCornerSpawn());
+        StartCoroutine(Enemy1Spawn());
+
+        Invoke("StopEnemy1Spawn", 7);
     }
+
     IEnumerator Enemy2Spawn()
     {
-        while (swi3)
+        while (swi2)
         {
             yield return new WaitForSeconds(7);
             float X = Random.Range(startPos, endPos);
@@ -95,22 +88,71 @@ public class SpawnerSJ : MonoBehaviour
         }
     }
 
-    IEnumerator LeftEnemy3Spawn()
+    IEnumerator Enemy1Spawn()
     {
-        while (swi4)
+        while (swi)
         {
             yield return new WaitForSeconds(1);
-            Vector2 spawnSpot = LeftStopSpawnPoint.position;
+            float X = Random.Range(startPos, endPos);
+            Vector2 spawnSpot = new Vector2(X, transform.position.y);
             GameObject monster = GameManagerSJ.Instance.pool.Get(3);
             monster.transform.position = spawnSpot;
             yield return new WaitForSeconds(1);
-            RighttEnemy3Spawn();
+            Enemy1Spawn2();
         }
     }
-    void RighttEnemy3Spawn()
+    void Enemy1Spawn2()
     {
-        Vector2 spawnSpot = RightStopSpawnPoint.position;
+        float X = Random.Range(startPos, endPos);
+        Vector2 spawnSpot = new Vector2(X, transform.position.y);
         GameObject monster = GameManagerSJ.Instance.pool.Get(4);
         monster.transform.position = spawnSpot;
+       
     }
+
+    IEnumerator LeftArcSpawn()
+    {
+        while (swi3)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnSpot = LeftSpawnPoint.position;
+            GameObject monster = GameManagerSJ.Instance.pool.Get(0);
+            monster.transform.position = spawnSpot; 
+        }
+    }
+
+    IEnumerator RightArcSpawn()
+    {
+        while (swi4)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnSpot = RightSpawnPoint.position;
+            GameObject monster = GameManagerSJ.Instance.pool.Get(1);
+            monster.transform.position = spawnSpot;
+        }
+    }
+
+    IEnumerator LeftCornerSpawn()
+    {
+        while (swi5)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnSpot = LeftCornerSpawnPoint.position;
+            GameObject monster = GameManagerSJ.Instance.pool.Get(5);
+            monster.transform.position = spawnSpot;
+        }
+    }
+
+    IEnumerator RightCornerSpawn()
+    {
+        while (swi6)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnSpot = RightCornerSpawnPoint.position;
+            GameObject monster = GameManagerSJ.Instance.pool.Get(6);
+            monster.transform.position = spawnSpot;
+        }
+    }
+
+    
 }

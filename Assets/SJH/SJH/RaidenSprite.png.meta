@@ -1,0 +1,5059 @@
+fileFormatVersion: 2
+guid: ca173a46c81e93041ba2800fbc584b23
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RaidenSprite_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 2024
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1f4d25e6019044d9c716c3699f53ef
+      internalID: -1019983443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 2024
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61852ae2ba7c36045a9a999113e3f801
+      internalID: -353072843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2813c9218fcf1e04ea225e0323da3898
+      internalID: 2138578038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_3
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a30f0ec53277046b4e9078fe85905a
+      internalID: 808057377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_4
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344a40036f3093e469837caedb12d25d
+      internalID: 818929010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_5
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9455c5fa26e4000419fd565f4d6dfc8d
+      internalID: -872890138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_6
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732b6330c21ac3544a7e37e7c044bc8b
+      internalID: -855347681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_7
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21f4090baf16bb40bed7b9d85027ee0
+      internalID: 648930823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_8
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6f08aa1319ea54d8e8e2e10792ca07
+      internalID: 1349023025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_9
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29af704624d7fe54c9934ee60aa080d4
+      internalID: -1842770652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_10
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02acf5b7dc581c447bfd48d22473ced3
+      internalID: 1826916836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_11
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d7ebcf5fca10e4e9d0791f9d8305c9
+      internalID: 719954536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_12
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 2014
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8d110eadd040e4e84094e64f13653d
+      internalID: -201962529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_13
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb05cb582f5bfe744a163f64cf1f9397
+      internalID: -1526697316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_14
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c61040c018264448fda76cf058bbcb
+      internalID: -851531719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_15
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 2014
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09e3f9cce3524d41887c73ec320b0e2
+      internalID: -1456811450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_16
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 2014
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcf6a215f70e604eaca951cf7929163
+      internalID: -1287150642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1976
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051057168fa5b984fbe6f4ca6ce1bfb4
+      internalID: 2106881613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_18
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1976
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef4fe24536985a4a85be489107810df
+      internalID: 1472755378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_19
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1976
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a12c9e953a0034ab408572f08bf18c
+      internalID: -1329931202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_20
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1976
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a18f1f85e13abd4595c9dfa33940aa1
+      internalID: -1893324846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_21
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1976
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900cb3086de104e48a8cf9697c253d61
+      internalID: -142474908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_22
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1976
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd578c2366495043891ab10528c107a
+      internalID: -639291368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_23
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1976
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282cefee743cf0a4ab28853a4a114109
+      internalID: -188925693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1976
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fbe07491222ab498736cde09c98709
+      internalID: 598549946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_25
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1976
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3570f0fea57424cb94f050a963a988
+      internalID: 70118018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_26
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1976
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558ccfa7c2308154cba3a06aa2d15d1b
+      internalID: -1061578741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_27
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1976
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dbe944167dbe54a962817df5689038
+      internalID: -513890986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_28
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 2004
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31511d86d7ecdb44863d623ae698d9b
+      internalID: 1050545201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_29
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1960
+        width: 57
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c44fb9c065c0584a916a70ab4695c85
+      internalID: 1276825988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_30
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1960
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78322c9ee47536b44b6143e01efcf701
+      internalID: -424204928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_31
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 1960
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c7b9e3f3de71a4d9cdf31e6d41507f
+      internalID: 1292137163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_32
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1960
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c086fe372597f8448ea8495afa1c289
+      internalID: -479457010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_33
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1960
+        width: 50
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f78e9d91d74cd4587ce5e773cb7c54
+      internalID: 1236725200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_34
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1932
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e42bbf6b2d4e4742a6849d9e055762c
+      internalID: -1563469390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_35
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1942
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fea43fe29e1bf14eada70e1700b811a
+      internalID: 1474177902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_36
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1941
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1158f05fb3def84ab9483227e7d9742
+      internalID: 407490677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_37
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1942
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e12cff2810983a4b8abe530cbdc1d9a
+      internalID: 1811687082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_38
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1941
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c123d375781ed4ab5b806d58a2e10f
+      internalID: -1249050757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_39
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1945
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f162cc8c829140647bf3b3b0cd7b60ac
+      internalID: -1552769804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_40
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1945
+        width: 42
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f553ee4c8f3efff41bd15bf67ecffdc7
+      internalID: -1569143071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_41
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1945
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afeb2dfd9e35c540ac086808ca3a6c4
+      internalID: 557750829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_42
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1943
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30991a88bd3365e42b9619c541db8fe0
+      internalID: -1172220430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_43
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49e4234c8594f1408cb9520dc020527
+      internalID: 1365155168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_44
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1881
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6680740b846f05499f9e27b70dfaf06
+      internalID: 94775968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_45
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1896
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27af9a6d127b45340a0bf51d9b602158
+      internalID: 1997958330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_46
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1881
+        width: 13
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac94dc786a5a2f3448f89fc4712906be
+      internalID: 1037097415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_47
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1134e432d9a2054aa0323d582baa054
+      internalID: -733411778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_48
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a806f1a2f2abe49abb790de54480e4
+      internalID: -203928757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_49
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1896
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e821caf0df3d6148a5950d4a65e5cc0
+      internalID: -676919524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_50
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1896
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859a9515ebb731d4c9d0f7fc13e6764e
+      internalID: 596619355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_51
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70a2eb9943dfc94a8b2d2073b374b7b
+      internalID: -199633278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_52
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ec85cf35c638941b14a95a07a64c44
+      internalID: 1460451244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_53
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1896
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e43b69d3b3d6b46957e87891a08fee
+      internalID: -909587651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_54
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c49f08194be50549b365d27274fa066
+      internalID: 1279808584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_55
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6c0e6ab5d26df48be025d9a460a39e
+      internalID: 625179507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_56
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1896
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28373be2346f78b44822f17dcccd970c
+      internalID: -1998700223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_57
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1904
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bf9f3c2ddf57a4a8f9901ee3e70217
+      internalID: 1110875026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_58
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1904
+        width: 42
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9686a93b971b241889d116543cf1fc
+      internalID: -1840657846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_59
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1906
+        width: 30
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8648a87b2b8ff654db6d60ffdae0d023
+      internalID: 1054500846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_60
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0769997add7382e44b1b9206d8c03343
+      internalID: -371812972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_61
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1901
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddb504e7fdbb3044a15c3268ba926ef
+      internalID: 667569298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_62
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1901
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b803c6c7e116d9b44a3fb82b6cccaa15
+      internalID: 1481087075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_63
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1881
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98f72331e9c373418d9968d35a2b31b
+      internalID: -1210576607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_64
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1904
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6353b20bc3f4fe9468f31f649be85134
+      internalID: 808888533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_65
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1929
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0154d888443dbfe4cba1c737c169db3a
+      internalID: -1095337532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_66
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1905
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e74a449b0ee8c2438013b6a08467993
+      internalID: 1520979529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_67
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1905
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c04249d6d67c2b4ba14793a87ebfabb
+      internalID: -1989066428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_68
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1929
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f75d41808baadf4fb50c72c753e6297
+      internalID: 33202617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_69
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1906
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6571fe9436bfdb14da6714f062738474
+      internalID: -1937680254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_70
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1908
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afb4263e468d3b439059a77592208a1
+      internalID: 2014212588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_71
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1906
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113d13855e1c81e418d08d244669554a
+      internalID: -1970297119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_72
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1908
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27923a471b7de74a968f02edccd63b3
+      internalID: -1573925124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_73
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1908
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e9bb5ed0b503d4c9c2dfe36b57d5cf
+      internalID: -1754746152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_74
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1908
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6072b1f9cda4e408dd4ea80144e1e6
+      internalID: 610700754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_75
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1908
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a16571f7b42a24c9e3a46273af6cba
+      internalID: 849961551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_76
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1877
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089f8d75901c1a14b9db7f0039cf73aa
+      internalID: -820560763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_77
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1877
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa15c79ea24d474c92cbe3ee725b2f7
+      internalID: 516867094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_78
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1880
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49cf4dd92fce7548801418635da806f
+      internalID: -1582840453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_79
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1880
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd8816548610e7419f9d87f888d7484
+      internalID: 1085181841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_80
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1881
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978f0f45d1c515e4295656eb75fde16e
+      internalID: -1021369067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_81
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1877
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1efdad59bcff8249b7046690a8a9237
+      internalID: -1360947329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_82
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1877
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5040581370f9f4c94c346e1090cfcb
+      internalID: 535620980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_83
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1882
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ce38abf9d9f2f46b55c91fa958d19e
+      internalID: 735395313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_84
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1881
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297c1036484765d40838c8dafe9e167b
+      internalID: -1575559055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_85
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1855
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631d3596a15e86a4bacbb58b90c93231
+      internalID: -2031567238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_86
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1855
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07cc3511304fda4fbe1cd70ea4f1991
+      internalID: -1965965857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_87
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1854
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90135a1c29f7f6b40aded9151a05b7e2
+      internalID: 1581961854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_88
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1854
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e71a60322f251445855aec55ddbcc98
+      internalID: -2115420050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_89
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1850
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f5b1f0cbb5879469eddc4a6c2a65c1
+      internalID: 1440719087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_90
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1850
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b959810f74f30ce49bc436488936e91b
+      internalID: 374128789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_91
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1849
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad9a2fbb44b28d44867532d3f9c5c00
+      internalID: -1843983453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_92
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1849
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b512ccec3e5fe54592997d003aab446
+      internalID: 746317983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_93
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1843
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67c6f9723513444d803ad9dc47af76f
+      internalID: -1064054327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_94
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1843
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f6322e9b468d14ebc75c00fd1450a8
+      internalID: -531056116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_95
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1849
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa281a708ab0ba343b7875c007e07046
+      internalID: 980130108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_96
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1850
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8262d222315c06c4391156ee01af0477
+      internalID: -1264295220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_97
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1839
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d07f8141807ee7448a706b36cc43d2e
+      internalID: -615806547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_98
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1836
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ff9a3c0b75778438437830b4e03212
+      internalID: 447356614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_99
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1772
+        width: 33
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4952f18fae51e49bc49bb4419df544
+      internalID: -805653751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_100
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1826
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434fdb9f46d2a6444ad33ba516dcb75d
+      internalID: 836411253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_101
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1826
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0223cad1c02934ebc4546d87257d17
+      internalID: 1845567903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_102
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1828
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d9b89b4eea6874e996a3627222f83c
+      internalID: -1290185198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_103
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1828
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b535d5d5600d26d49859cdaec0e536df
+      internalID: -1416857904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_104
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1809
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf931f6a785c494aaf6318d512d2c7b
+      internalID: 1038791692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_105
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1810
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad5eeea84e33a7409d27944bcb9af0c
+      internalID: 1637680473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_106
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1808
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6c62a9ccfd34749bc9f2652bc7bba1
+      internalID: 271596174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_107
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1808
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8e4376ec25552479b4a6b74568edb4
+      internalID: -1455366853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_108
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1817
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724ed295b9e0661428a18b90eb557acd
+      internalID: 745212100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_109
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1817
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06209cd2c427174ba1339937f43756d
+      internalID: 857457049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_110
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1814
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c78af776aeb8f8439babf0fe23a4381
+      internalID: 1542687458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_111
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1814
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058bb734d7bb55c4ca9771a684dfc464
+      internalID: 1268469161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_112
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1796
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c569be3a73fb786428a8e40db40eb826
+      internalID: -2075869198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_113
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1796
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a321ecec9f19745bfbdac833c0e59a
+      internalID: -488120497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_114
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1799
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394e674f73c957a469051851d57b8850
+      internalID: 765532675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_115
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1799
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7bc753d31b128418b07429a7d0810f
+      internalID: 1098919060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_116
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1772
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bb8c815e40fc9459d1c5ae7325dabd
+      internalID: 1497617742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_117
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1772
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ee5baaeda9494449cb001d3a67fe8d
+      internalID: -125822199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_118
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1775
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a0781850b258c4da2cf1679415a1d7
+      internalID: 2062405451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_119
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1781
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0219ab91b72b1e94c9b31a624c5ad976
+      internalID: -1028047517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_120
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1781
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8640bfef48356c4498afeec2184cd3f4
+      internalID: -223428912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_121
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1774
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4d27e32c899c14ca3cccce061157ae
+      internalID: 2074548670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_122
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1774
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ba680e4e69716468c20f3fff44f6c6
+      internalID: -1952415783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_123
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1749
+        width: 37
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a833051aae803114789c0fb6666d43ee
+      internalID: 996250085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_124
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1748
+        width: 53
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872be61d8c4e3184aa82c6e3413de81c
+      internalID: -1384757018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_125
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1749
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e346b249671bb242a282127a79e62e7
+      internalID: -1228162273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_126
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1744
+        width: 36
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d14ca6e0de0bdc49aefa16aba48441c
+      internalID: 112115179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_127
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1744
+        width: 58
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb6738dd317d434d9e8424817ecda26
+      internalID: 1405935467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_128
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 1747
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba359626e4d2e7479a7aee20bb3fb96
+      internalID: -742075496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_129
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1747
+        width: 28
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f990bcbc02c78d42bd65a235745e179
+      internalID: 633774268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_130
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1747
+        width: 29
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1d8112b82c9ac43b8263113d02dd16
+      internalID: 285686661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_131
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1747
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112ced2af05cf224d96a53c6c5e477a5
+      internalID: 87319447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_132
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1740
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d18f3dcb8bf22f459394a6fd2376936
+      internalID: 1147418998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_133
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1725
+        width: 39
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba08343af1543c3429a4f87c5366d506
+      internalID: 1206664271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_134
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1728
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff546fbd5ce28d847875c81e33b9b5f0
+      internalID: 1776049878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_135
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1727
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38cff30d497c3749afdb29add4062a9
+      internalID: 570407380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_136
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1726
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d301849c12a7c4e4ca40eceb2d59d76f
+      internalID: 1885703862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_137
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1725
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4b9dc9377cbca42819321dc703b57e
+      internalID: 866804405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_138
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1724
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e73813f6c05f3478ab2a2dbfcfb50b
+      internalID: -992977523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_139
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1724
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84ee819286a3804b97c89df2809eca0
+      internalID: 1740740232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_140
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1724
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c88af23a8948549b168d167643a9ae
+      internalID: -1301009473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_141
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1725
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8d20a43b084b247a509ad4ca80e390
+      internalID: 731812370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_142
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1725
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ff63f169126484da6f76b4766d68b0
+      internalID: 615839171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_143
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1726
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6182a072fb6d78045a7d2a8672d3abc2
+      internalID: -1449014449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_144
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1727
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c915bcdb2394e0940a57a535248bb272
+      internalID: 1299483372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_145
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1728
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ba8e34849a4df4cb368c20ed9c24dc
+      internalID: -1758978543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_146
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1728
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc78ccc21bfc8d94886f0df472a27eab
+      internalID: -1158213071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_147
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1707
+        width: 37
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d83a1c4f084664d876228d5c0ffe84
+      internalID: -64985846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_148
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1705
+        width: 53
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a28b749362bf244a18db89d61ddb0b
+      internalID: -1541493829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_149
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1704
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d915e0743dc5cb04aafcb0c730a0829a
+      internalID: -129449365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_150
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1557
+        width: 46
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445ee8c6e68c65446a86ca54b4b0c8b2
+      internalID: 241260335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_151
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1686
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b788686948bbc41439e29cd6010427bc
+      internalID: -1279008788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_152
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1685
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76693e625120b9d45b4a9f5b2e13e451
+      internalID: -2006082459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_153
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1684
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca7717ee60166c41b95bee8d499c2bc
+      internalID: -2048312776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_154
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1683
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c51b2b989396c04a9f3a077cd885106
+      internalID: -1703815281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_155
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1682
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1514f748624e894fb1b2a4c2376b113
+      internalID: 977150770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_156
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1682
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3f247db780b4c4f96a3a9a84b8048e
+      internalID: -698357763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_157
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1682
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42788c469e6039499add9ed51a10e34
+      internalID: 860704428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_158
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1683
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcfba87345739d4bb7ae49e6803fd94
+      internalID: 807424788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_159
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1683
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947a9070b5a5c324085d0cb4020c68ed
+      internalID: 109837118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_160
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1684
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4dfa64e3d254242bda1ecf0fd2f3ee
+      internalID: 1986287079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_161
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1685
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4cea871b034b24e9c7ab1d17c1b3ed
+      internalID: -793672137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_162
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1671
+        width: 69
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664b6a27b6b1b0848862b48fe01a1a64
+      internalID: 1385436027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_163
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1686
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d56eabd8cd349146874f36581fc7bdd
+      internalID: -1624755628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_164
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1686
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f822bc1a1be4334b929cc34a3ac40ee
+      internalID: -1320083406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_165
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1476
+        width: 62
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87bedc0593e75f4fa4d56329996dff2
+      internalID: -2137400128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_166
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1498
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e1ee45d4675174b986d66e128f3ae4
+      internalID: 4289169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_167
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1498
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2272a8a897ee87b49bebd850ed9f3e72
+      internalID: -701390696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_168
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1494
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eadfd3cedd10be4d8e416702c013fe2
+      internalID: 1988499521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_169
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1494
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f88bdf40814df84a97c384b66428686
+      internalID: 1703130666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_170
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1494
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f5141f6cf2e5b4d973da7b57c9ada4
+      internalID: -1105192144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_171
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1494
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e906ded6bce11274b84967a643b1f1ad
+      internalID: -1305586482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_172
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1497
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07dcca2c433c194a943579890d836cf
+      internalID: -981693744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_173
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 1496
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e707b069ecbfe439f19de91b934791
+      internalID: 169738387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_174
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1497
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1085e5c8e4c41d243b7dffd21e102f2b
+      internalID: 1214984485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_175
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1497
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cfc46b3c4297f4d8e91720cd24c88d
+      internalID: -1049815963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_176
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1498
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed04e65454339f4195ca3ca3c79ab15
+      internalID: -2054617870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_177
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 905
+        width: 163
+        height: 537
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eac0d3c458c15248b647f7c8176ce7c
+      internalID: 861855068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_178
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1011
+        width: 226
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9f058e724d70a42b3edb5fd33f8c6d
+      internalID: -416106074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_179
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 990
+        width: 232
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d21b73b95e92a342bf54a2fc3607652
+      internalID: 1050766579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_180
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1320
+        width: 133
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846c998a4e2a4724998ba6ab5bf97c8f
+      internalID: -458816332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_181
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 773
+        width: 261
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf0190cf9c245d48bb74fd1a7a43b3e
+      internalID: 410128032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_182
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1287
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50dd4877fa26a64cb69bc09e9af61f3
+      internalID: 1553719004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_183
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 980
+        width: 248
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358287e62b805d64e9bd44a28b63d6fa
+      internalID: -1027012117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_184
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1275
+        width: 188
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598bc2d5c7c9fb44ebd3aee4c1a28043
+      internalID: -2032881961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_185
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 631
+        width: 258
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98d297fbf9de724d90194ce5c15adac
+      internalID: 1186416532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_186
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 615
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6797c6f6b6af5f468f6248b4770f5a7
+      internalID: -1823852754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_187
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 613
+        width: 66
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57cf023f207e20498c631511365fd3a
+      internalID: -926241763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_188
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 615
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81be4ae8df0420842b7b9ea2445dde9f
+      internalID: -79332269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_189
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 426
+        width: 214
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6262a371baaec4eb65f19ac569a9f6
+      internalID: -651373139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_190
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 603
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cc7d9736ad9cb40847c157e6f9e072
+      internalID: -1258126249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_191
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 603
+        width: 37
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edff3d9d02144f4fbb94a68bbc0b074
+      internalID: 877277986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_192
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 603
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18aea3160baa5042b14bbf52c9a637a
+      internalID: -173624132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_193
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 603
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0723a52ccb3064640a3b31287b783c01
+      internalID: 1586665915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_194
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 603
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd843b7fde7d141b8ffac2a1106013
+      internalID: -1231358376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_195
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 603
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b5116e9a9a68a47a6c0e5a2f5216ce
+      internalID: 1842306666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_196
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 603
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddeac01e5188c04faad4dadac8d4ecc
+      internalID: 1104773050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_197
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 602
+        width: 61
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5a3264d19f08747acbb3ee6ff83cb8
+      internalID: -930309265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_198
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 603
+        width: 66
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c8ee5c7f856bd40b50a13942bf3823
+      internalID: 1571293926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_199
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 603
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f2dea155c0ebf4cb8226e1034d40ab
+      internalID: 1815869260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_200
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 603
+        width: 41
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b40f46f41e00343837887bbcc02634
+      internalID: 1017349903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_201
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 414
+        width: 188
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfbf3969724b9148ae019283569cab3
+      internalID: 1359712058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_202
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 420
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009938cc7ef126542b87bdcc14ff7367
+      internalID: 1817422644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_203
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 418
+        width: 174
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c011ffab46f0809459c96963776994e5
+      internalID: 68843102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_204
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 423
+        width: 160
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2342c069cd6e648a1f91adcb5c0a13
+      internalID: 1775839333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_205
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 394
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08237cab66af1647ab9da556ba2af34
+      internalID: -1876571103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_206
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 392
+        width: 53
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f460646cc2a27d46892d1db6f425395
+      internalID: 811978304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_207
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 391
+        width: 57
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57516684601632499df0d6a65d3e549
+      internalID: -1323350856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_208
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 394
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c7953edeccece4f86dcd78a7e0a7fe
+      internalID: -1871266788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_209
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 214
+        width: 172
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd94f4c6c08de74d9cf9779c0aa7c33
+      internalID: -919391420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_210
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 174
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e412d901fdfc60438380548294b8c2e
+      internalID: -49446151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_211
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 191
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcad9f2d3466ac84298b6d9e319ece2c
+      internalID: 1561143845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_212
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 189
+        width: 66
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e37f695f17f00438648800566e7e78
+      internalID: 556185424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_213
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 189
+        width: 61
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97f47ba33b331b46ab2dc79bd7024ac
+      internalID: -1854530795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_214
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 212
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340f105de762de04caba3cc0ff08b1e1
+      internalID: 781399722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_215
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 7
+        width: 176
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d01308df9106ad48b01643327ae1ca4
+      internalID: -1736106808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_216
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 214
+        width: 168
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e0665f18d61e542bce01d793fe1e9d
+      internalID: -1962666510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_217
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 213
+        width: 168
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385db2daa37fd8f43a9cc0dbe9e52f80
+      internalID: -162731252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_218
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 172
+        width: 166
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df44fa5a302b7b648b57c75e9f3adfe5
+      internalID: -1978136869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_219
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 75
+        width: 61
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb4d5b57c90d784bb4d4717f56dfa82
+      internalID: 1254050497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_220
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 79
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1602cbb0fd5909045bd05ead7525be99
+      internalID: -631221148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_221
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 77
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872b2ac7a4eefa74fa74760fe5216071
+      internalID: -1784910305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaidenSprite_222
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 75
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23f1d3f955a3ed4d92c1da0cc619214
+      internalID: 840094582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RaidenSprite_0: -1019983443
+      RaidenSprite_1: -353072843
+      RaidenSprite_10: 1826916836
+      RaidenSprite_100: 836411253
+      RaidenSprite_101: 1845567903
+      RaidenSprite_102: -1290185198
+      RaidenSprite_103: -1416857904
+      RaidenSprite_104: 1038791692
+      RaidenSprite_105: 1637680473
+      RaidenSprite_106: 271596174
+      RaidenSprite_107: -1455366853
+      RaidenSprite_108: 745212100
+      RaidenSprite_109: 857457049
+      RaidenSprite_11: 719954536
+      RaidenSprite_110: 1542687458
+      RaidenSprite_111: 1268469161
+      RaidenSprite_112: -2075869198
+      RaidenSprite_113: -488120497
+      RaidenSprite_114: 765532675
+      RaidenSprite_115: 1098919060
+      RaidenSprite_116: 1497617742
+      RaidenSprite_117: -125822199
+      RaidenSprite_118: 2062405451
+      RaidenSprite_119: -1028047517
+      RaidenSprite_12: -201962529
+      RaidenSprite_120: -223428912
+      RaidenSprite_121: 2074548670
+      RaidenSprite_122: -1952415783
+      RaidenSprite_123: 996250085
+      RaidenSprite_124: -1384757018
+      RaidenSprite_125: -1228162273
+      RaidenSprite_126: 112115179
+      RaidenSprite_127: 1405935467
+      RaidenSprite_128: -742075496
+      RaidenSprite_129: 633774268
+      RaidenSprite_13: -1526697316
+      RaidenSprite_130: 285686661
+      RaidenSprite_131: 87319447
+      RaidenSprite_132: 1147418998
+      RaidenSprite_133: 1206664271
+      RaidenSprite_134: 1776049878
+      RaidenSprite_135: 570407380
+      RaidenSprite_136: 1885703862
+      RaidenSprite_137: 866804405
+      RaidenSprite_138: -992977523
+      RaidenSprite_139: 1740740232
+      RaidenSprite_14: -851531719
+      RaidenSprite_140: -1301009473
+      RaidenSprite_141: 731812370
+      RaidenSprite_142: 615839171
+      RaidenSprite_143: -1449014449
+      RaidenSprite_144: 1299483372
+      RaidenSprite_145: -1758978543
+      RaidenSprite_146: -1158213071
+      RaidenSprite_147: -64985846
+      RaidenSprite_148: -1541493829
+      RaidenSprite_149: -129449365
+      RaidenSprite_15: -1456811450
+      RaidenSprite_150: 241260335
+      RaidenSprite_151: -1279008788
+      RaidenSprite_152: -2006082459
+      RaidenSprite_153: -2048312776
+      RaidenSprite_154: -1703815281
+      RaidenSprite_155: 977150770
+      RaidenSprite_156: -698357763
+      RaidenSprite_157: 860704428
+      RaidenSprite_158: 807424788
+      RaidenSprite_159: 109837118
+      RaidenSprite_16: -1287150642
+      RaidenSprite_160: 1986287079
+      RaidenSprite_161: -793672137
+      RaidenSprite_162: 1385436027
+      RaidenSprite_163: -1624755628
+      RaidenSprite_164: -1320083406
+      RaidenSprite_165: -2137400128
+      RaidenSprite_166: 4289169
+      RaidenSprite_167: -701390696
+      RaidenSprite_168: 1988499521
+      RaidenSprite_169: 1703130666
+      RaidenSprite_17: 2106881613
+      RaidenSprite_170: -1105192144
+      RaidenSprite_171: -1305586482
+      RaidenSprite_172: -981693744
+      RaidenSprite_173: 169738387
+      RaidenSprite_174: 1214984485
+      RaidenSprite_175: -1049815963
+      RaidenSprite_176: -2054617870
+      RaidenSprite_177: 861855068
+      RaidenSprite_178: -416106074
+      RaidenSprite_179: 1050766579
+      RaidenSprite_18: 1472755378
+      RaidenSprite_180: -458816332
+      RaidenSprite_181: 410128032
+      RaidenSprite_182: 1553719004
+      RaidenSprite_183: -1027012117
+      RaidenSprite_184: -2032881961
+      RaidenSprite_185: 1186416532
+      RaidenSprite_186: -1823852754
+      RaidenSprite_187: -926241763
+      RaidenSprite_188: -79332269
+      RaidenSprite_189: -651373139
+      RaidenSprite_19: -1329931202
+      RaidenSprite_190: -1258126249
+      RaidenSprite_191: 877277986
+      RaidenSprite_192: -173624132
+      RaidenSprite_193: 1586665915
+      RaidenSprite_194: -1231358376
+      RaidenSprite_195: 1842306666
+      RaidenSprite_196: 1104773050
+      RaidenSprite_197: -930309265
+      RaidenSprite_198: 1571293926
+      RaidenSprite_199: 1815869260
+      RaidenSprite_2: 2138578038
+      RaidenSprite_20: -1893324846
+      RaidenSprite_200: 1017349903
+      RaidenSprite_201: 1359712058
+      RaidenSprite_202: 1817422644
+      RaidenSprite_203: 68843102
+      RaidenSprite_204: 1775839333
+      RaidenSprite_205: -1876571103
+      RaidenSprite_206: 811978304
+      RaidenSprite_207: -1323350856
+      RaidenSprite_208: -1871266788
+      RaidenSprite_209: -919391420
+      RaidenSprite_21: -142474908
+      RaidenSprite_210: -49446151
+      RaidenSprite_211: 1561143845
+      RaidenSprite_212: 556185424
+      RaidenSprite_213: -1854530795
+      RaidenSprite_214: 781399722
+      RaidenSprite_215: -1736106808
+      RaidenSprite_216: -1962666510
+      RaidenSprite_217: -162731252
+      RaidenSprite_218: -1978136869
+      RaidenSprite_219: 1254050497
+      RaidenSprite_22: -639291368
+      RaidenSprite_220: -631221148
+      RaidenSprite_221: -1784910305
+      RaidenSprite_222: 840094582
+      RaidenSprite_23: -188925693
+      RaidenSprite_24: 598549946
+      RaidenSprite_25: 70118018
+      RaidenSprite_26: -1061578741
+      RaidenSprite_27: -513890986
+      RaidenSprite_28: 1050545201
+      RaidenSprite_29: 1276825988
+      RaidenSprite_3: 808057377
+      RaidenSprite_30: -424204928
+      RaidenSprite_31: 1292137163
+      RaidenSprite_32: -479457010
+      RaidenSprite_33: 1236725200
+      RaidenSprite_34: -1563469390
+      RaidenSprite_35: 1474177902
+      RaidenSprite_36: 407490677
+      RaidenSprite_37: 1811687082
+      RaidenSprite_38: -1249050757
+      RaidenSprite_39: -1552769804
+      RaidenSprite_4: 818929010
+      RaidenSprite_40: -1569143071
+      RaidenSprite_41: 557750829
+      RaidenSprite_42: -1172220430
+      RaidenSprite_43: 1365155168
+      RaidenSprite_44: 94775968
+      RaidenSprite_45: 1997958330
+      RaidenSprite_46: 1037097415
+      RaidenSprite_47: -733411778
+      RaidenSprite_48: -203928757
+      RaidenSprite_49: -676919524
+      RaidenSprite_5: -872890138
+      RaidenSprite_50: 596619355
+      RaidenSprite_51: -199633278
+      RaidenSprite_52: 1460451244
+      RaidenSprite_53: -909587651
+      RaidenSprite_54: 1279808584
+      RaidenSprite_55: 625179507
+      RaidenSprite_56: -1998700223
+      RaidenSprite_57: 1110875026
+      RaidenSprite_58: -1840657846
+      RaidenSprite_59: 1054500846
+      RaidenSprite_6: -855347681
+      RaidenSprite_60: -371812972
+      RaidenSprite_61: 667569298
+      RaidenSprite_62: 1481087075
+      RaidenSprite_63: -1210576607
+      RaidenSprite_64: 808888533
+      RaidenSprite_65: -1095337532
+      RaidenSprite_66: 1520979529
+      RaidenSprite_67: -1989066428
+      RaidenSprite_68: 33202617
+      RaidenSprite_69: -1937680254
+      RaidenSprite_7: 648930823
+      RaidenSprite_70: 2014212588
+      RaidenSprite_71: -1970297119
+      RaidenSprite_72: -1573925124
+      RaidenSprite_73: -1754746152
+      RaidenSprite_74: 610700754
+      RaidenSprite_75: 849961551
+      RaidenSprite_76: -820560763
+      RaidenSprite_77: 516867094
+      RaidenSprite_78: -1582840453
+      RaidenSprite_79: 1085181841
+      RaidenSprite_8: 1349023025
+      RaidenSprite_80: -1021369067
+      RaidenSprite_81: -1360947329
+      RaidenSprite_82: 535620980
+      RaidenSprite_83: 735395313
+      RaidenSprite_84: -1575559055
+      RaidenSprite_85: -2031567238
+      RaidenSprite_86: -1965965857
+      RaidenSprite_87: 1581961854
+      RaidenSprite_88: -2115420050
+      RaidenSprite_89: 1440719087
+      RaidenSprite_9: -1842770652
+      RaidenSprite_90: 374128789
+      RaidenSprite_91: -1843983453
+      RaidenSprite_92: 746317983
+      RaidenSprite_93: -1064054327
+      RaidenSprite_94: -531056116
+      RaidenSprite_95: 980130108
+      RaidenSprite_96: -1264295220
+      RaidenSprite_97: -615806547
+      RaidenSprite_98: 447356614
+      RaidenSprite_99: -805653751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

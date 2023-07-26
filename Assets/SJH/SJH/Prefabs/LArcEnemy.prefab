@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   AttackPower: 10
-  AttackSpeed: 0.7
+  AttackSpeed: 2
   player: {fileID: 4420007127888458917, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
   gunPos1: {fileID: 6073613026744823283}
   bullet: {fileID: 6612812784078740228, guid: 2c9f336ab9581ee418e22ea7481dfac0, type: 3}

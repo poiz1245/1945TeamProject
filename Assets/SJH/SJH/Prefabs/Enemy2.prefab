@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 673660081317984659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7835159269500353034}
@@ -163,13 +163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c30f5b947a8b640951661ad93ef962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 0.5
   AttackPower: 10
-  Hp: 50
+  Hp: 200
   AttackSpeed: 2
   gunPos1: {fileID: 7835159269500353034}
   gunPos2: {fileID: 6731097276163712122}
   bullet: {fileID: 4924902852957537345, guid: 7f5e1d340c6e3e14980569c0d5c15c9a, type: 3}
+  item: {fileID: 3247606516886110032, guid: 902a48e36e9a1614093cd2308c9f5cd5, type: 3}
 --- !u!50 &8809187549746849489
 Rigidbody2D:
   serializedVersion: 4
