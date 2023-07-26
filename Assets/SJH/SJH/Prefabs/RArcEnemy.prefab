@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4572966462704182581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3093887292369040277}
   - component: {fileID: 3515208260302504980}
   - component: {fileID: 5852894517605609542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RArcEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

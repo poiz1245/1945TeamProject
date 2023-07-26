@@ -17,6 +17,7 @@ TagManager:
   - RightCornerWayPoint
   - Item1
   - Item2
+  - ItemPower
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

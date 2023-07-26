@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802165870928583358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunDown
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2310919844769097081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunUp
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 8789520176510524261}
   - component: {fileID: 16758072987624824}
   - component: {fileID: 5861440927194758685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCornerEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

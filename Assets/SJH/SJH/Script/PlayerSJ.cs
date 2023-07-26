@@ -6,6 +6,7 @@ public class PlayerSJ : MonoBehaviour
 {
     public float Speed = 1f;
     public GameObject bullet;
+    public GameObject HomingMissle;
 
     public Transform gunPos;
     public Transform gunPos2;
@@ -19,11 +20,13 @@ public class PlayerSJ : MonoBehaviour
     public int AttackPower = 10;
     public int Hp = 100;
     public int MaxItemCount = 4;
+    public int MaxItem2Count = 3;
     public int ItemCount = 0;
     public int ItemCount2 = 0;
 
 
     bool check = false;
+    bool check2 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +43,45 @@ public class PlayerSJ : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
-            if (ItemCount ==0)
+            if (!check2)
+            {
+                if (ItemCount2 == 1)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, gunPos.position, Quaternion.identity);
+                }
+                else if (ItemCount2 == 2)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, gunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos3.position, Quaternion.identity);
+                }
+                else if (ItemCount2 == 3)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, gunPos.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos3.position, Quaternion.identity);
+                }
+                else if (ItemCount2 == 3)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, SgunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos3.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos4.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
+                }
+            }
+            
+
+            if (ItemCount == 0)
             {
                 StartCoroutine(CreatBullet());
                 GameObject clone1 = Instantiate(bullet, gunPos.position, Quaternion.identity);
-                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0,1));
+                clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 transform.Find("CShot").gameObject.SetActive(true);
             }
-            else if(ItemCount ==1)
+            else if (ItemCount == 1)
             {
                 StartCoroutine(CreatBullet());
                 GameObject clone1 = Instantiate(bullet, gunPos2.position, Quaternion.identity);
@@ -78,7 +112,7 @@ public class PlayerSJ : MonoBehaviour
                 GameObject clone2 = Instantiate(bullet, SgunPos3.position, Quaternion.identity);
                 GameObject clone3 = Instantiate(bullet, SgunPos4.position, Quaternion.identity);
                 GameObject clone4 = Instantiate(bullet, SgunPos5.position, Quaternion.identity);
-                    
+
                 clone1.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(-0.25f, 1));
                 clone2.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
                 clone3.GetComponent<PlayerBulletSJ>().OnMove(new Vector2(0, 1));
@@ -104,11 +138,12 @@ public class PlayerSJ : MonoBehaviour
                 transform.Find("RShot").gameObject.SetActive(true);
                 transform.Find("CShot").gameObject.SetActive(true);
             }
-        }
-        else
-        {
-            transform.Find("LShot").gameObject.SetActive(false);
-            transform.Find("RShot").gameObject.SetActive(false);
+
+            else
+            {
+                transform.Find("LShot").gameObject.SetActive(false);
+                transform.Find("RShot").gameObject.SetActive(false);
+            }
         }
     }
 
@@ -118,6 +153,12 @@ public class PlayerSJ : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         check = false;
 
+    }
+    IEnumerator CreatMissle()
+    {
+        check2 = true;
+        yield return new WaitForSeconds(1f);
+        check2 = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -136,9 +177,9 @@ public class PlayerSJ : MonoBehaviour
         {
             ItemCount2++;
 
-            if (ItemCount2 >= MaxItemCount)
+            if (ItemCount2 >= MaxItem2Count)
             {
-                ItemCount2 = MaxItemCount;
+                ItemCount2 = MaxItem2Count;
             }
         }
     }
