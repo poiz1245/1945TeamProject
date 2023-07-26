@@ -8,58 +8,68 @@ public class LStopEnemy3SJ : MonoBehaviour
 {
     public float Speed =5;
     public float AttackSpeed = 1;
-    int currentWayPoint = 0;
+    public float rotationSpeed = 5f;
+
+
+    bool fire = false;
+    bool moveEnd = false;
+
 
     public Transform gunPos;
     public GameObject bullet;
-    // Start is called before the first frame update
+    GameObject target;
+
     void Start()
     {
         InvokeRepeating("CreatBullet", 1, AttackSpeed);
+        target = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentWayPoint < 4)
+
+        transform.Translate(Vector2.down * Speed * Time.deltaTime);
+
+        if (transform.position.y - GameManagerSJ.Instance.player.transform.position.y <=5)
         {
-            Transform targetWayPoint = WayPointManagerSJ.instance.LeftStopWayPoint[currentWayPoint];
-            transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, Speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, targetWayPoint.position) < 0.01f)
-            {
-                currentWayPoint++;
+            Speed = 0;
+
+            if (!fire)
+            { 
+                StartCoroutine(CreatBullet());
+                fire = true;
             }
+
+            Vector2 direction = new Vector2(transform.position.x - target.transform.position.x,
+                                    transform.position.y - target.transform.position.y);
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion angleAxis = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+            Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotationSpeed * Time.deltaTime);
+            transform.rotation = rotation;
+
+            Invoke("MoveEndPoint", 2);
+
         }
 
-        if (currentWayPoint == 4)
+        if (moveEnd)
         {
-            Invoke("MoveEndPoint", 1.5f);
-            if (Vector2.Distance(transform.position, WayPointManagerSJ.instance.LeftStopWayPoint[4].position) < 0.01f)
-            {
-                currentWayPoint++;
-            }
-            return;
-        }
-
-        if(currentWayPoint == 5)
-        {
-            Destroy(gameObject);
+            Destroy(gameObject, 2);
         }
     }
     void MoveEndPoint()
     {
         Transform targetWayPoint = WayPointManagerSJ.instance.LeftStopWayPoint[4];
-        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, 10 * Time.deltaTime);
+        moveEnd = true;
     }
 
-
-    void CreatBullet()
+    IEnumerator CreatBullet()
     {
-        
-        if (currentWayPoint == WayPointManagerSJ.instance.LeftStopWayPoint.Length-1 )
-        {
-            Instantiate(bullet, gunPos.position, Quaternion.identity);
-        }
+        yield return new WaitForSeconds(AttackSpeed);
+        Instantiate(bullet, gunPos.position, Quaternion.identity);
+        fire = false;
     }
     private void OnBecameInvisible()
     {
