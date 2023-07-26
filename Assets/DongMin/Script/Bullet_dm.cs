@@ -9,7 +9,7 @@ public class Bullet_dm : MonoBehaviour
     GameObject exprosionPrefab;
     [SerializeField]
     GameObject itemPrefab;
-    int attack = 10;
+    public int attack = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,15 @@ public class Bullet_dm : MonoBehaviour
 
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
-            collision.GetComponent<Monster_dm>().Damage(attack);
+            //collision.GetComponent<Monster_dm>().Damage(attack);
+
+            if (collision.GetComponent<Monster_dm>() != null)
+                collision.GetComponent<Monster_dm>().Damage(attack);
+            else if (collision.GetComponent<BossArm_dm>() != null)
+                collision.GetComponent<BossArm_dm>().Damage(attack);
+            else if (collision.GetComponent<Boss_dm>() != null)
+                collision.GetComponent<Boss_dm>().Damage(attack);
+
             //미사일 지우기
             Destroy(gameObject);
 

@@ -13,15 +13,20 @@ public class Boss_dm : MonoBehaviour
     //float limitY = 4.47f;
     float x = 1;
     float y = 0;
+    [SerializeField]
+    Collider2D collider;
+    bool isLazer = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        collider.enabled = false;
+
         //보스 나타나면 Hide함수 1초 뒤 동작
         Invoke("Hide", 1);
 
-        //StartCoroutine("BossBullet");
-        StartCoroutine("CircleFire");
+        StartCoroutine("BossBullet");
+        //StartCoroutine("CircleFire");
 
         ////한번 호출
         //Invoke("CreateBullet", 0.1f);
@@ -74,6 +79,10 @@ public class Boss_dm : MonoBehaviour
             x = -x;
         }
 
+        if (isLazer)
+        {
+
+        }
         
     }
 
@@ -84,19 +93,22 @@ public class Boss_dm : MonoBehaviour
 
     public void Damage(int attack)
     {
-        //hp -= attack;
+        hp -= attack;
 
-        //if (hp <= 0)
-        //{
-        //    ItemDrop();
-        //    Destroy(gameObject);
-        //}
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Hide()
     {
         //보스 텍스트 객체이름 검색해서 끄기
-        GameObject.Find("TextBossWarning").SetActive(false);
+        if (GameObject.Find("TextBossWarning") != null)
+        {
+            GameObject.Find("TextBossWarning").SetActive(false);
+        }
+        
     }
 
     IEnumerator BossBullet()
@@ -111,7 +123,19 @@ public class Boss_dm : MonoBehaviour
 
             //Instantiate(bullet, ms.position, Quaternion.identity);
             //Instantiate(bullet, ms2.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
+        }
+    }
+
+    IEnumerator BossLazer()
+    {
+        float curTime = 0;
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            yield return null;
         }
     }
 }
