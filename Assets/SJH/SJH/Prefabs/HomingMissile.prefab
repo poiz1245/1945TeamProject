@@ -207,11 +207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  ScanRange: 500
+  ScanRange: 100
   rotationSpeed: 10
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  count: 2
 --- !u!70 &3127133180486190004
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

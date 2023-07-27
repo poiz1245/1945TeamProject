@@ -87,7 +87,6 @@ public class LStopEnemy3SJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            Instantiate(Effect, transform.position, Quaternion.identity);
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
         if (collision.CompareTag("HomingMissle"))

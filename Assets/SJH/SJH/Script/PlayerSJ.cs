@@ -38,7 +38,6 @@ public class PlayerSJ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ItemCount);
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
         transform.Translate(moveHorizontal, moveVertical , 0);

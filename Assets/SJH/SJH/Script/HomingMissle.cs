@@ -13,7 +13,7 @@ public class HomingMissle : MonoBehaviour
     //public GameObject effect;
     private Transform nearestTarget;
     private bool isScanning = true;
-
+    public float count  = 0;
     void Start()
     {
         ScanTargets();
@@ -43,9 +43,13 @@ public class HomingMissle : MonoBehaviour
         }
         else
         {
-            ScanTargets();
+            //Destroy(gameObject, count );
+            //ScanTargets();
             transform.Translate(Vector2.up*Speed*Time.deltaTime);
+
         }
+
+
     }
 
     void ScanTargets()
