@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 public class Boss_dm : MonoBehaviour
 {
@@ -17,16 +19,36 @@ public class Boss_dm : MonoBehaviour
     Collider2D collider;
     bool isLazer = false;
 
+    [SerializeField]
+    GameObject LazerWarningArea;
+    [SerializeField]
+    GameObject BossLazer;
+
+    //[SerializeField]
+    //GameObject FireWarningArea;
+    //[SerializeField]
+    //GameObject BossFire;
+
     // Start is called before the first frame update
     void Start()
     {
         collider.enabled = false;
 
+        LazerWarningArea.SetActive(false);
+        BossLazer.SetActive(false);
+        //FireWarningArea.SetActive(false);
+        //BossFire.SetActive(false);
+
         //보스 나타나면 Hide함수 1초 뒤 동작
         Invoke("Hide", 1);
-
         StartCoroutine("BossBullet");
-        //StartCoroutine("CircleFire");
+        
+        //StartCoroutine("attackBullet");
+
+        //StartCoroutine(AttackWarning(LazerWarningArea, BossLazer));
+        //StartCoroutine(AttackWarning(FireWarningArea, BossFire));
+
+
 
         ////한번 호출
         //Invoke("CreateBullet", 0.1f);
@@ -81,7 +103,7 @@ public class Boss_dm : MonoBehaviour
 
         if (isLazer)
         {
-
+            
         }
         
     }
@@ -127,15 +149,73 @@ public class Boss_dm : MonoBehaviour
         }
     }
 
-    IEnumerator BossLazer()
+    public IEnumerator AttackWarning(GameObject[] attackArea, GameObject BossAttack)
     {
-        float curTime = 0;
+        SpriteRenderer[] attackAreaSprite = new SpriteRenderer[attackArea.Length];
 
-        while (true)
+        for (int i = 0; i < attackArea.Length; i++)
         {
-            curTime += Time.deltaTime;
-
-            yield return null;
+            attackArea[i].SetActive(true);
+            attackAreaSprite[i] = attackArea[i].GetComponent<SpriteRenderer>();
         }
+        
+
+        float curTime = 0;
+        //int count = 10;
+        //float wfSeconds = 1 / (float)count;
+        //int curCount = 0;
+        float maxColorA = 80 / 255.0f;
+        float curColorA = 0;
+        int blinkCount = 3;
+
+        for (int i = 0; i < blinkCount; i++)
+        {
+            while (curTime < 1f)
+            {
+                curTime += Time.deltaTime;
+                curColorA = maxColorA * curTime;
+                for(int j = 0; j < attackAreaSprite.Length; j++)
+                {
+                    attackAreaSprite[j].color = new Color(attackAreaSprite[j].color.r,
+                        attackAreaSprite[j].color.g, attackAreaSprite[j].color.b, curColorA);
+                }
+                
+                yield return null;
+            }
+            curTime = 0;
+
+            while (curTime < 1f)
+            {
+                curTime += Time.deltaTime;
+                curColorA = maxColorA * (1.0f - curTime);
+                for (int j = 0; j < attackAreaSprite.Length; j++)
+                {
+                    attackAreaSprite[j].color = new Color(attackAreaSprite[j].color.r,
+                        attackAreaSprite[j].color.g, attackAreaSprite[j].color.b, curColorA);
+                }
+
+                yield return null;
+            }
+            curTime = 0;
+        }
+
+        //Debug.Log(Time.time);
+        for(int i = 0; i < attackArea.Length; i++)
+        {
+            attackArea[i].SetActive(false);
+        }
+
+        BossAttackOn(BossAttack);
+    }
+
+
+    void BossAttackOn(GameObject BossAttack)
+    {
+        BossAttack.SetActive(true);
+    }
+
+    IEnumerator BossPattern()
+    {
+        yield return null;
     }
 }
