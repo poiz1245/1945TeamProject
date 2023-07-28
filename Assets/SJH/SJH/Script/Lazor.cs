@@ -5,21 +5,9 @@ using UnityEngine;
 
 public class Lazor : MonoBehaviour
 {
-    ParticleSystem ps;
-    List<ParticleSystem.Particle> inseide = new List<ParticleSystem.Particle>();
-    private void Awake()
+    private void OnParticleCollision(GameObject other)
     {
-        ps = GetComponent<ParticleSystem>();
+       // Destroy(other.gameObject);
     }
 
-    private void OnParticleTrigger()
-    {
-        Debug.Log("aa");
-        ps.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inseide);
-
-        foreach (var player in inseide)
-        {
-            Debug.Log("aa");
-        }
-    }
 }

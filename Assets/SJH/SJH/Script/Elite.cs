@@ -24,16 +24,22 @@ public class Elite : MonoBehaviour
     public float Speed = 5f;
 
     Vector3 playerPos;
-
+    GameObject beam;
     bool check;
-   
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        beam = GameObject.Find("EffBeam").transform.Find("gliter").gameObject;
+    }
     void Start()
     {
+
         check = true;
+        beam.SetActive(true);
         StartCoroutine(Spawn());
-        //StartCoroutine(lazor());
         Invoke("Stop", 1f);
+        Invoke("BeamStop", 2f);
     }
 
     void Stop()
@@ -55,6 +61,16 @@ public class Elite : MonoBehaviour
 
     }
 
+    void BeamStop()
+    {
+        beam.SetActive(false);
+        Invoke("BeamCreat", 2f);
+    }
+    void BeamCreat()
+    {
+        beam.SetActive(true);
+        Invoke("BeamStop", 2f);
+    }
     private void Update()
     {
         transform.Translate(Vector2.right * Speed* Time.deltaTime );
@@ -74,19 +90,16 @@ public class Elite : MonoBehaviour
         }
 
     }
-   /* IEnumerator lazor()
+  /*  IEnumerator lazor()
     {
         while (check)
         {
-            yield return new WaitForSeconds(0.0005f);
+            yield return new WaitForSeconds(3f);
             GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
         }
     }*/
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-    }*/
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SideWall"))

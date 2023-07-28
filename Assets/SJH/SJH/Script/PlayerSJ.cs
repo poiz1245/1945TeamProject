@@ -16,7 +16,6 @@ public class PlayerSJ : MonoBehaviour
     public Transform SgunPos3;
     public Transform SgunPos4;
     public Transform SgunPos5;
-    GameObject effect;
 
     public int AttackPower = 10;
     public int Hp = 100;
@@ -29,35 +28,14 @@ public class PlayerSJ : MonoBehaviour
     bool check = false;
     bool check2 = false;
 
-    ParticleSystem particle;
-    List<ParticleSystem.Particle> inside = new List<ParticleSystem.Particle>();
-
-  /*  private void Awake()
-    {
-        particle = GameObject.Find("Parline").GetComponent<ParticleSystem>();
-    }*/
-
- 
-    private void OnParticleTrigger()
-    {
-        Debug.Log("충돌");
-        particle.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
-
-        foreach (var v in inside)
-        {
-            Debug.Log("충돌");
-        }
-    }
     void Start()
     {
-        //GameObject.Find("razor").transform.Find("lazerhead").gameObject.SetActive(false);
-
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
         transform.Translate(moveHorizontal, moveVertical , 0);

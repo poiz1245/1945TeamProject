@@ -57,6 +57,7 @@ public class LIntercepter : MonoBehaviour
             Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
+        
     }
 
 }

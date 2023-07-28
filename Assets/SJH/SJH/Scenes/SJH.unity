@@ -2120,7 +2120,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
---- !u!1001 &5467550038398074242
+--- !u!1001 &9094857113266121089
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2128,26 +2128,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3063345015219142923, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: lengthInSec
-      value: 5
+    - target: {fileID: 2694010923437461504, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: m_Name
+      value: Parline
       objectReference: {fileID: 0}
-    - target: {fileID: 3063345015219142923, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: simulationSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063345015219142923, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063345015219142923, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: InitialModule.startSpeed.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3063345015219142923, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: TriggerModule.primitives.Array.data[0]
-      value: 
-      objectReference: {fileID: 1218911889}
     - target: {fileID: 3522440430071237874, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2192,13 +2176,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685542201615475809, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
+      propertyPath: TriggerModule.primitives.Array.data[0]
+      value: 
+      objectReference: {fileID: 1218911889}
     - target: {fileID: 4734140178025234016, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
       propertyPath: m_Name
       value: EliteEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6649635582753555422, guid: 48a34d7fd4848974a9f1a7e8bddb64b9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
