@@ -17,7 +17,7 @@ public class BossBressJ : MonoBehaviour
     
     void Update()
     {
-        transform.position = tr.position;
+        //transform.position = tr.position;
         
 
     }
