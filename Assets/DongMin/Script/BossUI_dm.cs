@@ -11,7 +11,8 @@ public class BossUI_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.maxValue = GetComponentInParent<Monster_dm>().hp;
+        slider.maxValue = GameObject.Find("Boss_dm").GetComponent<Boss_dm>().hp;
+        //slider.maxValue = GetComponentInParent<Monster_dm>().hp;
         slider.value = slider.maxValue;
     }
 
