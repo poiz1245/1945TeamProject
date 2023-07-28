@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Homing : MonoBehaviour
 {
+    public GameObject effect;
     // public GameObject target;
     public float Speed = 3f;
     // Vector2 dir;
@@ -30,7 +31,7 @@ public class Homing : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(Vector3.right * Speed * Time.deltaTime,Space.Self);
+        transform.Translate(Vector3.down * Speed * Time.deltaTime,Space.Self);
     }
 
 
@@ -49,5 +50,11 @@ public class Homing : MonoBehaviour
             //미사일 지우기
             // Destroy(gameObject);
         }
+        else if(collision.tag == "BombAir")
+        {
+            Instantiate(effect, collision.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
+    
 }

@@ -38,13 +38,21 @@ public class Lazer : MonoBehaviour
 
 
         }
-
-        if (collision.tag == "BossArm")
+        else if (collision.tag == "BossArm")
         {
 
             
 
-            collision.gameObject.GetComponent<Monster>().Damage(Attack);
+            collision.gameObject.GetComponent<BossArmHp>().Damage(Attack);
+
+
+        }
+        else if (collision.tag == "Boss")
+        {
+
+
+
+            collision.gameObject.GetComponent<Boss>().Damage(Attack);
 
 
         }
