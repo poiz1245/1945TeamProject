@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7127451261939782534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: -3635557537902052520}
   - component: {fileID: 8182598822897511551}
   - component: {fileID: 6020047994253902406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy1SJ2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,7 +135,8 @@ MonoBehaviour:
   AttackSpeed: 0.7
   rotationSpeed: 5
   gunPos: {fileID: 7127451261939782534}
-  bullet: {fileID: 6612812784078740228, guid: 2c9f336ab9581ee418e22ea7481dfac0, type: 3}
+  bullet: {fileID: 6183818910760910000, guid: fac138d870414d94aa3099a934901edb, type: 3}
+  Effect: {fileID: 867964676664672380, guid: 1113239970a34f7478f73b895e45cf06, type: 3}
 --- !u!50 &8182598822897511551
 Rigidbody2D:
   serializedVersion: 4

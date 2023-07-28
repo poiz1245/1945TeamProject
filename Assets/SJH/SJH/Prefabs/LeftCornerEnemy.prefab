@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802165870928583358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunDown
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2310919844769097081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunUp
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 8789520176510524261}
   - component: {fileID: 16758072987624824}
   - component: {fileID: 5861440927194758685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftCornerEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -169,8 +169,9 @@ MonoBehaviour:
   rotationSpeed: 5
   gunUpPos: {fileID: 2310919844769097081}
   gunDownPos: {fileID: 1802165870928583358}
-  Upbullet: {fileID: 6612812784078740228, guid: df08415e74e6d7b4692949b9437c0117, type: 3}
-  Downbullet: {fileID: 6612812784078740228, guid: e8053f81789f31a419d1a5efca600314, type: 3}
+  Upbullet: {fileID: 8691207354867932189, guid: df08415e74e6d7b4692949b9437c0117, type: 3}
+  Downbullet: {fileID: 5915167044589396660, guid: e8053f81789f31a419d1a5efca600314, type: 3}
+  Effect: {fileID: 867964676664672380, guid: 1113239970a34f7478f73b895e45cf06, type: 3}
 --- !u!58 &16758072987624824
 CircleCollider2D:
   m_ObjectHideFlags: 0

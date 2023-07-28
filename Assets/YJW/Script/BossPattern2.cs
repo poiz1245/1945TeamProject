@@ -15,6 +15,8 @@ public class BossPattern2 : MonoBehaviour
 
     public void Shot()
     {
+        Debug.Log("2번 패턴이 발동 되었음.");
+
         //360번 반복
         for (int i = 0; i < 360; i += 13)
         {

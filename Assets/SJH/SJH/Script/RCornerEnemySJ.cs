@@ -14,6 +14,7 @@ public class RCornerEnemySJ : MonoBehaviour
     public Transform gunDownPos;
     public GameObject Upbullet;
     public GameObject Downbullet;
+    public GameObject Effect;
     int currentWayPoint = 0;
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,14 @@ public class RCornerEnemySJ : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+        if (collision.CompareTag("HomingMissle"))
+        {
+            Instantiate(Effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

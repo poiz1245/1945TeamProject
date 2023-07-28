@@ -8,6 +8,7 @@ public class RotationSJ : MonoBehaviour
 
     public float rotationSpeed = 5f;
 
+    
     GameObject target;
     private void Start()
     {

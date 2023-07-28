@@ -9,11 +9,13 @@ public class Enemy2SJ : MonoBehaviour
     public int AttackPower = 10;
     public int Hp = 50;
     public float AttackSpeed = 2f;
+    public int rnd;
 
     public Transform gunPos1;
     public Transform gunPos2;
     public GameObject bullet;
-    public GameObject item;
+    public GameObject item1;
+    public GameObject item2;
 
 
 
@@ -22,6 +24,7 @@ public class Enemy2SJ : MonoBehaviour
     void Start()
     {
         StartCoroutine(CreatBullet());
+        rnd = Random.Range(1, 21);
     }
 
 
@@ -33,7 +36,17 @@ public class Enemy2SJ : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(gameObject);
-            Instantiate(item, transform.position, Quaternion.identity);
+
+            if (rnd >= 1 && rnd <= 5)
+            {
+                Instantiate(item1, transform.position, Quaternion.identity);
+            }
+            else if (rnd >= 6 && rnd <= 10)
+            {
+                Instantiate(item2, transform.position, Quaternion.identity);
+            }
+            else
+                return;
         }
 
 
@@ -73,6 +86,10 @@ public class Enemy2SJ : MonoBehaviour
         if (collision.CompareTag("PlayerBullet"))
         {
             Hp -= GameManagerSJ.Instance.player.AttackPower;
+        }
+        if (collision.CompareTag("HomingMissle"))
+        {  
+            Hp -= GameManagerSJ.Instance.player.AttackPower * 2; 
         }
     }
 }

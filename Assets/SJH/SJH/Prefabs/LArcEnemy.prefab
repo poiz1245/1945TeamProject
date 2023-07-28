@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5833324700748287521}
   - component: {fileID: 4390702339963550107}
   - component: {fileID: 482681892376838902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LArcEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -105,7 +105,8 @@ MonoBehaviour:
   AttackSpeed: 2
   player: {fileID: 4420007127888458917, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
   gunPos1: {fileID: 6073613026744823283}
-  bullet: {fileID: 6612812784078740228, guid: 2c9f336ab9581ee418e22ea7481dfac0, type: 3}
+  bullet: {fileID: 6183818910760910000, guid: fac138d870414d94aa3099a934901edb, type: 3}
+  Effect: {fileID: 867964676664672380, guid: 1113239970a34f7478f73b895e45cf06, type: 3}
 --- !u!50 &4390702339963550107
 Rigidbody2D:
   serializedVersion: 4
@@ -177,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6073613026744823283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
