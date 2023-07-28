@@ -38,10 +38,6 @@ public class LIntercepter : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log(PosB.transform.localPosition);
-        Debug.Log(PosA.transform.localPosition);
-
-
         Vector3 p1 = Vector3.Lerp(myPos, PosA.transform.position, time);
         Vector3 p2 = Vector3.Lerp(PosA.transform.position, PosB.transform.position, time);
         Vector3 p3 = Vector3.Lerp(PosB.transform.position, playerPos, time);
@@ -56,7 +52,7 @@ public class LIntercepter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerBullet") ||
-             collision.gameObject.CompareTag("PlayerMissle"))
+             collision.gameObject.CompareTag("HomingMissle"))
         {
             Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);

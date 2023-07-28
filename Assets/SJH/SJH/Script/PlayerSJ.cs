@@ -28,13 +28,33 @@ public class PlayerSJ : MonoBehaviour
 
     bool check = false;
     bool check2 = false;
-    // Start is called before the first frame update
+
+    ParticleSystem particle;
+    List<ParticleSystem.Particle> inside = new List<ParticleSystem.Particle>();
+
+  /*  private void Awake()
+    {
+        particle = GameObject.Find("Parline").GetComponent<ParticleSystem>();
+    }*/
+
+ 
+    private void OnParticleTrigger()
+    {
+        Debug.Log("충돌");
+        particle.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
+
+        foreach (var v in inside)
+        {
+            Debug.Log("충돌");
+        }
+    }
     void Start()
     {
         //GameObject.Find("razor").transform.Find("lazerhead").gameObject.SetActive(false);
 
         
     }
+
     // Update is called once per frame
     void Update()
     {

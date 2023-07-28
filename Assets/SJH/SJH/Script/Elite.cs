@@ -32,7 +32,7 @@ public class Elite : MonoBehaviour
     {
         check = true;
         StartCoroutine(Spawn());
-        StartCoroutine(lazor());
+        //StartCoroutine(lazor());
         Invoke("Stop", 1f);
     }
 
@@ -40,7 +40,7 @@ public class Elite : MonoBehaviour
     {
         check = false;
         StopCoroutine(Spawn());
-        StopCoroutine(lazor());
+        //StopCoroutine(lazor());
 
         Invoke("Creat", 3f);
     }
@@ -49,7 +49,7 @@ public class Elite : MonoBehaviour
     {
         check = true;
         StartCoroutine(Spawn());
-        StartCoroutine(lazor());
+        //StartCoroutine(lazor());
 
         Invoke("Stop", 1f);
 
@@ -74,16 +74,20 @@ public class Elite : MonoBehaviour
         }
 
     }
-    IEnumerator lazor()
+   /* IEnumerator lazor()
     {
         while (check)
         {
             yield return new WaitForSeconds(0.0005f);
             GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
         }
-    }
+    }*/
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+       
+    }*/
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SideWall"))
             Speed *= -1;

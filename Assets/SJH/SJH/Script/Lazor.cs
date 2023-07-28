@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class Lazor : MonoBehaviour
 {
-    Transform PosA;
-    public float Speed=5;
-    // Start is called before the first frame update
-    void Start()
+    ParticleSystem ps;
+    List<ParticleSystem.Particle> inseide = new List<ParticleSystem.Particle>();
+    private void Awake()
     {
-
+        ps = GetComponent<ParticleSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnParticleTrigger()
     {
-        PosA = GameObject.FindGameObjectWithTag("Elite").transform.Find("gun").transform;
+        Debug.Log("aa");
+        ps.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inseide);
 
-        transform.position = new Vector2(PosA.position.x,transform.position.y);
-        transform.Translate(new Vector2(transform.position.x, -1f * Speed * Time.deltaTime));
+        foreach (var player in inseide)
+        {
+            Debug.Log("aa");
+        }
     }
 }
