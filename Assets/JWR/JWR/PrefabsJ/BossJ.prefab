@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad3c1a2bd4c8a34b89b255cf448b557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 200
   bress: {fileID: 8600556480062823409}
   tr: {fileID: 0}
   ZigzagDistance: 1.4
