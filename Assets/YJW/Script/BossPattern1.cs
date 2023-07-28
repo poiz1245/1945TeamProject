@@ -5,10 +5,15 @@ using UnityEngine;
 public class BossPattern1 : MonoBehaviour
 {
     //총알을 생성후 Target에게 날아갈 변수
-    public Transform Target;
+    public GameObject Target;
 
     //발사될 총알 오브젝트
     public GameObject Bullet;
+
+    private void Start()
+    {
+        Target = GameObject.FindWithTag("Player");
+    }
 
     private void Update()
     {
@@ -17,6 +22,7 @@ public class BossPattern1 : MonoBehaviour
 
     public void Shot()
     {
+        Debug.Log("1번패턴이 발동되었음");
         //Target방향으로 발사될 오브젝트 수록
         List<Transform> bullets = new List<Transform>();
 

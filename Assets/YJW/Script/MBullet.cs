@@ -9,6 +9,7 @@ public class MBullet : MonoBehaviour
     public float Speed = 3f;
     Vector2 dir;
     Vector2 dirNo;
+    public GameObject effect;
 
 
 
@@ -46,9 +47,14 @@ public class MBullet : MonoBehaviour
         if(collision.tag == "Player")
         {
             //플레이어 지우기
-           // Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
             //미사일 지우기
-           // Destroy(gameObject);
+            // Destroy(gameObject);
+        }
+        else if (collision.tag == "BombAir")
+        {
+            Instantiate(effect, collision.transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

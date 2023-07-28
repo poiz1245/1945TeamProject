@@ -1,16 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public int HP = 150;
+    public float HP = 150;
     public float Speed = 3;
     public float Delay = 1f;
     public Transform ms;
     public Transform ms2;
     public GameObject bullet;
 
+   
     public GameObject effect;
 
     public GameObject Item = null;
@@ -41,10 +43,14 @@ public class Monster : MonoBehaviour
     }
 
 
-    public void Damage(int attack)
+
+    public void Damage(float attack)
     {
+
+
         HP -= attack;
         Debug.Log("데미지 받았음");
+      
         if (HP <= 0)
         {
             HP = 0;

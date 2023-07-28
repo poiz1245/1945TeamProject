@@ -10,13 +10,23 @@ public class Spawn : MonoBehaviour
     public float StartTime2 = 3;  //시작
     public float SpawnStop = 10; //스폰끝내는 시간
 
-    public float StartTime3 = 9.5f;  //시작
     public GameObject monster;
     public GameObject monster2;
-    public GameObject monster3;
+    public GameObject Boss;
 
     bool swi = true;
     bool swi2 = true;
+
+
+    [SerializeField]
+    GameObject textBossWarning; //보스 등장 텍스트 오브젝트
+
+    private void Awake()
+    {
+        //보스 등장 텍스트 비활성화
+        textBossWarning.SetActive(false);
+
+    }
 
     void Start()
     {
@@ -24,11 +34,6 @@ public class Spawn : MonoBehaviour
         Invoke("Stop", SpawnStop);
 
 
-        StartCoroutine("RandomSpawn2");
-        Invoke("Stop2", SpawnStop);
-
-        StartCoroutine("RandomSpawn3");
-        Invoke("Stop3", SpawnStop);
 
     }
 
@@ -54,16 +59,16 @@ public class Spawn : MonoBehaviour
     {
         swi2 = false;
         StopCoroutine("RandomSpawn2");
-    }
 
+        Vector3 pos = new Vector3(0, 2.76f, 0);
 
-    void Stop3()
-    {
-        swi = false;
-        StopCoroutine("RandomSpawn");
-
+        textBossWarning.SetActive(true);
+        //보스출현
+        Instantiate(Boss, pos, Quaternion.identity);
 
     }
+
+
 
 
     IEnumerator RandomSpawn()
@@ -83,20 +88,7 @@ public class Spawn : MonoBehaviour
 
 
     //코루틴으로 랜덤하게 생성하기
-    IEnumerator RandomSpawn3()
-    {
-        while(swi)
-        {
-            //1초마다
-            yield return new WaitForSeconds(StartTime3);
-            //x값 랜덤
-            
-            //X값 랜덤값 y값 자기자신값
-            Vector2 r = new Vector2(transform.position.x, transform.position.y);
-            //몬스터 생성
-            Instantiate(monster3,r,Quaternion.identity);
-        }
-    }
+   
     IEnumerator RandomSpawn2()
     {
         while (swi2)

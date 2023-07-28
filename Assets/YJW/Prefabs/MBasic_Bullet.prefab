@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 735405914649966642}
   m_Layer: 0
   m_Name: MBasic_Bullet
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   Speed: 3
+  effect: {fileID: 549399869073430458, guid: d076cfd9768c00b449315aba6048a97f, type: 3}
 --- !u!58 &735405914649966642
 CircleCollider2D:
   m_ObjectHideFlags: 0
