@@ -26,10 +26,8 @@ public class SpawnerSJ : MonoBehaviour
     {
         swi = true;
         swi2 = true;
-
         StartCoroutine(Enemy1Spawn());
         StartCoroutine(Enemy2Spawn());
-
         Invoke("StartArcSpawn", 7);
         Invoke("StopEnemy1Spawn", 7);
     }
@@ -44,12 +42,7 @@ public class SpawnerSJ : MonoBehaviour
     void StopEnemy1Spawn()
     {
         swi = false;
-        /*swi3 = true;
-        swi4 = true;*/
         StopCoroutine(Enemy1Spawn());
-       /* StartCoroutine(LeftArcSpawn());
-        StartCoroutine(RightArcSpawn());*/
-
         Invoke("CreatEnemy1", 7);
         Invoke("StopArcSpawn", 12);
     }
@@ -62,7 +55,6 @@ public class SpawnerSJ : MonoBehaviour
         StopCoroutine(LeftArcSpawn());
         StopCoroutine(RightArcSpawn());
         StartCoroutine(LeftCornerSpawn());
-        
         Invoke("StopLeftCornerSpawn", 10);
     }
 
@@ -72,27 +64,27 @@ public class SpawnerSJ : MonoBehaviour
         swi5 = false;
         StopCoroutine(LeftCornerSpawn());
         StartCoroutine(RightCornerSpawn());
-
         Invoke("StopRightCorner", 10);
     }
     void StopRightCorner()
     {
-        //swi = true;
         swi6 = false;
         StopCoroutine(RightCornerSpawn());
-        //StartCoroutine(Enemy1Spawn());
 
-        Invoke("StartArcSpawn", 10);
-        //Invoke("StopEnemy1Spawn", 10);
+        swi = false;
+        StopCoroutine(Enemy1Spawn());
+
+        swi2 = false;
+        StopCoroutine(Enemy2Spawn());
+        //Invoke("StartArcSpawn", 10);
+
     }
 
     void CreatEnemy1()
     {
         swi = true;
         StartCoroutine(Enemy1Spawn());
-
-        Invoke("SoptEnemy1Creat", 7);
-        //Invoke("CreatEnemy1", 7);
+        //Invoke("SoptEnemy1Creat", 7);
     }
 
     void SoptEnemy1Creat()
@@ -142,7 +134,7 @@ public class SpawnerSJ : MonoBehaviour
         yield return new WaitForSeconds(7);
         while (swi3)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = LeftSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(0);
             monster.transform.position = spawnSpot; 
@@ -154,7 +146,7 @@ public class SpawnerSJ : MonoBehaviour
         yield return new WaitForSeconds(10);
         while (swi4)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = RightSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(1);
             monster.transform.position = spawnSpot;

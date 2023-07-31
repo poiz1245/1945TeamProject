@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RIntercepter2 : MonoBehaviour
 {
-    //내 기준 왼쪽 뒤에서 나오는 인터셉터 스크립트 근데 이름은 R
+    //내 기준 오른쪽 뒤에서 나오는 인터셉터 스크립트 근데 이름은 R
     
     public float Speed;
 
@@ -39,13 +39,15 @@ public class RIntercepter2 : MonoBehaviour
      
 
         Vector3 p1 = Vector3.Lerp(myPos, PosA.transform.position, time);
-        Vector3 p2 = Vector3.Lerp(PosA.transform.position, PosB.transform.position, time);
-        Vector3 p3 = Vector3.Lerp(PosB.transform.position, playerPos, time);
+        Vector3 p2 = Vector3.Lerp(PosA.transform.position, playerPos, time);
+        //Vector3 p2 = Vector3.Lerp(PosA.transform.position, PosB.transform.position, time);
+        //Vector3 p3 = Vector3.Lerp(PosB.transform.position, playerPos, time);
 
-        Vector3 p4 = Vector3.Lerp(p1, p2, time);
-        Vector3 p5 = Vector3.Lerp(p2, p3, time);
+        transform.position = Vector3.Lerp(p1, p2, time);
+        // Vector3 p4 = Vector3.Lerp(p1, p2, time);
+        //Vector3 p5 = Vector3.Lerp(p2, p3, time);
 
-        transform.position = Vector3.Lerp(p4, p5, time);
+        //transform.position = Vector3.Lerp(p4, p5, time);
         time += Time.deltaTime;
 
     }
