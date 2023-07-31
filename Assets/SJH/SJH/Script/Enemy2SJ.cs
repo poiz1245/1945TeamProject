@@ -36,6 +36,7 @@ public class Enemy2SJ : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(gameObject);
+            ScoreManager.instance.monsterkill++;
 
             if (rnd >= 1 && rnd <= 5)
             {
@@ -88,7 +89,7 @@ public class Enemy2SJ : MonoBehaviour
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
         if (collision.CompareTag("HomingMissle"))
-        {
+        {           
             Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }

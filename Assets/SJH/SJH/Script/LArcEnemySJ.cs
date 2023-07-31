@@ -57,11 +57,13 @@ public class LArcEnemySJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {
+            ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

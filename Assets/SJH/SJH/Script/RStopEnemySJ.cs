@@ -83,10 +83,12 @@ public class RStopEnemy3SJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            ScoreManager.instance.monsterkill++;
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
         if (collision.CompareTag("HomingMissle"))
         {
+            ScoreManager.instance.monsterkill++;
             Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }

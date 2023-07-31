@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class Lazor : MonoBehaviour
 {
+
+    private void Start()
+    {
+        
+    }
     private void OnParticleCollision(GameObject other)
     {
-       // Destroy(other.gameObject);
+        if (other!=null)
+        GameManagerSJ.Instance.player.Heart--;
     }
 
 }

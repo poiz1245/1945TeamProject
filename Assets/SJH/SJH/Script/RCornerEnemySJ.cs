@@ -62,11 +62,13 @@ public class RCornerEnemySJ : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+            ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {
+            ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

@@ -19,12 +19,11 @@ public class PlayerSJ : MonoBehaviour
     public Transform SgunPos5;
 
     public int AttackPower = 10;
-    public int Hp = 100;
     public int MaxItemCount = 4;
     public int MaxItem2Count = 3;
     public int ItemCount = 0;
     public int ItemCount2 = 0;
-
+    public int Heart = 3;
     bool volumeCheck = false;
     bool check = false;
     bool check2 = false;
@@ -134,6 +133,11 @@ public class PlayerSJ : MonoBehaviour
             transform.Find("LShot").gameObject.SetActive(false);
             transform.Find("RShot").gameObject.SetActive(false);
         }
+
+        if(Heart < 3)
+        {
+
+        }
     }
 
     IEnumerator CreatBullet()
@@ -184,6 +188,11 @@ public class PlayerSJ : MonoBehaviour
             {
                 ItemCount2 = MaxItem2Count;
             }
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("InterCepter"))
+        {
+            Heart -= 1;
         }
     }
 }

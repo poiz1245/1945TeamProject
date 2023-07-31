@@ -22,7 +22,7 @@ public class Elite : MonoBehaviour
     public GameObject Lazor;
 
     public float Speed = 5f;
-
+    public float Hp = 1000;
     Vector3 playerPos;
     GameObject beam;
     bool check;
@@ -74,6 +74,13 @@ public class Elite : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector2.right * Speed* Time.deltaTime );
+        if(Hp <= 0)
+        {
+            Destroy(gameObject);
+            ScoreManager.instance.UpdateScore();
+            ScoreManager.instance.monsterkill++;
+            ScoreManager.instance.Bonus++;
+        }
     }
     IEnumerator Spawn()
     {
@@ -90,20 +97,25 @@ public class Elite : MonoBehaviour
         }
 
     }
-  /*  IEnumerator lazor()
-    {
-        while (check)
-        {
-            yield return new WaitForSeconds(3f);
-            GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
-        }
-    }*/
+   
+    /*  IEnumerator lazor()
+      {
+          while (check)
+          {
+              yield return new WaitForSeconds(3f);
+              GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
+          }
+      }*/
 
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SideWall"))
             Speed *= -1;
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+            Hp -= GameManagerSJ.Instance.player.AttackPower;
+        if(collision.gameObject.CompareTag("HomingMissle"))
+            Hp -= GameManagerSJ.Instance.player.AttackPower*2;
     }
 
 }

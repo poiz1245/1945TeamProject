@@ -100,6 +100,10 @@ public class HomingMissle : MonoBehaviour
             //Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
     }
-    
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
 
 }

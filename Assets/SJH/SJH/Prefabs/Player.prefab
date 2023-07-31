@@ -295,7 +295,7 @@ MonoBehaviour:
   SgunPos3: {fileID: 5597516425815860356}
   SgunPos4: {fileID: 768567147331151210}
   SgunPos5: {fileID: 8410977404164931242}
-  AttackPower: 50
+  AttackPower: 25
   Hp: 100
   MaxItemCount: 4
   MaxItem2Count: 3

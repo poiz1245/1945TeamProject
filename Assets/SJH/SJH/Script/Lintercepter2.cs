@@ -55,6 +55,7 @@ public class Lintercepter2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerBullet") ||
             collision.gameObject.CompareTag("HomingMissle"))
         {
+            ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
