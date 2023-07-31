@@ -24,7 +24,7 @@ public class Enemy2SJ : MonoBehaviour
     void Start()
     {
         StartCoroutine(CreatBullet());
-        rnd = Random.Range(1, 21);
+        rnd = Random.Range(1, 16);
     }
 
 
@@ -39,11 +39,11 @@ public class Enemy2SJ : MonoBehaviour
 
             if (rnd >= 1 && rnd <= 5)
             {
-                Instantiate(item1, transform.position, Quaternion.identity);
+                Instantiate(item1, new Vector3(transform.position.x, transform.position.y - 2), Quaternion.identity);
             }
             else if (rnd >= 6 && rnd <= 10)
             {
-                Instantiate(item2, transform.position, Quaternion.identity);
+                Instantiate(item2, new Vector3(transform.position.x, transform.position.y - 2), Quaternion.identity);
             }
             else
                 return;
@@ -57,18 +57,18 @@ public class Enemy2SJ : MonoBehaviour
         float intervalAngle = 90 / count;
         float weightAngle = 0;
 
-        while(true)
+        while (true)
         {
             for (int i = 0; i < count; ++i)
             {
                 yield return new WaitForSeconds(0.1f);
                 GameObject clone = Instantiate(bullet, gunPos1.position, Quaternion.identity);
                 GameObject clone2 = Instantiate(bullet, gunPos2.position, Quaternion.identity);
-                float angle = weightAngle + intervalAngle*i;
+                float angle = weightAngle + intervalAngle * i;
                 float x = Mathf.Cos(angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(angle * Mathf.Deg2Rad);
-                clone.GetComponent<ArcBulletSJ>().Move(new Vector2(x, -y-3));
-                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(-x, -y-3));
+                clone.GetComponent<ArcBulletSJ>().Move(new Vector2(x, -y - 3));
+                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(-x, -y - 3));
             }
             weightAngle += 1;
 
@@ -88,8 +88,8 @@ public class Enemy2SJ : MonoBehaviour
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
         if (collision.CompareTag("HomingMissle"))
-        {  
-            Hp -= GameManagerSJ.Instance.player.AttackPower * 2; 
+        {
+            Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }
 }

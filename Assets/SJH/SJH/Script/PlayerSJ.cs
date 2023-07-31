@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerSJ : MonoBehaviour
 {
@@ -24,30 +25,21 @@ public class PlayerSJ : MonoBehaviour
     public int ItemCount = 0;
     public int ItemCount2 = 0;
 
-
+    bool volumeCheck = false;
     bool check = false;
     bool check2 = false;
-
-    void Start()
+    
+    private void Start()
     {
-        
+        StartCoroutine(VolumeUp());
     }
-
     void Update()
     {
+      
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
-        transform.Translate(moveHorizontal, moveVertical , 0);
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(true);
-        }
-        else
-        {
-            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(false);
-        }
+        transform.Translate(moveHorizontal, moveVertical, 0);
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
@@ -157,6 +149,20 @@ public class PlayerSJ : MonoBehaviour
         yield return new WaitForSeconds(1f);
         check2 = false;
     }
+    IEnumerator VolumeUp()
+    {
+
+        float scaleSpeed = 0.01f;
+        yield return new WaitForSeconds(2.5f);
+
+        while (gameObject.transform.localScale.x < 0.45f)
+        {
+            yield return new WaitForSeconds(0.1f);
+            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed, 
+                0.25f + scaleSpeed, 0.25f + scaleSpeed);
+            scaleSpeed += 0.01f;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -164,7 +170,7 @@ public class PlayerSJ : MonoBehaviour
         {
             ItemCount++;
 
-            if(ItemCount >= MaxItemCount)
+            if (ItemCount >= MaxItemCount)
             {
                 ItemCount = MaxItemCount;
             }

@@ -14,7 +14,11 @@ public class SpawnerSJ : MonoBehaviour
     public Transform LeftStopSpawnPoint;
     public Transform LeftCornerSpawnPoint;
     public Transform RightCornerSpawnPoint;
+    public Transform BossSpawnPoint;
+    public GameObject TextBossWarning;
+    public GameObject Boss;
 
+  
     bool swi6;
     bool swi5;
     bool swi4;
@@ -23,6 +27,12 @@ public class SpawnerSJ : MonoBehaviour
     bool swi;
 
     void Start()
+    {
+        Invoke("StartEnemySpawn", 8);
+       
+    }
+
+    void StartEnemySpawn()
     {
         swi = true;
         swi2 = true;
@@ -76,7 +86,11 @@ public class SpawnerSJ : MonoBehaviour
 
         swi2 = false;
         StopCoroutine(Enemy2Spawn());
-        //Invoke("StartArcSpawn", 10);
+
+
+        Invoke("TextStart", 4);
+        Invoke("TextStop", 7);
+        Invoke("BossSpawn", 10);
 
     }
 
@@ -91,10 +105,22 @@ public class SpawnerSJ : MonoBehaviour
     {
         swi = false;
         StopCoroutine(Enemy1Spawn());
-        Invoke("CreatEnemy1", 7);
-
+        //Invoke("CreatEnemy1", 7);
     }
 
+    void TextStart()
+    {
+        TextBossWarning.SetActive(true);
+    }
+    void TextStop()
+    {
+        TextBossWarning.SetActive(false);
+    }
+    void BossSpawn()
+    {
+   
+        Instantiate(Boss, BossSpawnPoint.position, Quaternion.Euler(0,0,180));
+    }
     IEnumerator Enemy2Spawn()
     {
         while (swi2)
@@ -111,12 +137,12 @@ public class SpawnerSJ : MonoBehaviour
     {
         while (swi)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             float X = Random.Range(startPos, endPos);
             Vector2 spawnSpot = new Vector2(X, transform.position.y);
             GameObject monster = GameManagerSJ.Instance.pool.Get(3);
             monster.transform.position = spawnSpot;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             Enemy1Spawn2();
         }
     }

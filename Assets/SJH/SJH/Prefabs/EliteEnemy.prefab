@@ -212,7 +212,7 @@ MonoBehaviour:
   Rintercept2: {fileID: 3888921323121371607, guid: d1075d70d5645824dacbf920a39c639c, type: 3}
   Lintercept2: {fileID: 3733403419130119250, guid: 49f52c488c07a374687b072e3d6d70ed, type: 3}
   Lazor: {fileID: 7633065290189156725, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
-  Speed: 0
+  Speed: 3
 --- !u!61 &5351244141685581468
 BoxCollider2D:
   m_ObjectHideFlags: 0
