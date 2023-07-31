@@ -175,6 +175,7 @@ MonoBehaviour:
   bullet: {fileID: 4924902852957537345, guid: 7f5e1d340c6e3e14980569c0d5c15c9a, type: 3}
   item1: {fileID: 3247606516886110032, guid: 902a48e36e9a1614093cd2308c9f5cd5, type: 3}
   item2: {fileID: 7795897562747938050, guid: 3d1312b09f8346d4a85af15ef0c83c18, type: 3}
+  Effect: {fileID: 3808199814222720650, guid: f0703207569e48b4481ca6fbc88c4fa0, type: 3}
 --- !u!50 &8809187549746849489
 Rigidbody2D:
   serializedVersion: 4

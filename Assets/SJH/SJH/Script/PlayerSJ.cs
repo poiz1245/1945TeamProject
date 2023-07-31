@@ -27,14 +27,14 @@ public class PlayerSJ : MonoBehaviour
     bool volumeCheck = false;
     bool check = false;
     bool check2 = false;
-    
+
     private void Start()
     {
         StartCoroutine(VolumeUp());
     }
     void Update()
     {
-      
+
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
@@ -134,10 +134,13 @@ public class PlayerSJ : MonoBehaviour
             transform.Find("RShot").gameObject.SetActive(false);
         }
 
-        if(Heart < 3)
-        {
 
+        if (Heart < 1)
+        {
+            Destroy(gameObject);
+            Heart = 0;
         }
+
     }
 
     IEnumerator CreatBullet()
@@ -162,7 +165,7 @@ public class PlayerSJ : MonoBehaviour
         while (gameObject.transform.localScale.x < 0.45f)
         {
             yield return new WaitForSeconds(0.1f);
-            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed, 
+            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed,
                 0.25f + scaleSpeed, 0.25f + scaleSpeed);
             scaleSpeed += 0.01f;
         }

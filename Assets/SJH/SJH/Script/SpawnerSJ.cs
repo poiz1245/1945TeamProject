@@ -18,7 +18,7 @@ public class SpawnerSJ : MonoBehaviour
     public GameObject TextBossWarning;
     public GameObject Boss;
 
-  
+
     bool swi6;
     bool swi5;
     bool swi4;
@@ -29,7 +29,7 @@ public class SpawnerSJ : MonoBehaviour
     void Start()
     {
         Invoke("StartEnemySpawn", 8);
-       
+
     }
 
     void StartEnemySpawn()
@@ -118,8 +118,8 @@ public class SpawnerSJ : MonoBehaviour
     }
     void BossSpawn()
     {
-   
-        Instantiate(Boss, BossSpawnPoint.position, Quaternion.Euler(0,0,180));
+
+        Instantiate(Boss, BossSpawnPoint.position, Quaternion.Euler(0, 0, 180));
     }
     IEnumerator Enemy2Spawn()
     {
@@ -152,7 +152,7 @@ public class SpawnerSJ : MonoBehaviour
         Vector2 spawnSpot = new Vector2(X, transform.position.y);
         GameObject monster = GameManagerSJ.Instance.pool.Get(4);
         monster.transform.position = spawnSpot;
-       
+
     }
 
     IEnumerator LeftArcSpawn()
@@ -163,7 +163,7 @@ public class SpawnerSJ : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = LeftSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(0);
-            monster.transform.position = spawnSpot; 
+            monster.transform.position = spawnSpot;
         }
     }
 
@@ -203,5 +203,5 @@ public class SpawnerSJ : MonoBehaviour
         }
     }
 
-    
+
 }

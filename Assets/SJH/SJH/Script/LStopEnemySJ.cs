@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LStopEnemy3SJ : MonoBehaviour
 {
-    public float Speed =5;
+    public float Speed = 5;
     public float AttackSpeed = 1;
     public float rotationSpeed = 5f;
     public int Hp = 100;
@@ -32,12 +32,12 @@ public class LStopEnemy3SJ : MonoBehaviour
 
         transform.Translate(Vector2.down * Speed * Time.deltaTime);
 
-        if (transform.position.y - GameManagerSJ.Instance.player.transform.position.y <=5)
+        if (GameManagerSJ.Instance.player != null && transform.position.y - GameManagerSJ.Instance.player.transform.position.y <= 5)
         {
             Speed = 0;
 
             if (!fire)
-            { 
+            {
                 StartCoroutine(CreatBullet());
                 fire = true;
             }
@@ -62,6 +62,7 @@ public class LStopEnemy3SJ : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(gameObject);
+            ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
     }
@@ -87,12 +88,10 @@ public class LStopEnemy3SJ : MonoBehaviour
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            ScoreManager.instance.monsterkill++;
             Hp -= GameManagerSJ.Instance.player.AttackPower;
         }
         if (collision.CompareTag("HomingMissle"))
         {
-            ScoreManager.instance.monsterkill++;
             Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }

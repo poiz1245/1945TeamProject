@@ -16,7 +16,7 @@ public class Enemy2SJ : MonoBehaviour
     public GameObject bullet;
     public GameObject item1;
     public GameObject item2;
-
+    public GameObject Effect;
 
 
 
@@ -25,6 +25,7 @@ public class Enemy2SJ : MonoBehaviour
     {
         StartCoroutine(CreatBullet());
         rnd = Random.Range(1, 16);
+        
     }
 
 
@@ -36,6 +37,7 @@ public class Enemy2SJ : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(gameObject);
+            Instantiate(Effect, transform.position, Quaternion.identity);
             ScoreManager.instance.monsterkill++;
 
             if (rnd >= 1 && rnd <= 5)

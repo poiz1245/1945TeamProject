@@ -37,16 +37,18 @@ public class LIntercepter : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (myPos != null && PosA.transform.position != null && playerPos !=null)
+        {
+            Vector3 p1 = Vector3.Lerp(myPos, PosA.transform.position, time);
+            Vector3 p2 = Vector3.Lerp(PosA.transform.position, PosB.transform.position, time);
+            Vector3 p3 = Vector3.Lerp(PosB.transform.position, playerPos, time);
 
-        Vector3 p1 = Vector3.Lerp(myPos, PosA.transform.position, time);
-        Vector3 p2 = Vector3.Lerp(PosA.transform.position, PosB.transform.position, time);
-        Vector3 p3 = Vector3.Lerp(PosB.transform.position, playerPos, time);
+            Vector3 p4 = Vector3.Lerp(p1, p2, time);
+            Vector3 p5 = Vector3.Lerp(p2, p3, time);
 
-        Vector3 p4 = Vector3.Lerp(p1, p2, time);
-        Vector3 p5 = Vector3.Lerp(p2, p3, time);
-
-        transform.position = Vector3.Lerp(p4, p5, time);
-        time += Time.deltaTime;
+            transform.position = Vector3.Lerp(p4, p5, time);
+            time += Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,7 +60,7 @@ public class LIntercepter : MonoBehaviour
             Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
-        
+
     }
 
 }

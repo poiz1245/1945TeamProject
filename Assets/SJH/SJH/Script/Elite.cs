@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -77,10 +78,15 @@ public class Elite : MonoBehaviour
         if(Hp <= 0)
         {
             Destroy(gameObject);
-            ScoreManager.instance.UpdateScore();
             ScoreManager.instance.monsterkill++;
             ScoreManager.instance.Bonus++;
         }
+    }
+
+
+    void OnDestroy()
+    {
+        ScoreManager.instance.UpdateScore();
     }
     IEnumerator Spawn()
     {
@@ -98,14 +104,7 @@ public class Elite : MonoBehaviour
 
     }
    
-    /*  IEnumerator lazor()
-      {
-          while (check)
-          {
-              yield return new WaitForSeconds(3f);
-              GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
-          }
-      }*/
+ 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
