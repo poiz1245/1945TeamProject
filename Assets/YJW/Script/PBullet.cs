@@ -65,7 +65,7 @@ public class PBullet : MonoBehaviour
 
 
             //이펙트 생성하기
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -87,7 +87,7 @@ public class PBullet : MonoBehaviour
 
 
             //이펙트 생성하기
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -95,6 +95,48 @@ public class PBullet : MonoBehaviour
             //미사일 지우기
             Destroy(gameObject);
 
+
+        }
+        else if (collision.tag == "Boss2")
+        {
+            // collision.gameObject.GetComponent<Monster>().ItemDrop();
+
+            //몬스터 충돌 지우기
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
+            player.GetComponent<Player>().GazyPower(enegy);
+
+
+
+            //이펙트 생성하기
+            // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            //이펙트 1초뒤에 지우기
+            // Destroy(go, 1);
+
+
+            //미사일 지우기
+            Destroy(gameObject);
+
+
+        }
+        else if(collision.tag =="BossHelper")
+        {
+            collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
+            //collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
+            player.GetComponent<Player>().GazyPower(enegy);
+
+            //미사일 지우기
+            Destroy(gameObject);
+
+        }
+        else if (collision.tag == "BossHelper2")
+        {
+            //collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
+            collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
+            player.GetComponent<Player>().GazyPower(enegy);
+
+            //미사일 지우기
+            Destroy(gameObject);
 
         }
     }
