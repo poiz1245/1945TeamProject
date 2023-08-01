@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Leg_dm : MonoBehaviour
 {
-    GameObject parent;
+    public float rotationSpeed = 100f;
+
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        parent = transform.parent.gameObject;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = parent.transform.position;
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+        rb.rotation += rotation;
     }
 }

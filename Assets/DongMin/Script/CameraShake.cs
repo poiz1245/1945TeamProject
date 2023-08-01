@@ -4,8 +4,24 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    float curTime = 0;
+    public static CameraShake instance;
+
     bool switchLR = true;
+    float speed = 10;
+    float maxPosX = 0.03f;
+    bool shakeOnOff = false;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,23 +32,31 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        curTime += Time.deltaTime;
-
-        if (switchLR)
+        if (shakeOnOff)
         {
-            transform.Translate(0.001f, 0, 0);
-               
-        }
-        else
-        {
-            transform.Translate(0.001f, 0, 0);
-        }
+            if (switchLR)
+            {
+                transform.Translate(speed * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                transform.Translate(-speed * Time.deltaTime, 0, 0);
+            }
 
-        if (curTime >= 1f)
-        {
-            curTime = 0;
-            switchLR = false;
-        }
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, -maxPosX, maxPosX),
+                transform.position.y, transform.position.z);
 
+            //transform.position.x = 3;
+            if (transform.position.x >= maxPosX || transform.position.x <= -maxPosX)
+                switchLR = !switchLR;
+        }
+    }
+
+
+    public void ShakeSwitch()
+    {
+        shakeOnOff = !shakeOnOff;
+        transform.position = new Vector3(0, 0, transform.position.z);
     }
 }
