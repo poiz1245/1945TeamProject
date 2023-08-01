@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerSJ : MonoBehaviour
 {
@@ -16,60 +17,28 @@ public class PlayerSJ : MonoBehaviour
     public Transform SgunPos3;
     public Transform SgunPos4;
     public Transform SgunPos5;
-    GameObject effect;
 
     public int AttackPower = 10;
-    public int Hp = 100;
     public int MaxItemCount = 4;
     public int MaxItem2Count = 3;
     public int ItemCount = 0;
     public int ItemCount2 = 0;
-
-
+    public int Heart = 3;
+    bool volumeCheck = false;
     bool check = false;
     bool check2 = false;
-
-    ParticleSystem particle;
-    List<ParticleSystem.Particle> inside = new List<ParticleSystem.Particle>();
-
-  /*  private void Awake()
+    
+    private void Start()
     {
-        particle = GameObject.Find("Parline").GetComponent<ParticleSystem>();
-    }*/
-
- 
-    private void OnParticleTrigger()
-    {
-        Debug.Log("충돌");
-        particle.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
-
-        foreach (var v in inside)
-        {
-            Debug.Log("충돌");
-        }
+        StartCoroutine(VolumeUp());
     }
-    void Start()
-    {
-        //GameObject.Find("razor").transform.Find("lazerhead").gameObject.SetActive(false);
-
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+      
+
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
-        transform.Translate(moveHorizontal, moveVertical , 0);
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(true);
-        }
-        else
-        {
-            GameObject.Find("Effect").transform.Find("Boost").gameObject.SetActive(false);
-        }
+        transform.Translate(moveHorizontal, moveVertical, 0);
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
@@ -164,6 +133,11 @@ public class PlayerSJ : MonoBehaviour
             transform.Find("LShot").gameObject.SetActive(false);
             transform.Find("RShot").gameObject.SetActive(false);
         }
+
+        if(Heart < 3)
+        {
+
+        }
     }
 
     IEnumerator CreatBullet()
@@ -179,6 +153,20 @@ public class PlayerSJ : MonoBehaviour
         yield return new WaitForSeconds(1f);
         check2 = false;
     }
+    IEnumerator VolumeUp()
+    {
+
+        float scaleSpeed = 0.01f;
+        yield return new WaitForSeconds(2.5f);
+
+        while (gameObject.transform.localScale.x < 0.45f)
+        {
+            yield return new WaitForSeconds(0.1f);
+            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed, 
+                0.25f + scaleSpeed, 0.25f + scaleSpeed);
+            scaleSpeed += 0.01f;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -186,7 +174,7 @@ public class PlayerSJ : MonoBehaviour
         {
             ItemCount++;
 
-            if(ItemCount >= MaxItemCount)
+            if (ItemCount >= MaxItemCount)
             {
                 ItemCount = MaxItemCount;
             }
@@ -200,6 +188,11 @@ public class PlayerSJ : MonoBehaviour
             {
                 ItemCount2 = MaxItem2Count;
             }
+        }
+
+        if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("InterCepter"))
+        {
+            Heart -= 1;
         }
     }
 }

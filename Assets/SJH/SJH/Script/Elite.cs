@@ -22,18 +22,24 @@ public class Elite : MonoBehaviour
     public GameObject Lazor;
 
     public float Speed = 5f;
-
+    public float Hp = 1000;
     Vector3 playerPos;
-
+    GameObject beam;
     bool check;
-   
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        beam = GameObject.Find("EffBeam").transform.Find("gliter").gameObject;
+    }
     void Start()
     {
+
         check = true;
+        beam.SetActive(true);
         StartCoroutine(Spawn());
-        //StartCoroutine(lazor());
         Invoke("Stop", 1f);
+        Invoke("BeamStop", 2f);
     }
 
     void Stop()
@@ -55,9 +61,26 @@ public class Elite : MonoBehaviour
 
     }
 
+    void BeamStop()
+    {
+        beam.SetActive(false);
+        Invoke("BeamCreat", 2f);
+    }
+    void BeamCreat()
+    {
+        beam.SetActive(true);
+        Invoke("BeamStop", 2f);
+    }
     private void Update()
     {
         transform.Translate(Vector2.right * Speed* Time.deltaTime );
+        if(Hp <= 0)
+        {
+            Destroy(gameObject);
+            ScoreManager.instance.UpdateScore();
+            ScoreManager.instance.monsterkill++;
+            ScoreManager.instance.Bonus++;
+        }
     }
     IEnumerator Spawn()
     {
@@ -74,23 +97,25 @@ public class Elite : MonoBehaviour
         }
 
     }
-   /* IEnumerator lazor()
-    {
-        while (check)
-        {
-            yield return new WaitForSeconds(0.0005f);
-            GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
-        }
-    }*/
+   
+    /*  IEnumerator lazor()
+      {
+          while (check)
+          {
+              yield return new WaitForSeconds(3f);
+              GameObject clone5 = Instantiate(Lazor, gunPos.position, Quaternion.identity);
+          }
+      }*/
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-    }*/
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SideWall"))
             Speed *= -1;
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+            Hp -= GameManagerSJ.Instance.player.AttackPower;
+        if(collision.gameObject.CompareTag("HomingMissle"))
+            Hp -= GameManagerSJ.Instance.player.AttackPower*2;
     }
 
 }

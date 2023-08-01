@@ -14,7 +14,11 @@ public class SpawnerSJ : MonoBehaviour
     public Transform LeftStopSpawnPoint;
     public Transform LeftCornerSpawnPoint;
     public Transform RightCornerSpawnPoint;
+    public Transform BossSpawnPoint;
+    public GameObject TextBossWarning;
+    public GameObject Boss;
 
+  
     bool swi6;
     bool swi5;
     bool swi4;
@@ -24,12 +28,16 @@ public class SpawnerSJ : MonoBehaviour
 
     void Start()
     {
+        Invoke("StartEnemySpawn", 8);
+       
+    }
+
+    void StartEnemySpawn()
+    {
         swi = true;
         swi2 = true;
-
         StartCoroutine(Enemy1Spawn());
         StartCoroutine(Enemy2Spawn());
-
         Invoke("StartArcSpawn", 7);
         Invoke("StopEnemy1Spawn", 7);
     }
@@ -44,12 +52,7 @@ public class SpawnerSJ : MonoBehaviour
     void StopEnemy1Spawn()
     {
         swi = false;
-        /*swi3 = true;
-        swi4 = true;*/
         StopCoroutine(Enemy1Spawn());
-       /* StartCoroutine(LeftArcSpawn());
-        StartCoroutine(RightArcSpawn());*/
-
         Invoke("CreatEnemy1", 7);
         Invoke("StopArcSpawn", 12);
     }
@@ -62,7 +65,6 @@ public class SpawnerSJ : MonoBehaviour
         StopCoroutine(LeftArcSpawn());
         StopCoroutine(RightArcSpawn());
         StartCoroutine(LeftCornerSpawn());
-        
         Invoke("StopLeftCornerSpawn", 10);
     }
 
@@ -72,37 +74,53 @@ public class SpawnerSJ : MonoBehaviour
         swi5 = false;
         StopCoroutine(LeftCornerSpawn());
         StartCoroutine(RightCornerSpawn());
-
         Invoke("StopRightCorner", 10);
     }
     void StopRightCorner()
     {
-        //swi = true;
         swi6 = false;
         StopCoroutine(RightCornerSpawn());
-        //StartCoroutine(Enemy1Spawn());
 
-        Invoke("StartArcSpawn", 10);
-        //Invoke("StopEnemy1Spawn", 10);
+        swi = false;
+        StopCoroutine(Enemy1Spawn());
+
+        swi2 = false;
+        StopCoroutine(Enemy2Spawn());
+
+
+        Invoke("TextStart", 4);
+        Invoke("TextStop", 7);
+        Invoke("BossSpawn", 10);
+
     }
 
     void CreatEnemy1()
     {
         swi = true;
         StartCoroutine(Enemy1Spawn());
-
-        Invoke("SoptEnemy1Creat", 7);
-        //Invoke("CreatEnemy1", 7);
+        //Invoke("SoptEnemy1Creat", 7);
     }
 
     void SoptEnemy1Creat()
     {
         swi = false;
         StopCoroutine(Enemy1Spawn());
-        Invoke("CreatEnemy1", 7);
-
+        //Invoke("CreatEnemy1", 7);
     }
 
+    void TextStart()
+    {
+        TextBossWarning.SetActive(true);
+    }
+    void TextStop()
+    {
+        TextBossWarning.SetActive(false);
+    }
+    void BossSpawn()
+    {
+   
+        Instantiate(Boss, BossSpawnPoint.position, Quaternion.Euler(0,0,180));
+    }
     IEnumerator Enemy2Spawn()
     {
         while (swi2)
@@ -119,12 +137,12 @@ public class SpawnerSJ : MonoBehaviour
     {
         while (swi)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             float X = Random.Range(startPos, endPos);
             Vector2 spawnSpot = new Vector2(X, transform.position.y);
             GameObject monster = GameManagerSJ.Instance.pool.Get(3);
             monster.transform.position = spawnSpot;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             Enemy1Spawn2();
         }
     }
@@ -142,7 +160,7 @@ public class SpawnerSJ : MonoBehaviour
         yield return new WaitForSeconds(7);
         while (swi3)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = LeftSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(0);
             monster.transform.position = spawnSpot; 
@@ -154,7 +172,7 @@ public class SpawnerSJ : MonoBehaviour
         yield return new WaitForSeconds(10);
         while (swi4)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
             Vector2 spawnSpot = RightSpawnPoint.position;
             GameObject monster = GameManagerSJ.Instance.pool.Get(1);
             monster.transform.position = spawnSpot;

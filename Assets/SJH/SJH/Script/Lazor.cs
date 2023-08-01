@@ -5,21 +5,15 @@ using UnityEngine;
 
 public class Lazor : MonoBehaviour
 {
-    ParticleSystem ps;
-    List<ParticleSystem.Particle> inseide = new List<ParticleSystem.Particle>();
-    private void Awake()
+
+    private void Start()
     {
-        ps = GetComponent<ParticleSystem>();
+        
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other!=null)
+        GameManagerSJ.Instance.player.Heart--;
     }
 
-    private void OnParticleTrigger()
-    {
-        Debug.Log("aa");
-        ps.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inseide);
-
-        foreach (var player in inseide)
-        {
-            Debug.Log("aa");
-        }
-    }
 }
