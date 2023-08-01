@@ -96,7 +96,7 @@ public class HomingMissle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
             //Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
     }

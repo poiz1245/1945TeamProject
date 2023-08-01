@@ -11,7 +11,8 @@ public class Elite : MonoBehaviour
     public Transform SpawnPos3;
     public Transform SpawnPos4;
     public Transform gunPos;
-
+    public Transform gun2Pos;
+    public Transform gun3Pos;
     public Transform BossPos;
 
 
@@ -21,7 +22,8 @@ public class Elite : MonoBehaviour
     public GameObject Rintercept2;
     public GameObject Lintercept2;
     public GameObject Lazor;
-
+    public GameObject bullet;
+    public GameObject StarBullet;
     public float Speed = 5f;
     public float Hp = 1000;
     Vector3 playerPos;
@@ -35,10 +37,14 @@ public class Elite : MonoBehaviour
     }
     void Start()
     {
-
+        Instantiate(StarBullet, gunPos.position, Quaternion.identity);
+        
         check = true;
         beam.SetActive(true);
+
         StartCoroutine(Spawn());
+        StartCoroutine(CreatBullet());
+
         Invoke("Stop", 1f);
         Invoke("BeamStop", 2f);
     }
@@ -47,8 +53,6 @@ public class Elite : MonoBehaviour
     {
         check = false;
         StopCoroutine(Spawn());
-        //StopCoroutine(lazor());
-
         Invoke("Creat", 3f);
     }
 
@@ -56,8 +60,6 @@ public class Elite : MonoBehaviour
     {
         check = true;
         StartCoroutine(Spawn());
-        //StartCoroutine(lazor());
-
         Invoke("Stop", 1f);
 
     }
@@ -88,6 +90,7 @@ public class Elite : MonoBehaviour
     {
         ScoreManager.instance.UpdateScore();
     }
+
     IEnumerator Spawn()
     {
         while (check)
@@ -103,10 +106,42 @@ public class Elite : MonoBehaviour
         }
 
     }
-   
- 
 
+    IEnumerator CreatBullet()
+    {
+        int count = 9;
+        float intervalAngle = 360 / count;
+        float weightAngle = 0;
 
+        while (true)
+        {
+            for (int i = 0; i < count; ++i)
+            {
+                yield return new WaitForSeconds(0.1f);
+                GameObject clone = Instantiate(bullet, gun2Pos.position, Quaternion.identity);
+                float angle = weightAngle + intervalAngle * i;
+                float x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                float y = Mathf.Sin(angle * Mathf.Deg2Rad);
+                clone.GetComponent<ArcBulletSJ>().Move(new Vector2(x, -y-3));
+            }
+
+            yield return new WaitForSeconds(3f);
+
+            for (int i = 0; i < count; ++i)
+            {
+                yield return new WaitForSeconds(0.1f);
+                GameObject clone2 = Instantiate(bullet, gun3Pos.position, Quaternion.identity);
+                float angle = weightAngle + intervalAngle * i;
+                float x = Mathf.Cos(angle * Mathf.Deg2Rad);
+                float y = Mathf.Sin(angle * Mathf.Deg2Rad);
+                clone2.GetComponent<ArcBulletSJ>().Move(new Vector2(x, -y - 3));
+            }
+
+            weightAngle += 1;
+
+            yield return new WaitForSeconds(5);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SideWall"))

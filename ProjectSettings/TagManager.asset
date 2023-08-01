@@ -21,6 +21,7 @@ TagManager:
   - HomingMissle
   - Elite
   - InterCepter
+  - DestroyPos
   layers:
   - Default
   - TransparentFX

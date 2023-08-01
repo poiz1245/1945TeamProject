@@ -53,14 +53,13 @@ public class LIntercepter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerBullet") ||
-             collision.gameObject.CompareTag("HomingMissle"))
+        if (collision.gameObject.CompareTag("PlayerBullet") ||
+            collision.gameObject.CompareTag("HomingMissle") || collision.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
-
     }
 
 }

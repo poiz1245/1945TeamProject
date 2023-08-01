@@ -37,20 +37,24 @@ public class RIntercepter2 : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (myPos != null && PosA.transform.position != null&& playerPos !=null)
+        if (myPos != null && PosA.transform.position != null && playerPos != null)
         {
             Vector3 p1 = Vector3.Lerp(myPos, PosA.transform.position, time);
             Vector3 p2 = Vector3.Lerp(PosA.transform.position, playerPos, time);
-       
+
             transform.position = Vector3.Lerp(p1, p2, time);
-            
+
             time += Time.deltaTime;
+        }
+        else
+        {
+            transform.Translate(Vector2.down);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerBullet") ||
-            collision.gameObject.CompareTag("HomingMissle"))
+        if (collision.gameObject.CompareTag("PlayerBullet") ||
+            collision.gameObject.CompareTag("HomingMissle") || collision.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
