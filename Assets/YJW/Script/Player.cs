@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     Animator ani; //애니메이터 가져올 변수
     public float moveSpeed = 5;
 
+    public GameObject playerChasePos;
 
 
     public GameObject[] bullet; //미사일 
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
     //public float stackfill = 0;
 
     public int BoomStack = 2;
+
+    
 
   
 
@@ -59,6 +62,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerControl();
+
+      
 
     }
 

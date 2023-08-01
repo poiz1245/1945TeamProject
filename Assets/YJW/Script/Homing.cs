@@ -32,6 +32,7 @@ public class Homing : MonoBehaviour
     {
 
         transform.Translate(Vector3.down * Speed * Time.deltaTime,Space.Self);
+      
     }
 
 

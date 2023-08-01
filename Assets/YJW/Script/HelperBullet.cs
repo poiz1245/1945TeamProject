@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class HelperBullet : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class HelperBullet : MonoBehaviour
             collision.gameObject.GetComponent<BossArmHp>().Damage(Attack);
 
 
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+          //  GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //미사일 지우기
             Destroy(gameObject);
 
@@ -56,7 +57,7 @@ public class HelperBullet : MonoBehaviour
 
 
             //이펙트 생성하기
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -78,7 +79,7 @@ public class HelperBullet : MonoBehaviour
 
 
             //이펙트 생성하기
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            //GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -86,6 +87,31 @@ public class HelperBullet : MonoBehaviour
             //미사일 지우기
             Destroy(gameObject);
 
+
+        }
+        else if (collision.tag == "BossHelper")
+        {
+            collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
+    
+            //미사일 지우기
+            Destroy(gameObject);
+
+        }
+        else if (collision.tag == "BossHelper2")
+        {
+        
+            collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
+            //미사일 지우기
+            Destroy(gameObject);
+
+        }
+        else if (collision.tag == "Boss2")
+        {
+        
+            collision.gameObject.GetComponent<Boss>().Damage(Attack);
+
+
+            Destroy(gameObject);
 
         }
     }
