@@ -20,7 +20,7 @@ public class Boss_dm : MonoBehaviour
     bool isLazer = false;
 
     [SerializeField]
-    GameObject LazerWarningArea;
+    GameObject[] LazerWarningArea;
     [SerializeField]
     GameObject BossLazer;
 
@@ -34,7 +34,7 @@ public class Boss_dm : MonoBehaviour
     {
         collider.enabled = false;
 
-        LazerWarningArea.SetActive(false);
+        LazerWarningArea[0].SetActive(false);
         BossLazer.SetActive(false);
         //FireWarningArea.SetActive(false);
         //BossFire.SetActive(false);
@@ -42,10 +42,10 @@ public class Boss_dm : MonoBehaviour
         //보스 나타나면 Hide함수 1초 뒤 동작
         Invoke("Hide", 1);
         StartCoroutine("BossBullet");
-        
+
         //StartCoroutine("attackBullet");
 
-        //StartCoroutine(AttackWarning(LazerWarningArea, BossLazer));
+        StartCoroutine(AttackWarning(LazerWarningArea, BossLazer));
         //StartCoroutine(AttackWarning(FireWarningArea, BossFire));
 
 

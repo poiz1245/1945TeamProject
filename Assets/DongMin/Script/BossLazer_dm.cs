@@ -51,6 +51,7 @@ public class BossLazer_dm : MonoBehaviour
 
     void SetActiveOff()
     {
+        CameraShake.instance.ShakeSwitch();
         gameObject.SetActive(false);
     }
 
@@ -58,5 +59,6 @@ public class BossLazer_dm : MonoBehaviour
     {
         isLazer = true;
         curTime = 0;
+        CameraShake.instance.ShakeSwitch();
     }
 }
