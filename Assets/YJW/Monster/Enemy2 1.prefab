@@ -76,9 +76,9 @@ GameObject:
   - component: {fileID: 18231121270969949}
   - component: {fileID: 5968254310868534523}
   - component: {fileID: 8837624633923337989}
-  - component: {fileID: -411844840928121058}
+  - component: {fileID: 6741506636373385887}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2 1
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5763597, y: 1.5192657}
   m_EdgeRadius: 0
---- !u!114 &-411844840928121058
+--- !u!114 &6741506636373385887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,6 +275,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5270881867673358995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6517c1775a0590f48808d7593d279430, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cb98ee6bdb5af24fab89bfe28caa646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

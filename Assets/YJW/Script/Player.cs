@@ -206,10 +206,10 @@ public class Player : MonoBehaviour
 
     IEnumerator CoolTimeAtk()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.04f);
         pBulletCheck = true;
-        energyStack.fillAmount += 0.01f;
-        stack++;
+        energyStack.fillAmount += 0.02f;
+        stack += 2;
 
     }
 
@@ -264,6 +264,12 @@ public class Player : MonoBehaviour
 
             if (power >= 3)
                 power = 3;
+
+            if(power == 3)
+            {
+                BoomStack++; // 파워가 3이상일때, 그 이상의 아이템 습득은 파워대신 폭탄을 얻음.
+            }
+
 
             //아이템 먹음 처리
             Destroy(collision.gameObject);
