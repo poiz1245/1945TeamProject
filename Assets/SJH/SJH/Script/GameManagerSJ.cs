@@ -20,7 +20,6 @@ public class GameManagerSJ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         GameTime += Time.deltaTime;
     }
 }

@@ -26,8 +26,11 @@ public class ArcBulletSJ : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
-        Destroy(gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            GameManagerSJ.Instance.player.Heart--;
+        }
     }
     private void OnBecameInvisible()
     {

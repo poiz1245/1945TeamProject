@@ -19,12 +19,19 @@ public class EnemyBulletSJ : MonoBehaviour
             dir = target.transform.position - transform.position;
             dirNo = dir.normalized;
         }
+        else
+        {
+            dir = Vector2.down;
+            dirNo = dir.normalized;
+        }
+     
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(dirNo*Speed*Time.deltaTime);
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

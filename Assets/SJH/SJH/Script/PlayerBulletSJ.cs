@@ -27,7 +27,7 @@ public class PlayerBulletSJ : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
         {
             Destroy(gameObject);
         }

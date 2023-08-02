@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 15
-  AttackSpeed: 0.7
+  AttackSpeed: 1.5
   rotationSpeed: 5
   Hp: 50
   gunPos: {fileID: 7127451261939782534}

@@ -20,21 +20,21 @@ public class PlayerSJ : MonoBehaviour
 
     public int AttackPower = 10;
     public int MaxItemCount = 4;
-    public int MaxItem2Count = 3;
+    public int MaxItem2Count = 4;
     public int ItemCount = 0;
     public int ItemCount2 = 0;
     public int Heart = 3;
     bool volumeCheck = false;
     bool check = false;
     bool check2 = false;
-    
+
     private void Start()
     {
         StartCoroutine(VolumeUp());
     }
     void Update()
     {
-      
+
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
@@ -69,6 +69,16 @@ public class PlayerSJ : MonoBehaviour
                     Instantiate(HomingMissle, SgunPos3.position, Quaternion.identity);
                     Instantiate(HomingMissle, SgunPos4.position, Quaternion.identity);
                     Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
+                }
+                else if (ItemCount2 == 4)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, SgunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos3.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos4.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos3.position, Quaternion.identity);
                 }
             }
 
@@ -127,17 +137,14 @@ public class PlayerSJ : MonoBehaviour
 
 
         }
-        else
+
+
+        if (Heart < 1)
         {
-            transform.Find("CShot").gameObject.SetActive(false);
-            transform.Find("LShot").gameObject.SetActive(false);
-            transform.Find("RShot").gameObject.SetActive(false);
+            Destroy(gameObject);
+            Heart = 0;
         }
 
-        if(Heart < 3)
-        {
-
-        }
     }
 
     IEnumerator CreatBullet()
@@ -162,7 +169,7 @@ public class PlayerSJ : MonoBehaviour
         while (gameObject.transform.localScale.x < 0.45f)
         {
             yield return new WaitForSeconds(0.1f);
-            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed, 
+            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed,
                 0.25f + scaleSpeed, 0.25f + scaleSpeed);
             scaleSpeed += 0.01f;
         }

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 15
-  AttackSpeed: 0.7
+  AttackSpeed: 1.5
   rotationSpeed: 5
   Hp: 50
   Effect: {fileID: 867964676664672380, guid: 1113239970a34f7478f73b895e45cf06, type: 3}

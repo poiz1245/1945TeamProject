@@ -33,4 +33,7 @@ public class BossPattern2 : MonoBehaviour
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
         }
     }
+
+
+
 }

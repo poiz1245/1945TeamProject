@@ -1,63 +1,181 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
-using static UnityEditor.PlayerSettings;
+using static UnityEngine.GraphicsBuffer;
 
 public class Boss : MonoBehaviour
 {
     public float HP = 2000;
 
-    public GameObject effect;
+    public GameObject effect; //이 객체가 파괴 될때마다 호출될 이펙트
+    public GameObject lastBoss; //이 객체가 완전히 파괴될때 호출될 오브젝트
+    public GameObject self_destruct;
 
-    int flag = 1;
-    int speed = 2;
 
-    public bool isHit = false;
+    int speed = 2; //이 오브젝트에 대한 속도 변수
+    Vector3 pos; //현재위치
 
-   
+    float delta = 1.0f; // 좌(우)로 이동가능한 (x)최대값
 
-    
+    public float timer = 0;
+
+
+    //맞았는지에 대해 체크 하는 변수
+
+    string bossMode = "mode1"; //보스의 1페이즈 mode를 스트링으로 정의하였음.  
+
+
+
+
 
 
     public GameObject mb;
     public GameObject mb2;
     public Transform tr;
     public Transform tr2;
+    //보스 통상 패턴에 사용될 위치와 거기에 사용될 탄 오브젝트
 
 
     public GameObject BossP1;
     public GameObject BossP2;
     public GameObject BossP3;
+    //보스 패턴에 사용될 오브젝트를 저장
+    GameObject BossP4;
 
+    
 
-    private void LateUpdate()
+    
+    public GameObject[] SummonsMon;
+   
+    public int breackStack = 0;
+
+    public int summonStack = 0;
+
+    public int destruckCount = 0;
+
+    public int StartPaze2Conut = 0;
+
+    public bool CoolAtk = false;
+
+    public bool isHit = false;
+
+    private void Awake()
     {
-        if (transform.position.x >= 0.75f)
-            flag *= -1;
-        if (transform.position.x <= -0.75f)
-            flag *= -1;
+       
+        //transform.Find("BPpos3") .gameObject.SetActive(false);
+        BossP4 = transform.GetChild(7).gameObject;
+        //BossP4.gameObject.SetActive(false);
+        BossP3.gameObject.SetActive(false);
 
-        transform.Translate(flag * speed * Time.deltaTime, 0, 0);
+    }
+
+    void Start()
+    {
+        pos = transform.position;
+        //보스 나타나면 Hide함수 1초뒤 동작
+        Invoke("Hide", 1);
+
+        
+
+    }
+
+
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (HP <= 4000 && HP > 3000)
+        {
+
+            if (summonStack == 0)
+            {
+
+                Summons();
+
+            }
+
+            if(timer % 10 == 0)
+            {
+                summonStack = 0;
+                timer = 0;
+            }
+        }
+        else if (HP <= 3000 && HP > 2000)
+        {
+            //기존의 다른 패턴 적용요망.
+            //한번만 발동되게 하는게 좋을듯.
+            if (destruckCount == 0) 
+            {
+                Instantiate(self_destruct, transform.position, Quaternion.identity);
+                destruckCount++;
+            }
+            if(timer % 10 == 0)
+            {
+                destruckCount = 0;
+                timer = 0;
+            }
+            
+        }
+        else if(HP > 1000 && HP <= 2000)
+        {
+
+            BossP4.gameObject.SetActive(false);
+            BossP3.gameObject.SetActive(true);
+            if (StartPaze2Conut == 0)
+            {
+                Start2Paze();
+                StartPaze2Conut++;
+            }
+            if(timer % 2 ==0 )
+            {
+                StartPaze2Conut = 0;
+                timer = 0;
+            }
+        }
+        else if(HP>0 && HP<=1000)
+        {
+            if (CoolAtk == false)
+            {
+                StartCoroutine(Think());
+                StartCoroutine(CoolTime());
+            }
+
+        }
+
+
+    }
+
+
+    void LateUpdate()
+    {
+
+        //2페이지 이동으로 구현.
+        Vector3 v = pos;
+
+        v.x += delta * Mathf.Sin(Time.time * speed);
+
+        // 좌우 이동의 최대치 및 반전 처리를 이렇게 한줄에 멋있게 하네요.
+
+        transform.position = v;
+        
+
+
     }
 
     public void Damage(float attack)
     {
         HP -= attack;
 
-     
-      
         Debug.Log("데미지 받았음");
         StartCoroutine(CoolHit());
-       
-
 
         if (HP <= 0)
         {
             HP = 0;
 
             Destroy(gameObject);
+
+            Instantiate(lastBoss, transform.position, Quaternion.identity);
 
 
             Instantiate(effect, transform.position, Quaternion.identity);
@@ -68,18 +186,9 @@ public class Boss : MonoBehaviour
     }
 
 
-    private void Awake()
-    {
-        StartCoroutine(Think());
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start2Paze()
     {
-        
-        //보스 나타나면 Hide함수 1초뒤 동작
-        Invoke("Hide", 1);
         StartCoroutine(BossMissle()); //코루틴 실행 함수 동작
         StartCoroutine(CircleFire()); //코루틴 실행 함수 동작
     }
@@ -126,6 +235,8 @@ public class Boss : MonoBehaviour
                 float y = Mathf.Sin(angle * Mathf.Deg2Rad);
                 //발사체 이동 방향 설정
                 //clone.GetComponent<BossBullet>().Move(new Vector2(x, y));
+
+                Debug.Log("발사되었음");
             }
             //발사체가 생성되는 시작 각도 설정을 위한 변수
             weightAngle += 1;
@@ -136,11 +247,11 @@ public class Boss : MonoBehaviour
         }
     }
 
-    IEnumerator Think() //패턴 코루틴 함수임
+    IEnumerator Think() //패턴 코루틴 함수임 2페이지에서 사용될 거임.
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
-        int rendAction = Random.Range(0, 3);
+        int rendAction = Random.Range(0, 5);
         switch (rendAction)
         {
             case 0:
@@ -148,43 +259,64 @@ public class Boss : MonoBehaviour
             case 1:
                 StartCoroutine(Bosspattern1());
 
-
                 break;
 
             case 2:
 
             case 3:
+
+            case 4:
                 StartCoroutine(Bosspattern2());
 
                 break;
-           
+
 
 
 
         }
 
-        IEnumerator Bosspattern1()
+
+
+
+
+
+    }
+
+    IEnumerator Bosspattern1()
+    {
+
+        BossP1.GetComponent<BossPattern1>().Shot();
+        yield return new WaitForSeconds(1f);
+        // StartCoroutine(Think());
+    }
+
+    IEnumerator Bosspattern2()
+    {
+
+        BossP2.GetComponent<BossPattern2>().Shot();
+        yield return new WaitForSeconds(1f);
+        //StartCoroutine(Think());
+    }
+
+
+
+    IEnumerator CoolTime()
+    {
+        CoolAtk = true;
+        yield return new WaitForSeconds(0.5f);
+        CoolAtk = false;
+    }
+
+
+    void Summons()
+    {
+        Debug.Log("소환되었음");
+        for (int i = 0; i < 4; i++)
         {
-           
-            BossP1.GetComponent<BossPattern1>().Shot();
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(Think());
+            Instantiate(SummonsMon[i], transform.position, Quaternion.identity);
         }
-
-        IEnumerator Bosspattern2()
-        {
-            
-            BossP2.GetComponent<BossPattern2>().Shot();
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(Think());
-        }
-
-      
-
-
-
-
-
+        summonStack++;
+       
     }
 
     IEnumerator CoolHit()
@@ -196,5 +328,5 @@ public class Boss : MonoBehaviour
         hit.color = Color.white;
         isHit = false;
     }
-    
+
 }

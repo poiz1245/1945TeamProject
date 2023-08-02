@@ -34,7 +34,7 @@ public class Monster : MonoBehaviour
     void Update()
     {
         //아래방향으로 움직여라
-        transform.Translate(Vector2.down * Speed * Time.deltaTime);
+       // transform.Translate(Vector2.down * Speed * Time.deltaTime);
     }
 
     public void ItemDrop()
