@@ -108,7 +108,7 @@ public class HelperBullet : MonoBehaviour
         else if (collision.tag == "Boss2")
         {
         
-            collision.gameObject.GetComponent<Boss>().Damage(Attack);
+            collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
 
 
             Destroy(gameObject);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 41720528903940600}
   - component: {fileID: 8589029949030073457}
   - component: {fileID: 7414880617834609113}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BossBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -187626882, guid: fc8fd4b4e6b90094f9544bd0363732be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,7 +151,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8722895612801121581}
   - component: {fileID: 4839710250353833820}
   - component: {fileID: 6591869839351726143}
-  - component: {fileID: 1309250695700514951}
+  - component: {fileID: -1147185069286980284}
+  - component: {fileID: 1640152560813031071}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Monster
+  m_TagString: BossPattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +35,7 @@ Transform:
   - {fileID: 4883148244984103661}
   - {fileID: 8950580419088450421}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4839710250353833820
 SpriteRenderer:
@@ -133,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.90058637, y: 1.2235255}
   m_EdgeRadius: 0
---- !u!114 &1309250695700514951
+--- !u!114 &-1147185069286980284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,17 +143,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654118991080863374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b4272880f2e35488a5317d4df263f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 66c6f3941da84ab44983fa8d4057246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2
+  HP: 1000
   Speed: 3
   Delay: 1
-  ms: {fileID: 4883148244984103661}
-  ms2: {fileID: 8950580419088450421}
   bullet: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
+  centerPos: {fileID: 0}
   effect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
   Item: {fileID: 5503971838979896313, guid: aee1b665c477fde4ead450bb7e73e78a, type: 3}
+--- !u!50 &1640152560813031071
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654118991080863374}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6686076952637892646
 GameObject:
   m_ObjectHideFlags: 0

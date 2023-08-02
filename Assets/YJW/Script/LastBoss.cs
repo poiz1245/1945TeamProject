@@ -13,7 +13,7 @@ public class LastBoss : MonoBehaviour
 
     //총알을 생성후 Target에게 날아갈 변수
   //  public GameObject Target;
-    public Transform bossPos;
+    public GameObject bossPos;
 
     public GameObject helper1;
     public GameObject helper2;
@@ -63,6 +63,7 @@ public class LastBoss : MonoBehaviour
     {
         currentPosition = transform.position.x;
         target = GameObject.FindGameObjectWithTag("Player");
+        bossPos = GameObject.Find("BossRollBackPos");
         //pos = transform.position;
        // BossHelperSpawn();
 
@@ -119,8 +120,8 @@ public class LastBoss : MonoBehaviour
 
 
                 transform.position =
-                Vector3.MoveTowards(transform.position, bossPos.position, downSpeed * Time.deltaTime);
-                if (transform.position.y == bossPos.position.y)
+                Vector3.MoveTowards(transform.position, bossPos.transform.position, downSpeed * Time.deltaTime);
+                if (transform.position.y == bossPos.transform.position.y)
                 {
 
                     isfell = false;
@@ -135,8 +136,8 @@ public class LastBoss : MonoBehaviour
             else if (isDownAttack && isfell)
             {
                 transform.position =
-               Vector3.MoveTowards(transform.position, bossPos.position, downSpeed * Time.deltaTime);
-                if (transform.position.y == bossPos.position.y)
+               Vector3.MoveTowards(transform.position, bossPos.transform.position, downSpeed * Time.deltaTime);
+                if (transform.position.y == bossPos.transform.position.y)
                 {
 
                     isfell = false;
@@ -146,12 +147,16 @@ public class LastBoss : MonoBehaviour
 
             }
         }
-        else if(hp>100 &&hp <= 300 && SpawnCount == 0)
+        else if(hp>100 &&hp <= 300)
         {
             transform.position =
-            Vector3.MoveTowards(transform.position, bossPos.position, downSpeed * Time.deltaTime);
-            BossHelperSpawn();
-            SpawnCount++;
+            Vector3.MoveTowards(transform.position, bossPos.transform.position, downSpeed * Time.deltaTime);
+            if (SpawnCount == 0)
+            {
+                BossHelperSpawn();
+                SpawnCount++;
+            }
+           
             if(helper1 == null && helper2 == null && SpawnCount == 1 && hp > 100)
             {
                 BossHelperSpawn();

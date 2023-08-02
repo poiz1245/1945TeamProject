@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2685950334575514727}
   - component: {fileID: -8251758784196367699}
   - component: {fileID: 4495974208600698738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BeazierMissile
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}

@@ -15,6 +15,7 @@ public class BeazierBullet : MonoBehaviour
 
     public GameObject master;
     public GameObject enemy;
+    public GameObject effect;
 
     void Start()
     {
@@ -59,11 +60,10 @@ public class BeazierBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == enemy)
+        if (collision.tag == "BombAir")
         {
-            hit = true;
-            anim.SetTrigger("hit");
-            Destroy(gameObject, 0.35f);
+            Instantiate(effect, collision.transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
@@ -75,5 +75,6 @@ public class BeazierBullet : MonoBehaviour
             + Mathf.Pow(t, 2) * 3 * (1 - t) * c
             + Mathf.Pow(t, 3) * d;
     }
+    
 
 }
