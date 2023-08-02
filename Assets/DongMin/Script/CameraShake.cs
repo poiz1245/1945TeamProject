@@ -7,8 +7,8 @@ public class CameraShake : MonoBehaviour
     public static CameraShake instance;
 
     bool switchLR = true;
-    float speed = 10;
-    float maxPosX = 0.03f;
+    public float speed = 10;
+    public float maxPosX = 0.03f;
     bool shakeOnOff = false;
 
     private void Awake()

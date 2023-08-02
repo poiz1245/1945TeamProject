@@ -23,6 +23,7 @@ public class BossArm_dm : MonoBehaviour
     GameObject BossAttack;
 
     public int hp = 500;
+    int maxHp;
     float Delay = 0.5f;
     public GameObject bullet;
     public Transform ms;
@@ -41,7 +42,13 @@ public class BossArm_dm : MonoBehaviour
         BossAttack.SetActive(false);
 
         //한번 호출
-        Invoke("CreateBullet", 0.1f);
+        //Invoke("CreateBullet", 0.1f);
+
+        maxHp = hp;
+        if (leftRight == LeftRight.Right)
+            BossUI_dm.instance.StartSet(BossUI_dm.HP.rightArm, maxHp);
+        else if (leftRight == LeftRight.Left)
+            BossUI_dm.instance.StartSet(BossUI_dm.HP.leftArm, maxHp);
 
         StartCoroutine("BossArmPattern");
     }
@@ -60,12 +67,16 @@ public class BossArm_dm : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void Damage(int attack)
     {
         hp -= attack;
+        if (leftRight == LeftRight.Right)
+            BossUI_dm.instance.Damage(BossUI_dm.HP.rightArm, hp);
+        else if (leftRight == LeftRight.Left)
+            BossUI_dm.instance.Damage(BossUI_dm.HP.leftArm, hp);
 
         if (hp <= 0)
         {
@@ -75,27 +86,34 @@ public class BossArm_dm : MonoBehaviour
 
     IEnumerator BossArmPattern()
     {
-        //yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         while (true)
         {
             //yield return new WaitForSeconds(15f);
 
-            //if (leftRight == LeftRight.Right)
-            //    AttackCoroutine = StartCoroutine(boss_dm.AttackWarning(WarningArea, BossAttack));
+            if (leftRight == LeftRight.Right)
+                AttackCoroutine = StartCoroutine(boss_dm.AttackWarning(WarningArea, BossAttack));
 
-            //yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(15f);
 
             if (leftRight == LeftRight.Left)
                 AttackCoroutine = StartCoroutine(boss_dm.AttackWarning(WarningArea, BossAttack));
+
             yield return new WaitForSeconds(15f);
         }
-        
-        
+
+
     }
 
     private void OnDisable()
     {
-        StopCoroutine(AttackCoroutine);
+
+        if (AttackCoroutine != null)
+        {
+            StopCoroutine(AttackCoroutine);
+        }
         StopCoroutine("BossArmPattern");
+
+        BossBody.GetComponent<Boss_dm>().destroyArmCount++;
     }
 }

@@ -8,9 +8,14 @@ public class BossLazer_dm : MonoBehaviour
     Animator lazerBodyAnim;
     [SerializeField]
     Animator lazerHeadAnim;
+    [SerializeField]
+    GameObject bossBody;
+
     public bool isLazer = true;
     float curTime = 0;
     float countTime = 4f;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -60,5 +65,13 @@ public class BossLazer_dm : MonoBehaviour
         isLazer = true;
         curTime = 0;
         CameraShake.instance.ShakeSwitch();
+    }
+
+    private void OnDisable()
+    {
+        if (bossBody.activeSelf)
+        {
+            bossBody.GetComponent<Boss_dm>().corBossBulletStart();
+        }
     }
 }

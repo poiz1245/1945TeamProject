@@ -27,8 +27,10 @@ public class SpawnManager_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("RandomSpawn");
-        Invoke("Stop", spawnStop);
+        //StartCoroutine("RandomSpawn");
+        //Invoke("Stop", spawnStop);
+
+        RandomSpawn3();
     }
 
     // Update is called once per frame
@@ -90,6 +92,6 @@ public class SpawnManager_dm : MonoBehaviour
     }
     void RandomSpawn3()
     {
-        Instantiate(Boss, new Vector2(transform.position.x, transform.position.y - 1.8f), Quaternion.identity);
+        Instantiate(Boss, new Vector2(transform.position.x, transform.position.y + 3f), Quaternion.identity);
     }
 }

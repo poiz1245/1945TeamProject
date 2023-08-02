@@ -7,22 +7,30 @@ using static Unity.Collections.AllocatorManager;
 public class Boss_dm : MonoBehaviour
 {
     public int hp = 1000;
-    float speed = 1; 
+    int maxHp;
+    float speed = 0.35f;
     float Delay = 1.5f;
     public Transform ms;
     public GameObject bullet;
-    float limitX = 1.4f;
+    float limitX = 0.3f;
     //float limitY = 4.47f;
     float x = 1;
     float y = 0;
-    [SerializeField]
-    Collider2D collider;
+
     bool isLazer = false;
+    bool isBattle = false;
+    bool isBodyActive = false;
+
+    public int destroyArmCount = 0;
 
     [SerializeField]
     GameObject[] LazerWarningArea;
     [SerializeField]
     GameObject BossLazer;
+
+    Coroutine corBossBullet;
+    Coroutine AttackCoroutine;
+    Coroutine corBossPattern;
 
     //[SerializeField]
     //GameObject FireWarningArea;
@@ -32,26 +40,19 @@ public class Boss_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        collider.enabled = false;
+        transform.GetComponent<BoxCollider2D>().enabled = false;
 
         LazerWarningArea[0].SetActive(false);
         BossLazer.SetActive(false);
-        //FireWarningArea.SetActive(false);
-        //BossFire.SetActive(false);
 
-        //보스 나타나면 Hide함수 1초 뒤 동작
-        Invoke("Hide", 1);
-        StartCoroutine("BossBullet");
+        maxHp = hp;
 
-        //StartCoroutine("attackBullet");
-
-        StartCoroutine(AttackWarning(LazerWarningArea, BossLazer));
-        //StartCoroutine(AttackWarning(FireWarningArea, BossFire));
+        BossUI_dm.instance.StartSet(BossUI_dm.HP.body, maxHp);
 
 
+        StartCoroutine(BossStart());
 
-        ////한번 호출
-        //Invoke("CreateBullet", 0.1f);
+
     }
 
     IEnumerator CircleFire()
@@ -90,32 +91,72 @@ public class Boss_dm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(x, y) * speed * Time.deltaTime);
-
-        transform.position = new Vector2(
-            Mathf.Clamp(transform.position.x, -limitX, limitX),
-            transform.position.y);
-
-        if (transform.position.x >= limitX || transform.position.x <= -limitX)
+        if (isBattle)
         {
-            x = -x;
+            transform.Translate(new Vector2(x, y) * speed * Time.deltaTime);
+
+            transform.position = new Vector2(
+                Mathf.Clamp(transform.position.x, -limitX, limitX),
+                transform.position.y);
+
+            if (transform.position.x >= limitX || transform.position.x <= -limitX)
+            {
+                x = -x;
+            }
         }
 
-        if (isLazer)
+        if (destroyArmCount >= 2 && !isBodyActive)
         {
-            
+            isBodyActive = true;
+
+            transform.GetComponent<BoxCollider2D>().enabled = true;
+
+            corBossPattern = StartCoroutine(BossPattern());
         }
-        
     }
 
-    private void OnBecameInvisible()
+    //private void OnBecameInvisible()
+    //{
+    //    Destroy(gameObject);
+    //}
+
+    IEnumerator BossStart()
     {
-        Destroy(gameObject);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.down * 11, ForceMode2D.Impulse);
+
+        float curTime = 0;
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            if (curTime >= 0.1f)
+            {
+                curTime = 0;
+                rb.velocity = rb.velocity * 0.8f;
+
+                if (rb.velocity.y >= -0.01f)
+                {
+                    rb.velocity = Vector2.zero;
+                    break;
+                }
+            }
+
+            yield return null;
+        }
+
+        //보스 나타나면 Hide함수 1초 뒤 동작
+        Invoke("Hide", 1);
+        corBossBullet = StartCoroutine("BossBullet");
+
     }
 
     public void Damage(int attack)
     {
         hp -= attack;
+
+        BossUI_dm.instance.Damage(BossUI_dm.HP.body, hp);
 
         if (hp <= 0)
         {
@@ -130,16 +171,21 @@ public class Boss_dm : MonoBehaviour
         {
             GameObject.Find("TextBossWarning").SetActive(false);
         }
-        
+
+        isBattle = true;
     }
 
     IEnumerator BossBullet()
     {
+        float weightAngle = 1;
+
         while (true)
         {
-            for(int i = 0; i < 36; i++)
+            ms.transform.Rotate(0, 0, weightAngle);
+
+            for (int i = 0; i < 18; i++)
             {
-                ms.transform.Rotate(0, 0, 10);
+                ms.transform.Rotate(0, 0, 20);
                 Instantiate(bullet, ms.position, ms.transform.rotation);
             }
 
@@ -147,6 +193,11 @@ public class Boss_dm : MonoBehaviour
             //Instantiate(bullet, ms2.position, Quaternion.identity);
             yield return new WaitForSeconds(2f);
         }
+    }
+
+    public void corBossBulletStart()
+    {
+        corBossBullet = StartCoroutine("BossBullet");
     }
 
     public IEnumerator AttackWarning(GameObject[] attackArea, GameObject BossAttack)
@@ -158,7 +209,7 @@ public class Boss_dm : MonoBehaviour
             attackArea[i].SetActive(true);
             attackAreaSprite[i] = attackArea[i].GetComponent<SpriteRenderer>();
         }
-        
+
 
         float curTime = 0;
         //int count = 10;
@@ -174,12 +225,12 @@ public class Boss_dm : MonoBehaviour
             {
                 curTime += Time.deltaTime;
                 curColorA = maxColorA * curTime;
-                for(int j = 0; j < attackAreaSprite.Length; j++)
+                for (int j = 0; j < attackAreaSprite.Length; j++)
                 {
                     attackAreaSprite[j].color = new Color(attackAreaSprite[j].color.r,
                         attackAreaSprite[j].color.g, attackAreaSprite[j].color.b, curColorA);
                 }
-                
+
                 yield return null;
             }
             curTime = 0;
@@ -200,10 +251,12 @@ public class Boss_dm : MonoBehaviour
         }
 
         //Debug.Log(Time.time);
-        for(int i = 0; i < attackArea.Length; i++)
+        for (int i = 0; i < attackArea.Length; i++)
         {
             attackArea[i].SetActive(false);
         }
+
+        StopCoroutine(corBossBullet);
 
         BossAttackOn(BossAttack);
     }
@@ -216,6 +269,29 @@ public class Boss_dm : MonoBehaviour
 
     IEnumerator BossPattern()
     {
-        yield return null;
+        yield return new WaitForSeconds(5f);
+        while (true)
+        {
+            AttackCoroutine = StartCoroutine(AttackWarning(LazerWarningArea, BossLazer));
+
+            yield return new WaitForSeconds(15f);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (corBossBullet != null)
+        {
+            StopCoroutine(corBossBullet);
+        }
+        if (AttackCoroutine != null)
+        {
+            StopCoroutine(AttackCoroutine);
+        }
+        if (corBossPattern != null)
+        {
+            StopCoroutine(corBossPattern);
+        }
+
     }
 }
