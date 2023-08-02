@@ -7,8 +7,8 @@ public class Lazor : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-        /*if (other.tag == "Player")
-            GameManagerSJ.Instance.player.Heart -= 1;      */
+        if (other.tag == "Player")
+            GameManagerSJ.Instance.player.Heart -= 1;    
     }
 
 }

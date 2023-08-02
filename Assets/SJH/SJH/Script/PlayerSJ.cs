@@ -141,11 +141,7 @@ public class PlayerSJ : MonoBehaviour
 
         if (Heart < 1)
         {
-            //Destroy(gameObject);  //aSFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-            //ASDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-            //ASDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-
-            //ASDFFFFFFFFFFFFFFFFFFF
+            Destroy(gameObject);
             Heart = 0;
         }
 
