@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: intercepterBosst_8 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7041379783949806846, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7948322081731017101, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -321,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 7041379783949806846, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
       propertyPath: m_Name
       value: intercepterBosst_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041379783949806846, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7948322081731017101, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
       propertyPath: m_RootOrder

@@ -16,13 +16,9 @@ public class destoyPosSJ : MonoBehaviour
         Invoke("Stop", 1.5f);
     }
 
-    void Update()
-    {
-        
-    }
     IEnumerator CreatBullet()
     {
-        int count = 18;
+        int count = 9;
         float intervalAngle = 180 / count;
         float weightAngle = 0;
         int i = 0;

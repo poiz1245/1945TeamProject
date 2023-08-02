@@ -29,7 +29,6 @@ public class SpawnerSJ : MonoBehaviour
     void Start()
     {
         Invoke("StartEnemySpawn", 8);
-
     }
 
     void StartEnemySpawn()
@@ -54,7 +53,6 @@ public class SpawnerSJ : MonoBehaviour
         swi = false;
         StopCoroutine(Enemy1Spawn());
         Invoke("CreatEnemy1", 7);
-        Invoke("StopArcSpawn", 12);
     }
 
     void StopArcSpawn()
@@ -90,7 +88,7 @@ public class SpawnerSJ : MonoBehaviour
 
         Invoke("TextStart", 4);
         Invoke("TextStop", 7);
-        Invoke("BossSpawn", 10);
+        Invoke("BossSpawn", 7);
 
     }
 
@@ -98,14 +96,12 @@ public class SpawnerSJ : MonoBehaviour
     {
         swi = true;
         StartCoroutine(Enemy1Spawn());
-        //Invoke("SoptEnemy1Creat", 7);
     }
 
     void SoptEnemy1Creat()
     {
         swi = false;
         StopCoroutine(Enemy1Spawn());
-        //Invoke("CreatEnemy1", 7);
     }
 
     void TextStart()
@@ -118,7 +114,6 @@ public class SpawnerSJ : MonoBehaviour
     }
     void BossSpawn()
     {
-
         Instantiate(Boss, BossSpawnPoint.position, Quaternion.Euler(0, 0, 180));
     }
     IEnumerator Enemy2Spawn()

@@ -14,7 +14,7 @@ public class LIntercepter : MonoBehaviour
     public Transform PosA;
     public Transform PosB;
     public GameObject Effect;
-
+    GameObject Elite;
     float time = 0;
 
     Vector3 myPos;
@@ -27,6 +27,7 @@ public class LIntercepter : MonoBehaviour
 
         PosA = GameObject.FindGameObjectWithTag("Elite").transform.Find("PosC");
         PosB = GameObject.FindGameObjectWithTag("Player").transform.Find("PosD");
+        Elite = GameObject.FindWithTag("Elite");
         myPos = transform.position;
     }
 
@@ -49,6 +50,8 @@ public class LIntercepter : MonoBehaviour
             transform.position = Vector3.Lerp(p4, p5, time);
             time += Time.deltaTime;
         }
+        if (Elite.GetComponent<Elite>().check == false)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

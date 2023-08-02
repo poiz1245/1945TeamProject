@@ -20,7 +20,7 @@ public class PlayerSJ : MonoBehaviour
 
     public int AttackPower = 10;
     public int MaxItemCount = 4;
-    public int MaxItem2Count = 3;
+    public int MaxItem2Count = 4;
     public int ItemCount = 0;
     public int ItemCount2 = 0;
     public int Heart = 3;
@@ -69,6 +69,16 @@ public class PlayerSJ : MonoBehaviour
                     Instantiate(HomingMissle, SgunPos3.position, Quaternion.identity);
                     Instantiate(HomingMissle, SgunPos4.position, Quaternion.identity);
                     Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
+                }
+                else if (ItemCount2 == 4)
+                {
+                    StartCoroutine(CreatMissle());
+                    Instantiate(HomingMissle, SgunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos3.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos4.position, Quaternion.identity);
+                    Instantiate(HomingMissle, SgunPos5.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos2.position, Quaternion.identity);
+                    Instantiate(HomingMissle, gunPos3.position, Quaternion.identity);
                 }
             }
 
@@ -127,17 +137,15 @@ public class PlayerSJ : MonoBehaviour
 
 
         }
-        else
-        {
-            transform.Find("CShot").gameObject.SetActive(false);
-            transform.Find("LShot").gameObject.SetActive(false);
-            transform.Find("RShot").gameObject.SetActive(false);
-        }
 
 
         if (Heart < 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);  //aSFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            //ASDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            //ASDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+            //ASDFFFFFFFFFFFFFFFFFFF
             Heart = 0;
         }
 

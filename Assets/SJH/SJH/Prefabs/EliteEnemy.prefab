@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728132824581102494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 1403952279053048754}
   - component: {fileID: 2346598868982908576}
   - component: {fileID: 6737403866908541463}
-  m_Layer: 0
-  m_Name: gliter (1)
+  m_Layer: 6
+  m_Name: gliter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4868,7 +4868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5033665643945146938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1281584409071923794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosC
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -4930,7 +4930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2593724454503807930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosA
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -4964,7 +4964,7 @@ GameObject:
   - component: {fileID: 6649635582753555422}
   - component: {fileID: 3305455517889331260}
   - component: {fileID: 5351244141685581468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EliteEnemy
   m_TagString: Elite
   m_Icon: {fileID: 0}
@@ -5078,7 +5078,9 @@ MonoBehaviour:
   bullet: {fileID: 4924902852957537345, guid: c312390ef1b5c884792ab12a27553583, type: 3}
   StarBullet: {fileID: 1600639199149057274, guid: df5a2ecdbc11a014b8240c2e60e68c76, type: 3}
   Speed: 3
-  Hp: 10000
+  MaxHp: 10000
+  currunt_Hp: 1000
+  check_smallstar: 0
 --- !u!61 &5351244141685581468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5133,7 +5135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663763307502332519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosG
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -5164,7 +5166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5122736854031617162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RSpawn2
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -5195,7 +5197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5384413903974397884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5226,7 +5228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6241999597926259212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5259,13 +5261,13 @@ GameObject:
   - component: {fileID: 6206775068088351404}
   - component: {fileID: 8415173828302451896}
   - component: {fileID: 2768051188888282328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ranBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6206775068088351404
 Transform:
   m_ObjectHideFlags: 0
@@ -5274,7 +5276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7039521407538613335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10085,7 +10087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362220074693287546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosE
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -10116,7 +10118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2497705314019900218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10147,7 +10149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5588088462044023550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LSpawn 2
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -10180,6 +10182,10 @@ PrefabInstance:
     - target: {fileID: 2334999623658336350, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
       propertyPath: m_Name
       value: Parline
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334999623658336350, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3900456455606633535, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
       propertyPath: CollisionModule.type
@@ -10260,6 +10266,18 @@ PrefabInstance:
     - target: {fileID: 7633065290189156725, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
       propertyPath: m_Name
       value: EffBeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633065290189156725, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632941134819306827, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
+      propertyPath: m_Name
+      value: beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632941134819306827, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8632941134819306827, guid: d5bc451f05f51694f8a6f5429fd5ae54, type: 3}
       propertyPath: m_IsActive

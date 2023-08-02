@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class StarFlareSJ : MonoBehaviour
 {
     public GameObject destroyPos;
     public GameObject smallstar;
-
+    GameObject Elite;
     public float Speed = 1f;
     public int count = 0;
 
     void Start()
     {
-        StartCoroutine(VolumeUp());
+        Elite = GameObject.FindWithTag("Elite");
         StartCoroutine(Move());
     }
-
+    private void Update()
+    {
+        if (Elite.GetComponent<Elite>().check_smallstar == false)
+        {
+            Destroy(gameObject);
+        }
+    }
     IEnumerator Move()
     {
         yield return new WaitForSeconds(3);
@@ -26,18 +34,6 @@ public class StarFlareSJ : MonoBehaviour
             yield return null;
         }
     }
-    IEnumerator VolumeUp()
-    {
-
-        float scaleSpeed = 0.02f;
-        while (gameObject.transform.localScale.x < 0.8f)
-        {
-            yield return new WaitForSeconds(0.1f);
-            gameObject.transform.localScale = new Vector3(0.1f + scaleSpeed,
-                0.1f + scaleSpeed, 0.1f + scaleSpeed);
-            scaleSpeed += 0.02f;
-        }
-    }
 
 
 
@@ -45,11 +41,14 @@ public class StarFlareSJ : MonoBehaviour
     {
         if (collision.CompareTag("UpDownWall") || collision.CompareTag("SideWall"))
         {
-            Debug.Log("aaa");
             Instantiate(destroyPos, transform.position, Quaternion.identity);
             Destroy(gameObject);
-
         }
+
+        if (collision.CompareTag("Player"))
+            GameManagerSJ.Instance.player.Heart--;
 
     }
 }
+
+

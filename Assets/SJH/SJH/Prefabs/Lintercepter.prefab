@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8484605318098003354}
   - component: {fileID: -8765946638876024460}
   - component: {fileID: -5536772112149446020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lintercepter
   m_TagString: InterCepter
   m_Icon: {fileID: 0}
@@ -175,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 7041379783949806846, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
       propertyPath: m_Name
       value: intercepterBosst_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041379783949806846, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7948322081731017101, guid: 07f25ce67bf46144d9fea654f754c250, type: 3}
       propertyPath: m_RootOrder

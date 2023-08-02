@@ -6,11 +6,6 @@ public class RCornerUp : MonoBehaviour
 {
     public float Speed = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

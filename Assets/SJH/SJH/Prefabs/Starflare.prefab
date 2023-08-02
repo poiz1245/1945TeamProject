@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edf32a6c9e699343a9696475d8e5381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyPos: {fileID: 6280783192086152723, guid: 5e060f24918dd7c44887fa948de43147, type: 3}
+  destroyPos: {fileID: 3394254260542398603, guid: a625a129dea1d7d4cab68feb3a4d0d36, type: 3}
   smallstar: {fileID: 4599204731665049331, guid: 8f6b6ee801e3ecc4582142b6e691cb7a, type: 3}
   Speed: 3
   count: 0
