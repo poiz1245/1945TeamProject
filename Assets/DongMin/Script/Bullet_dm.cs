@@ -48,6 +48,8 @@ public class Bullet_dm : MonoBehaviour
                 collision.GetComponent<BossArm_dm>().Damage(attack);
             else if (collision.GetComponent<Boss_dm>() != null)
                 collision.GetComponent<Boss_dm>().Damage(attack);
+            else if (collision.GetComponent<Octopus_dm>() != null)
+                collision.GetComponent<Octopus_dm>().Damage(attack);
 
             //미사일 지우기
             Destroy(gameObject);

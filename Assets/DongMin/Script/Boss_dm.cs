@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static Unity.Collections.AllocatorManager;
 
 public class Boss_dm : MonoBehaviour
@@ -18,19 +20,41 @@ public class Boss_dm : MonoBehaviour
     float y = 0;
 
     bool isLazer = false;
-    bool isBattle = false;
+    public bool isBattle = false;
     bool isBodyActive = false;
 
     public int destroyArmCount = 0;
+
 
     [SerializeField]
     GameObject[] LazerWarningArea;
     [SerializeField]
     GameObject BossLazer;
 
+    [SerializeField]
+    GameObject bossHead;
+
+    [SerializeField]
+    GameObject octopus;
+    [SerializeField]
+    int octopusHp = 1000;
+    int maxOctopusHp;
+    [SerializeField]
+    SpriteRenderer[] octopusSprite;
+    [SerializeField]
+    GameObject shadow1;
+    [SerializeField]
+    GameObject shadow2;
+    [SerializeField]
+    Image bossUI;
+    [SerializeField]
+    GameObject exprosion;
+
+
     Coroutine corBossBullet;
     Coroutine AttackCoroutine;
     Coroutine corBossPattern;
+    Coroutine corOctopusPattern;
 
     //[SerializeField]
     //GameObject FireWarningArea;
@@ -45,10 +69,16 @@ public class Boss_dm : MonoBehaviour
         LazerWarningArea[0].SetActive(false);
         BossLazer.SetActive(false);
 
+        bossUI = GameObject.Find("BossUI").GetComponent<Image>();
+
         maxHp = hp;
+        maxOctopusHp = octopusHp;
 
         BossUI_dm.instance.StartSet(BossUI_dm.HP.body, maxHp);
+        BossUI_dm.instance.StartSet(BossUI_dm.HP.octopus, maxOctopusHp);
 
+        //문어괴물 패턴 시작
+        //corOctopusPattern = StartCoroutine(OctopusPattern());
 
         StartCoroutine(BossStart());
 
@@ -109,6 +139,11 @@ public class Boss_dm : MonoBehaviour
         {
             isBodyActive = true;
 
+            BossUI_dm.instance.SetActiveFalseSlider(BossUI_dm.HP.leftArm);
+            BossUI_dm.instance.SetActiveFalseSlider(BossUI_dm.HP.rightArm);
+
+            BossUI_dm.instance.CorStartSliderSet(BossUI_dm.HP.body);
+
             transform.GetComponent<BoxCollider2D>().enabled = true;
 
             corBossPattern = StartCoroutine(BossPattern());
@@ -160,8 +195,78 @@ public class Boss_dm : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            isBattle = false;
+            transform.GetComponent<BoxCollider2D>().enabled = false;
+
+            if (AttackCoroutine != null)
+            {
+                StopCoroutine(AttackCoroutine);
+            }
+            if (corBossPattern != null)
+            {
+                StopCoroutine(corBossPattern);
+            }
+            //if (corBossBullet != null)
+            {
+                StopCoroutine(corBossBullet);
+            }
+
+            CameraShake.instance.ShakeSwitchOff();
+
+            bossHead.SetActive(false);
+            for (int i = 0; i < LazerWarningArea.Length; i++)
+            {
+                LazerWarningArea[i].SetActive(false);
+            }
+            BossLazer.SetActive(false);
+
+            exprosion.SetActive(true);
+
+            //문어괴물 패턴 시작
+            corOctopusPattern = StartCoroutine(OctopusPattern());
         }
+    }
+
+    public void OctopusDamage(int attack)
+    {
+        octopusHp -= attack;
+
+        BossUI_dm.instance.Damage(BossUI_dm.HP.octopus, octopusHp);
+
+        if (octopusHp <= 0)
+        {
+            isBattle = false;
+            octopus.GetComponent<CapsuleCollider2D>().enabled = false;
+
+            exprosion.SetActive(true);
+
+            StartCoroutine(OctopusDead());
+        }
+    }
+
+    IEnumerator OctopusDead()
+    {
+        //float curTime = 0;
+
+        yield return new WaitForSeconds(2f);
+        exprosion.SetActive(false);
+
+        while (true)
+        {
+            //보스 점점 작이지다 사라짐
+            transform.localScale = new Vector3(transform.localScale.x - (0.4f * Time.deltaTime), transform.localScale.y - (0.4f * Time.deltaTime), 1);
+
+            if (transform.localScale.x <= 0)
+            {
+                transform.localScale = new Vector3(0, 0, 1);
+                break;
+            }
+
+            yield return null;
+        }
+
+        BossUI_dm.instance.StageClear();
     }
 
     void Hide()
@@ -276,6 +381,103 @@ public class Boss_dm : MonoBehaviour
 
             yield return new WaitForSeconds(15f);
         }
+    }
+
+    IEnumerator OctopusPattern()
+    {
+        float shadow1Speed = 16f;
+        float shadow2Speed = 10f;
+        float curTime = 0;
+        float color = 0;
+        float downTime = 5f;
+        float octStartScale = 8.5602f;
+        bool warningTextOn = false;
+
+        yield return new WaitForSeconds(2f);
+
+        exprosion.SetActive(false);
+
+        yield return new WaitForSeconds(1.3f);
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            shadow1.transform.Translate(Vector2.down * shadow1Speed * Time.deltaTime);
+
+            if (curTime >= 2.5f)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+
+        curTime = 0;
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            shadow2.transform.Translate(Vector2.up * shadow2Speed * Time.deltaTime);
+
+            if (curTime >= 2.5f)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+
+        shadow1.SetActive(false);
+        shadow2.SetActive(false);
+
+        bossUI.color = Color.black;
+        octopus.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        curTime = 0;
+        while (true)
+        {
+            curTime += Time.deltaTime;
+            color = curTime / downTime;
+
+            for (int i = 0; i < octopusSprite.Length; i++)
+            {   //문어 검은색에서 점점 밝아짐
+                octopusSprite[i].color = new Color(color, color, color);
+            }
+
+            //UI패널 페이드 아웃
+            bossUI.color = new Color(0, 0, 0, 1 - color);
+
+            //문어 크기 축소
+            octopus.transform.localScale = new Vector3(octStartScale / (color * 10), octStartScale / (color * 10), 1);
+
+            if (curTime >= downTime * 0.7f && !warningTextOn)
+            {
+                warningTextOn = true;
+                BossUI_dm.instance.OctopusWarning();
+                BossUI_dm.instance.SetActiveFalseSlider(BossUI_dm.HP.body);
+
+                BossUI_dm.instance.CorStartSliderSet(BossUI_dm.HP.octopus);
+            }
+            else if (curTime >= downTime)
+            {
+                octopus.GetComponent<CapsuleCollider2D>().enabled = true;
+
+                yield return new WaitForSeconds(1f);
+
+                isBattle = true;
+
+                break;
+            }
+
+
+            yield return null;
+        }
+
+
+
     }
 
     private void OnDisable()

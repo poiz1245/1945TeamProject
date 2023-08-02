@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static BossUI_dm;
 
 public class BossUI_dm : MonoBehaviour
 {
@@ -29,13 +31,21 @@ public class BossUI_dm : MonoBehaviour
     float uiMoveSpeed = 120f;
 
     [SerializeField]
-    int setMaxCount = 3;
+    int setMaxCount = 4;
     int setCount = 0;
 
     float bodyMaxHp = 0;
     float leftMaxHp = 0;
     float rightMaxHp = 0;
     float octoMaxHp = 0;
+
+    [SerializeField]
+    GameObject octopusWarningText;
+
+    [SerializeField]
+    GameObject nextStageBtn;
+    [SerializeField]
+    GameObject clearText;
 
     private void Awake()
     {
@@ -58,6 +68,8 @@ public class BossUI_dm : MonoBehaviour
         //slider.maxValue = GameObject.Find("Boss_dm").GetComponent<Boss_dm>().hp;
         //slider.maxValue = GetComponentInParent<Monster_dm>().hp;
         //slider.value = slider.maxValue;
+
+        octopusWarningText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -82,6 +94,25 @@ public class BossUI_dm : MonoBehaviour
                 break;
             case HP.octopus:
                 octopusSlider.value = hp / octoMaxHp;
+                break;
+        }
+    }
+
+    public void SetActiveFalseSlider(HP hpSelect)
+    {
+        switch (hpSelect)
+        {
+            case HP.body:
+                bodySlider.gameObject.SetActive(false);
+                break;
+            case HP.leftArm:
+                leftArmSlider.gameObject.SetActive(false);
+                break;
+            case HP.rightArm:
+                rightArmSlider.gameObject.SetActive(false);
+                break;
+            case HP.octopus:
+                octopusSlider.gameObject.SetActive(false);
                 break;
         }
     }
@@ -173,6 +204,59 @@ public class BossUI_dm : MonoBehaviour
             yield return null;
         }
 
+    }
 
+    public void CorStartSliderSet(HP hpSelect)
+    {
+        switch (hpSelect)
+        {
+            case HP.body:
+                StartCoroutine(StartSliderSet(bodySlider));
+                break;
+            case HP.leftArm:
+                StartCoroutine(StartSliderSet(leftArmSlider));
+                break;
+            case HP.rightArm:
+                StartCoroutine(StartSliderSet(rightArmSlider));
+                break;
+            case HP.octopus:
+                StartCoroutine(StartSliderSet(octopusSlider));
+                break;
+        }
+    }
+
+    public void OctopusWarning()
+    {
+        octopusWarningText.SetActive(true);
+
+        StartCoroutine(OctopusWarningBlink());
+    }
+
+    IEnumerator OctopusWarningBlink()
+    {
+        float delaySec = 0.13f;
+
+        for(int i = 0; i < 12; i++)
+        {
+            yield return new WaitForSeconds(delaySec);
+            octopusWarningText.GetComponent<Text>().color = Color.white;
+            yield return new WaitForSeconds(delaySec);
+            octopusWarningText.GetComponent<Text>().color = Color.red;
+        }
+        yield return new WaitForSeconds(delaySec);
+
+        octopusWarningText.SetActive(false);
+    }
+
+    public void StageClear()
+    {
+        nextStageBtn.SetActive(true);
+        clearText.SetActive(true);
+    }
+
+    public void NextStage()
+    {
+        //SceneManager.LoadScene("")
+        Debug.Log("다음스테이지로");
     }
 }

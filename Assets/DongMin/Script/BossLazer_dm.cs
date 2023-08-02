@@ -39,7 +39,7 @@ public class BossLazer_dm : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             
             //Destroy(collision.gameObject);
@@ -69,7 +69,7 @@ public class BossLazer_dm : MonoBehaviour
 
     private void OnDisable()
     {
-        if (bossBody.activeSelf)
+        if (bossBody.GetComponent<Boss_dm>().isBattle)
         {
             bossBody.GetComponent<Boss_dm>().corBossBulletStart();
         }

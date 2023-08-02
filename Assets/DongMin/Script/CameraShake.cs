@@ -59,4 +59,10 @@ public class CameraShake : MonoBehaviour
         shakeOnOff = !shakeOnOff;
         transform.position = new Vector3(0, 0, transform.position.z);
     }
+
+    public void ShakeSwitchOff()
+    {
+        shakeOnOff = false;
+        transform.position = new Vector3(0, 0, transform.position.z);
+    }
 }

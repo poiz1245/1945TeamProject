@@ -16,11 +16,16 @@ public class BossArm_dm : MonoBehaviour
     [SerializeField]
     GameObject BossBody;
     Boss_dm boss_dm;
+    [SerializeField]
+    GameObject destroyArm;
 
     [SerializeField]
     GameObject[] WarningArea;
     [SerializeField]
     GameObject BossAttack;
+
+    [SerializeField]
+    GameObject exprosionPrefab;
 
     public int hp = 500;
     int maxHp;
@@ -80,7 +85,8 @@ public class BossArm_dm : MonoBehaviour
 
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -115,5 +121,9 @@ public class BossArm_dm : MonoBehaviour
         StopCoroutine("BossArmPattern");
 
         BossBody.GetComponent<Boss_dm>().destroyArmCount++;
+
+        destroyArm.SetActive(true);
+
+        Destroy(Instantiate(exprosionPrefab, transform.position, Quaternion.identity), 0.4f);
     }
 }
