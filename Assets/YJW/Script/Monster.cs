@@ -11,6 +11,7 @@ public class Monster : MonoBehaviour
     public Transform ms;
     public Transform ms2;
     public GameObject bullet;
+    public bool isHit = false;
 
    
     public GameObject effect;
@@ -49,8 +50,8 @@ public class Monster : MonoBehaviour
 
 
         HP -= attack;
-        Debug.Log("데미지 받았음");
-      
+        //Debug.Log("데미지 받았음");
+        StartCoroutine(CoolHit());
         if (HP <= 0)
         {
             HP = 0;
@@ -71,6 +72,15 @@ public class Monster : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator CoolHit()
+    {
+        var hit = transform.GetComponent<SpriteRenderer>();
+        isHit = true;
+        hit.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        hit.color = Color.white;
+        isHit = false;
+    }
 
 
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4507768939796243198}
   - component: {fileID: 1453570879568655563}
   - component: {fileID: 3483390558967499998}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Boss_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 9162699483202514551}
   - component: {fileID: 7993595083218785224}
   - component: {fileID: 6931230846791147296}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Boss_propeller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 43805898987126116}
   - component: {fileID: 5269382696655285059}
   - component: {fileID: 8148169783898247834}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -251,8 +251,9 @@ Transform:
   - {fileID: 6440203654085728132}
   - {fileID: 1321136071913773429}
   - {fileID: 4628902468853863856}
+  - {fileID: 8501294787985371748}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &43805898987126116
 MonoBehaviour:
@@ -269,19 +270,28 @@ MonoBehaviour:
   HP: 2000
   effect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
   lastBoss: {fileID: 3136225035243721095, guid: d8494c462de5bd04fa7c73a0bac2aad8, type: 3}
-  isHit: 0
+  self_destruct: {fileID: 4654118991080863374, guid: 72c45ba4ad18a74438fb946ce8134b0a, type: 3}
+  lazer: {fileID: 861540897308137919, guid: 9ddd1a932f080284594c0218084fb943, type: 3}
+  timer: 0
   mb: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
   mb2: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
   tr: {fileID: 9064136745768877161}
   tr2: {fileID: 3352477578574381826}
+  lazerZone: {fileID: 8501294787985371748}
   BossP1: {fileID: 7660273092789281385}
   BossP2: {fileID: 3193646675232365144}
   BossP3: {fileID: 2693096257502165401}
-  Paze1Pos1: {fileID: 0}
-  Paze1Pos2: {fileID: 0}
-  Paze1Pos3: {fileID: 0}
-  Paze1Pos4: {fileID: 0}
+  SummonsMon:
+  - {fileID: 5270881867673358995, guid: f1ee85efc93b3424e89b7f79a2c21414, type: 3}
+  - {fileID: 5270881867673358995, guid: aacee8056f7f01f4b99f2805439c8cc5, type: 3}
+  - {fileID: 5270881867673358995, guid: e58974b0754e7f14b964ab3e36416007, type: 3}
+  - {fileID: 5270881867673358995, guid: e6b7e94032fd36c42866c9751e29dc63, type: 3}
   breackStack: 0
+  summonStack: 0
+  destruckCount: 0
+  StartPaze2Conut: 0
+  CoolAtk: 0
+  isHit: 0
 --- !u!61 &5269382696655285059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -366,7 +376,7 @@ GameObject:
   - component: {fileID: 1101517177723665612}
   - component: {fileID: 3793871419699983750}
   - component: {fileID: 9114199427721406332}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Boss_right
   m_TagString: BossArm
   m_Icon: {fileID: 0}
@@ -498,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6b96fbfdefdbd47a6f0fc73384e1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 70
+  HP: 1000
   renderer: {fileID: 1101517177723665612}
   sprites:
   - {fileID: 982280833, guid: 25a3fb565a552e84cb477e63d3ce4e1e, type: 3}
@@ -514,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321136071913773429}
   - component: {fileID: 6231191515396440343}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BPpos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6440203654085728132}
   - component: {fileID: 3461953817974368888}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BPpos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,6 +606,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
+--- !u!1 &3778589820504320976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8501294787985371748}
+  m_Layer: 7
+  m_Name: BPPos5Lazer
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8501294787985371748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778589820504320976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6829136969301405503}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4170852362895550453
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3352477578574381826}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: LeftPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9064136745768877161}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: RightPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4628902468853863856}
   - component: {fileID: 134920411329194389}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BPPos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,8 +745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rotation: 0
   Vertex: 3
-  Subdivision: 1.5
-  Speed: 3
+  Subdivision: 2
+  Speed: 5
   Bullet: {fileID: 3142172318544950045, guid: 86eb121da08d16b48a9054feeaccf971, type: 3}
 --- !u!1 &4850369704041735280
 GameObject:
@@ -719,7 +760,7 @@ GameObject:
   - component: {fileID: 4808880480323893157}
   - component: {fileID: 4970496803703674637}
   - component: {fileID: 7228594080512631569}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Boss_left
   m_TagString: BossArm
   m_Icon: {fileID: 0}
@@ -851,7 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6b96fbfdefdbd47a6f0fc73384e1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 70
+  HP: 1000
   renderer: {fileID: 4808880480323893157}
   sprites:
   - {fileID: -988750007, guid: 03bcb624804b127428cc62820bf7a04e, type: 3}
@@ -867,7 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8559998209505363001}
   - component: {fileID: 6220989207308518350}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BPpos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,7 +6,7 @@ public class BoomAir : MonoBehaviour
 {
     public GameObject Boom1;
 
-
+    public GameObject colTransfromEffect;
 
     public float DeadTime = 5;
 
@@ -29,7 +29,7 @@ public class BoomAir : MonoBehaviour
     {
         if(collision.tag == "EnemyBullet")
         {
-            Debug.Log("적 공격에 맞았음.");
+            Instantiate(colTransfromEffect, collision.transform.position, Quaternion.identity);
         }
     }
 

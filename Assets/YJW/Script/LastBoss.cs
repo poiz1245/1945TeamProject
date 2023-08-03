@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.GraphicsBuffer;
 
 public class LastBoss : MonoBehaviour
 {
@@ -11,8 +9,11 @@ public class LastBoss : MonoBehaviour
     public GameObject playerDied;
     GameObject target;
 
+    Transform lastPat;
+
+
     //총알을 생성후 Target에게 날아갈 변수
-  //  public GameObject Target;
+    //  public GameObject Target;
     public GameObject bossPos;
 
     public GameObject helper1;
@@ -45,6 +46,7 @@ public class LastBoss : MonoBehaviour
     float downSpeed = 4;
 
     int SpawnCount = 0;
+    int Stack = 0;
 
     //Vector3 pos; //현재위치
 
@@ -65,12 +67,15 @@ public class LastBoss : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         bossPos = GameObject.Find("BossRollBackPos");
         //pos = transform.position;
-       // BossHelperSpawn();
+        // BossHelperSpawn();
 
-       
+        lastPat = transform.GetChild(0);
+        lastPat.gameObject.SetActive(false);
+
+
     }
 
-   
+
     void Update()
     {
 
@@ -78,14 +83,14 @@ public class LastBoss : MonoBehaviour
 
         BossMoving();
 
-        if (hp <= 1000 && hp > 600)
+        if (hp <= 3000 && hp > 2000)
         {
             if (isShot == false)
             {
                 StartCoroutine(CreateMissile());
             }
         }
-        else if (hp <= 600 && hp > 300)
+        else if (hp <= 2000 && hp > 1000)
         {
             //보스와 플레이어의 x축의 값이 절대값으로 -해서 0.1 정도의 차이가 난다면
             if (Mathf.Abs(Mathf.Abs(transform.position.x) - Mathf.Abs(target.transform.position.x)) <= 0.1)
@@ -147,31 +152,46 @@ public class LastBoss : MonoBehaviour
 
             }
         }
-        else if(hp>100 &&hp <= 300)
+        else if (hp > 300 && hp <= 1000)
         {
             transform.position =
             Vector3.MoveTowards(transform.position, bossPos.transform.position, downSpeed * Time.deltaTime);
             if (SpawnCount == 0)
             {
                 BossHelperSpawn();
-                SpawnCount++;
+                SpawnCount = 1;
             }
-           
-            if(helper1 == null && helper2 == null && SpawnCount == 1 && hp > 100)
+
+            if (helper1 == null && helper2 == null && SpawnCount == 1 && hp > 300)
             {
                 BossHelperSpawn();
             }
+
+            if (isHit == true)
+            {
+
+                lastPat.gameObject.SetActive(true);
+            }
+
+            if (isLastShot == false)
+            {
+                StartCoroutine(CoolTimeCheck());
+                StartCoroutine(Bosspattern1());
+                
+
+            }
+           
+
+
+
+
         }
-        else if(hp <= 100)
+        else if (hp <= 300)
         {
             //발악 패턴 넣으면 끝.
-
+            lastPat.gameObject.SetActive(false);
             StartCoroutine(Shot());
-            if (hp <=0)
-            {
-                hp = 0;
-              
-            }
+
         }
 
 
@@ -184,15 +204,15 @@ public class LastBoss : MonoBehaviour
 
     void BossHelperSpawn()
     {
-       Instantiate(helper1, transform.position, Quaternion.identity);
-       Instantiate(helper2, transform.position, Quaternion.identity);
+        Instantiate(helper1, transform.position, Quaternion.identity);
+        Instantiate(helper2, transform.position, Quaternion.identity);
     }
 
 
 
     private void BossMoving()
     {
-       
+
         currentPosition += Time.deltaTime * direction;
 
         if (currentPosition >= rightMax)
@@ -214,7 +234,7 @@ public class LastBoss : MonoBehaviour
 
     void BossStop()
     {
-       // direction = 0;
+        // direction = 0;
         currentPosition = target.transform.position.x;
     }
 
@@ -223,6 +243,7 @@ public class LastBoss : MonoBehaviour
         hp -= attack;
 
         Debug.Log("데미지 받았음");
+
         StartCoroutine(CoolHit());
 
         if (hp <= 0)
@@ -249,14 +270,25 @@ public class LastBoss : MonoBehaviour
         }
     }
 
+    IEnumerator Bosspattern1()
+    {
+        if (Stack == 0)
+        { }
+        Stack = 1;
+            lastPat.GetComponent<BossPattern1>().Shot();
+            yield return new WaitForSeconds(1f);
+           
+      
+    }
+
     IEnumerator CreateMissile()
     {
-       
+
         int _shot = shot;
         while (_shot > 0)
-        {   
+        {
             _shot--;
-            GameObject bullet = Instantiate(missile, transform.position,Quaternion.identity);
+            GameObject bullet = Instantiate(missile, transform.position, Quaternion.identity);
             bullet.GetComponent<BeazierBullet>().master = gameObject;
             bullet.GetComponent<BeazierBullet>().enemy = target;
             isShot = true;
@@ -265,9 +297,15 @@ public class LastBoss : MonoBehaviour
         }
         yield return null;
 
-       
+
     }
 
+    IEnumerator CoolTimeCheck()
+    {
+        isLastShot = true;
+        yield return new WaitForSeconds(1f);
+        isLastShot = false;
+    }
 
     IEnumerator Shot()
     {
