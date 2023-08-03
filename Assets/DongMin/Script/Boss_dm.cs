@@ -50,11 +50,21 @@ public class Boss_dm : MonoBehaviour
     [SerializeField]
     GameObject exprosion;
 
+    [SerializeField]
+    SpriteRenderer electricHead;
+    [SerializeField]
+    GameObject electricBall;
+    [SerializeField]
+    GameObject leftLeg;
+    [SerializeField]
+    GameObject rightLeg;
+
 
     Coroutine corBossBullet;
     Coroutine AttackCoroutine;
     Coroutine corBossPattern;
     Coroutine corOctopusPattern;
+    Coroutine corOctoSkill;
 
     //[SerializeField]
     //GameObject FireWarningArea;
@@ -214,8 +224,6 @@ public class Boss_dm : MonoBehaviour
                 StopCoroutine(corBossBullet);
             }
 
-            CameraShake.instance.ShakeSwitchOff();
-
             bossHead.SetActive(false);
             for (int i = 0; i < LazerWarningArea.Length; i++)
             {
@@ -224,6 +232,8 @@ public class Boss_dm : MonoBehaviour
             BossLazer.SetActive(false);
 
             exprosion.SetActive(true);
+
+            CameraShake.instance.ShakeSwitchOff();
 
             //문어괴물 패턴 시작
             corOctopusPattern = StartCoroutine(OctopusPattern());
@@ -268,6 +278,8 @@ public class Boss_dm : MonoBehaviour
 
             yield return null;
         }
+        CameraShake.instance.ShakeSwitchOff();
+
         ScoreManager.instance.Bonus++;
         BossUI_dm.instance.StageClear();
     }
@@ -388,8 +400,8 @@ public class Boss_dm : MonoBehaviour
 
     IEnumerator OctopusPattern()
     {
-        float shadow1Speed = 16f;
-        float shadow2Speed = 10f;
+        float shadow1Speed = 18f;
+        float shadow2Speed = 13f;
         float curTime = 0;
         float color = 0;
         float downTime = 5f;
@@ -479,8 +491,49 @@ public class Boss_dm : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds(10f);
+        while (true)
+        {
+            corOctoSkill = StartCoroutine(OctoSkill());
 
+            yield return new WaitForSeconds(20f);
+        }
+    }
 
+    IEnumerator OctoSkill()
+    {
+        float curTime = 0;
+        float colorA = 0;
+        float chargeTime = 3f;
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            colorA = curTime / chargeTime;
+
+            electricHead.color = new Color(electricHead.color.r, electricHead.color.g, electricHead.color.b, colorA);
+
+            if (curTime >= chargeTime)
+            {
+                leftLeg.GetComponent<LegMove2_dm>().isSkill = true;
+                rightLeg.GetComponent<LegMove2_dm>().isSkill = true;
+                electricBall.SetActive(true);
+                CameraShake.instance.ShakeSwitch();
+
+                break;
+            }
+
+            yield return null;
+        }
+        yield return new WaitForSeconds(5f);
+        leftLeg.SetActive(false);
+        rightLeg.SetActive(false);
+        electricBall.SetActive(false);
+        leftLeg.SetActive(true);
+        rightLeg.SetActive(true);
+        CameraShake.instance.ShakeSwitchOff();
+        electricHead.color = new Color(electricHead.color.r, electricHead.color.g, electricHead.color.b, 0);
     }
 
     private void OnDisable()
