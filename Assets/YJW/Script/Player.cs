@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +11,8 @@ public class Player : MonoBehaviour
 
 
     public GameObject[] bullet; //미사일 
+    public GameObject lazer;
+    public GameObject destroyEffect;
 
     public Transform pos = null; //미사일 발사
     public Transform boompos = null;
@@ -28,28 +28,28 @@ public class Player : MonoBehaviour
 
     public bool pBulletCheck = true;
 
-    public int power =0;
+    public int power = 0;
 
     public int stack = 0;
     //public float stackfill = 0;
 
     public int BoomStack = 2;
 
-    
 
-  
+
+
 
     public int powerStack = 0;
 
     public float energyValue;
 
     public float gazyStack;
-  
+
 
     private void Awake()
     {
         gazyStack = 0;
-       
+
     }
 
     void Start()
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     {
         PlayerControl();
 
-      
+
 
     }
 
@@ -101,20 +101,20 @@ public class Player : MonoBehaviour
             ani.SetBool("up", false);
         }
 
-        
+
 
         //여기서 처리
-        if (Input.GetKeyUp(KeyCode.Space) && (gazyStack >= 100 && gazyStack < 300) && (stack >=19 && stack <47) )
+        if (Input.GetKeyUp(KeyCode.Space) && (gazyStack >= 100 && gazyStack < 300) && (stack >= 19 && stack < 47))
         {
             gazyStack -= 100;
             energybar.fillAmount = energybar.fillAmount - 0.19f;
             energyStack.fillAmount = 0f;
             stack = 0;
             Instantiate(helper, pos2[0].transform.position, Quaternion.identity);
-            
-           // Instantiate(Lazer, pos.transform.position, Quaternion.identity);
+
+            // Instantiate(Lazer, pos.transform.position, Quaternion.identity);
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && (gazyStack >= 300 && gazyStack <700) && (stack >=47 && stack <100))
+        else if (Input.GetKeyUp(KeyCode.Space) && (gazyStack >= 300 && gazyStack < 700) && (stack >= 47 && stack < 100))
         {
             gazyStack -= 300;
             energybar.fillAmount = energybar.fillAmount - 0.47f;
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
             Instantiate(helper, pos2[1].transform.position, Quaternion.identity);
             Instantiate(helper, pos2[2].transform.position, Quaternion.identity);
         }
-        else if((Input.GetKeyUp(KeyCode.Space) && gazyStack >= 700 && stack >=100))
+        else if ((Input.GetKeyUp(KeyCode.Space) && gazyStack >= 700 && stack >= 100))
         {
             gazyStack = 0;
             energybar.fillAmount = 0f;
@@ -131,10 +131,9 @@ public class Player : MonoBehaviour
             stack = 0;
             Instantiate(helper, pos2[3].transform.position, Quaternion.identity);
             Instantiate(helper, pos2[4].transform.position, Quaternion.identity);
-            Instantiate(helper, pos2[5].transform.position, Quaternion.identity);
-            Instantiate(helper, pos2[6].transform.position, Quaternion.identity);
+            Instantiate(lazer, pos2[0].transform.position, Quaternion.identity);
         }
-        else if(Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             stack = 0;
             energyStack.fillAmount = 0f;
@@ -215,10 +214,10 @@ public class Player : MonoBehaviour
 
     public void GazyPower(float energy)
     {
-        
-      
-            gazyStack += energy;
-        
+
+
+        gazyStack += energy;
+
 
         if (gazyStack <= 100)
         {
@@ -226,46 +225,46 @@ public class Player : MonoBehaviour
             energybar.fillAmount += 0.0019f;
 
         }
-        if(gazyStack > 100 && gazyStack <=300)
+        if (gazyStack > 100 && gazyStack <= 300)
         {
             //0.48가 2단계 풀스텍 // 0.28정도 채울 수 있음.
             energybar.fillAmount += 0.0014f;
-           // powerStack = 1;
-            
+            // powerStack = 1;
+
         }
-        else if(gazyStack >=300 && gazyStack <700)
+        else if (gazyStack >= 300 && gazyStack < 700)
         {
             //1이 단계 풀스텍 // 0.52정도 채울 수 있음.
             energybar.fillAmount += 0.0013f;
-          //  powerStack = 2;
+            //  powerStack = 2;
 
         }
-        else if(gazyStack == 700)
+        else if (gazyStack == 700)
         {
             energybar.fillAmount = 1f;
-           // powerStack = 3;
+            // powerStack = 3;
         }
 
         energyValue = energybar.fillAmount;
     }
 
-   
-
-    
 
 
-        private void OnTriggerEnter2D(Collider2D collision)
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Item")
+        if (collision.CompareTag("Item"))
         {
             power += 1;
 
-           
+
 
             if (power >= 3)
                 power = 3;
 
-            if(power == 3)
+            if (power == 3)
             {
                 BoomStack++; // 파워가 3이상일때, 그 이상의 아이템 습득은 파워대신 폭탄을 얻음.
             }
@@ -274,6 +273,10 @@ public class Player : MonoBehaviour
             //아이템 먹음 처리
             Destroy(collision.gameObject);
 
+        }
+        else if (collision.CompareTag("EnemyBullet"))
+        {
+            Instantiate(destroyEffect, transform.position, Quaternion.identity);
         }
     }
 

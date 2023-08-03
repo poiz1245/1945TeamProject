@@ -10,14 +10,19 @@ public class BossPattern1 : MonoBehaviour
     //발사될 총알 오브젝트
     public GameObject Bullet;
 
+  
+
     private void Start()
     {
-        Target = GameObject.FindWithTag("Player");
+       
+
+     
+
     }
 
     private void Update()
     {
-       
+        Target = GameObject.FindWithTag("Player");
     }
 
     public void Shot()

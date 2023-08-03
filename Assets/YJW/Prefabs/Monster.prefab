@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c6f3941da84ab44983fa8d4057246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1000
+  HP: 2000
   Speed: 3
   Delay: 1
   bullet: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}

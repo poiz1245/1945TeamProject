@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     public GameObject effect; //이 객체가 파괴 될때마다 호출될 이펙트
     public GameObject lastBoss; //이 객체가 완전히 파괴될때 호출될 오브젝트
     public GameObject self_destruct;
+    public GameObject lazer;
 
 
     int speed = 2; //이 오브젝트에 대한 속도 변수
@@ -33,6 +34,7 @@ public class Boss : MonoBehaviour
     public GameObject mb2;
     public Transform tr;
     public Transform tr2;
+    public Transform lazerZone;
     //보스 통상 패턴에 사용될 위치와 거기에 사용될 탄 오브젝트
 
 
@@ -58,6 +60,8 @@ public class Boss : MonoBehaviour
     public bool CoolAtk = false;
 
     public bool isHit = false;
+
+
 
     private void Awake()
     {
@@ -124,13 +128,19 @@ public class Boss : MonoBehaviour
             if (StartPaze2Conut == 0)
             {
                 Start2Paze();
+                Instantiate(lazer, lazerZone.transform.position, Quaternion.identity);
                 StartPaze2Conut++;
-            }
-            if(timer % 2 ==0 )
-            {
-                StartPaze2Conut = 0;
                 timer = 0;
+                
+              
             }
+
+
+            if (timer % 10 > 9.99f)
+            {
+                Instantiate(lazer, lazerZone.transform.position, Quaternion.identity);
+            }
+
         }
         else if(HP>0 && HP<=1000)
         {
@@ -166,7 +176,7 @@ public class Boss : MonoBehaviour
     {
         HP -= attack;
 
-        Debug.Log("데미지 받았음");
+       // Debug.Log("데미지 받았음");
         StartCoroutine(CoolHit());
 
         if (HP <= 0)
@@ -311,7 +321,7 @@ public class Boss : MonoBehaviour
 
     void Summons()
     {
-        Debug.Log("소환되었음");
+        //Debug.Log("소환되었음");
         for (int i = 0; i < 4; i++)
         {
             Instantiate(SummonsMon[i], transform.position, Quaternion.identity);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8913886337519071551}
   - component: {fileID: 8370439490125887531}
   - component: {fileID: 866049386264752964}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Bomb_Airplan
   m_TagString: BombAir
   m_Icon: {fileID: 0}
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boom1: {fileID: 8525198319653699344, guid: c9d02371d947d114ab741a77a71dbaaf, type: 3}
+  colTransfromEffect: {fileID: 549399869073430458, guid: d076cfd9768c00b449315aba6048a97f, type: 3}
+  DeadTime: 5
   boomAirSpeed: 5
   startFirstBoomDonw: 1.8
 --- !u!50 &8370439490125887531

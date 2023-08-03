@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2685950334575514727}
   - component: {fileID: -8251758784196367699}
   - component: {fileID: 4495974208600698738}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BeazierMissile
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -171,3 +171,5 @@ MonoBehaviour:
   posB: 0.3
   master: {fileID: 0}
   enemy: {fileID: 0}
+  effect: {fileID: 549399869073430458, guid: d076cfd9768c00b449315aba6048a97f, type: 3}
+  destroyEfffect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5710409161150385646}
   - component: {fileID: 9050228017967494901}
   - component: {fileID: -6648497366908983124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lazer
   m_TagString: Lazer
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {fileID: 0}
-  Attack: 10
+  Attack: 4
   speed: 5
 --- !u!61 &9050228017967494901
 BoxCollider2D:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 3036156119582632065}
   - component: {fileID: 6009162080940791030}
   - component: {fileID: 5870065608104557236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lazer_body
   m_TagString: Lazer
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 397045265958732258}
   - component: {fileID: 6830017570024822268}
   - component: {fileID: 7459898130847223238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lazer_head
   m_TagString: Lazer
   m_Icon: {fileID: 0}

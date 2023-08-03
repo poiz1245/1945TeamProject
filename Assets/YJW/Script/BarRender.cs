@@ -32,8 +32,8 @@ public class BarRender : MonoBehaviour
     public void StackCompare()
     {
         energyval = player.gameObject.GetComponent<Player>().energyValue;
-        //GameManagerSJ.Instance.player.energyValue;
-            //
+
+
     }
 
     private void StackCheckImage()

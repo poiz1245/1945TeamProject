@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 41720528903940600}
   - component: {fileID: 8589029949030073457}
   - component: {fileID: 7414880617834609113}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BossBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 549399869073430458, guid: d076cfd9768c00b449315aba6048a97f, type: 3}
   Speed: 6
+  destroyEfffect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
 --- !u!58 &7414880617834609113
 CircleCollider2D:
   m_ObjectHideFlags: 0
