@@ -36,7 +36,8 @@ public class Enemy2SJ : MonoBehaviour
         transform.Translate(Vector2.down * Speed * Time.deltaTime);
         if (Hp <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
             ScoreManager.instance.monsterkill++;
 
@@ -81,7 +82,8 @@ public class Enemy2SJ : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

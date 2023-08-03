@@ -60,6 +60,7 @@ public class PBullet : MonoBehaviour
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Monster>().Damage(Attack);
+
             player.GetComponent<Player>().GazyPower(enegy);
 
 
@@ -82,6 +83,7 @@ public class PBullet : MonoBehaviour
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Boss>().Damage(Attack);
+
             player.GetComponent<Player>().GazyPower(enegy);
 
 

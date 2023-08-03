@@ -34,7 +34,8 @@ public class Lintercepter2 : MonoBehaviour
 
         if (time > 1)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
 
         if (myPos != null && PosA.transform.position != null && playerPos != null)
@@ -48,7 +49,8 @@ public class Lintercepter2 : MonoBehaviour
         }
 
         if (Elite.GetComponent<Elite>().check == false)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+        // Destroy(gameObject);
         /*else
         {
             transform.Translate(Vector2.down * Speed * Time.deltaTime);
@@ -62,7 +64,8 @@ public class Lintercepter2 : MonoBehaviour
             collision.gameObject.CompareTag("HomingMissle") || collision.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.monsterkill++;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
         }
     }

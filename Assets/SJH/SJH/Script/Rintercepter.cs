@@ -34,7 +34,8 @@ public class Rintercepter : MonoBehaviour
 
         if (time > 1)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
 
         if (myPos != null && PosA.transform.position != null && playerPos != null)
@@ -51,7 +52,8 @@ public class Rintercepter : MonoBehaviour
         }
 
         if (Elite.GetComponent<Elite>().check == false)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+        //Destroy(gameObject);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,7 +62,8 @@ public class Rintercepter : MonoBehaviour
             collision.gameObject.CompareTag("HomingMissle") || collision.gameObject.CompareTag("Player"))
         {
             ScoreManager.instance.monsterkill++;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
             Instantiate(Effect, transform.position, Quaternion.identity);
 
         }

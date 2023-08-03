@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerBulletSJ : MonoBehaviour
 {
     public float Speed = 1f;
 
     Vector2 vec2 = Vector2.down;
-    // Start is called before the first frame update
+    public float enegy = 1;
+
+    GameObject player;
     void Start()
     {
+        player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(vec2 * Speed* Time.deltaTime);
@@ -29,7 +32,10 @@ public class PlayerBulletSJ : MonoBehaviour
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
         {
+            
+            player.GetComponent<PlayerSJ>().GazyPower(enegy);
             Destroy(gameObject);
+            
         }
     }
 

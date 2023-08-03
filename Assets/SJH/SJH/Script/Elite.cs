@@ -178,7 +178,17 @@ public class Elite : MonoBehaviour
             ScoreManager.instance.Bonus++;
         }
     }
-
+  /*  IEnumerator Enemy2Spawn()
+    {
+        while (swi2)
+        {
+            yield return new WaitForSeconds(5);
+            float X = Random.Range(startPos, endPos);
+            Vector2 spawnSpot = new Vector2(X, transform.position.y);
+            GameObject monster = GameManagerSJ.Instance.pool.Get(2);
+            monster.transform.position = spawnSpot;
+        }
+    }*/
 
     void OnDestroy()
     {
@@ -192,11 +202,19 @@ public class Elite : MonoBehaviour
             while (check2)
             {
                 yield return new WaitForSeconds(0.1f);
+                GameObject intercepter = GameManagerSJ.Instance.pool.Get(7); 
+                GameObject intercepter1 = GameManagerSJ.Instance.pool.Get(8); 
+                GameObject intercepter2= GameManagerSJ.Instance.pool.Get(9); 
+                GameObject intercepter3 = GameManagerSJ.Instance.pool.Get(10);
 
-                GameObject clone1 = Instantiate(Rintercept, SpawnPos1.position, Quaternion.identity);
+                intercepter.transform.position = SpawnPos1.position;
+                intercepter1.transform.position = SpawnPos2.position;
+                intercepter2.transform.position = SpawnPos3.position;
+                intercepter3.transform.position = SpawnPos4.position;
+                /*GameObject clone1 = Instantiate(Rintercept, SpawnPos1.position, Quaternion.identity);
                 GameObject clone2 = Instantiate(Lintercept, SpawnPos2.position, Quaternion.identity);
                 GameObject clone3 = Instantiate(Rintercept2, SpawnPos3.position, Quaternion.identity);
-                GameObject clone4 = Instantiate(Lintercept2, SpawnPos4.position, Quaternion.identity);
+                GameObject clone4 = Instantiate(Lintercept2, SpawnPos4.position, Quaternion.identity);*/
 
             }
             yield return new WaitForSeconds(1f);
