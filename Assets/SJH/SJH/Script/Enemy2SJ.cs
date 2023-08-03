@@ -82,8 +82,8 @@ public class Enemy2SJ : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7367719609875235624}
   - component: {fileID: 7971029482422824364}
   - component: {fileID: 7275459222852768360}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5.1799927, y: 0}
   m_SizeDelta: {x: 20.36, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7776066161112657205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5898265766026574071}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,13 +157,13 @@ GameObject:
   - component: {fileID: 4104490467175193702}
   - component: {fileID: 6604310020629177766}
   - component: {fileID: 531702105350997296}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6639813386508786191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7400581060358731763}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 9207454265864463888}
   - component: {fileID: 5898036483005425882}
   - component: {fileID: 7332114961329450043}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,8 +331,8 @@ RectTransform:
   m_Father: {fileID: 5898265766026574071}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7959884595461271974}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ms2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 6881441185968584468}
   - component: {fileID: 6544359873069055081}
   - component: {fileID: 9054882498777030090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigMonster_dm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ Transform:
   - {fileID: 7959884595461271974}
   - {fileID: 6639813386508786191}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6021226078948818229
 SpriteRenderer:
@@ -619,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7033407922320325693}
   - component: {fileID: 1049705908268480685}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 5718577408511087436}
   - component: {fileID: 442711270204333369}
   - component: {fileID: 5969811124439843954}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

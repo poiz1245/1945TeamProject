@@ -64,6 +64,8 @@ public class Boss_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CameraShake.instance.AudioPlay();
+
         transform.GetComponent<BoxCollider2D>().enabled = false;
 
         LazerWarningArea[0].SetActive(false);

@@ -16,7 +16,7 @@ public class Elite : MonoBehaviour
     public Transform BossPos;
 
 
-
+    public GameObject dieEffect;
     public GameObject Rintercept;
     public GameObject Lintercept;
     public GameObject Rintercept2;
@@ -173,7 +173,9 @@ public class Elite : MonoBehaviour
 
         if (currunt_Hp <= 0)
         {
-            Destroy(gameObject);
+            
+            dieEffect.SetActive(true);
+            Destroy(gameObject, 3);
 
             ScoreManager.instance.monsterkill++;
             ScoreManager.instance.Bonus++;
@@ -190,7 +192,6 @@ public class Elite : MonoBehaviour
               monster.transform.position = spawnSpot;
           }
       }*/
-
     void OnDestroy()
     {
         ScoreManager.instance.UpdateScore();

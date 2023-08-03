@@ -7,7 +7,7 @@ public class SpawnManager_dm : MonoBehaviour
     float ss = -2.3f; //몬스터 생성 x값 처음
     float es = 2.3f; //몬스터 생성 y값 처음
     public float delayTime = 2; //시작
-    public float spawnStop = 10; //스폰 끝내는 시간
+    public float spawnStop = 5; //스폰 끝내는 시간
     public GameObject monster;
     public GameObject monster2;
     public GameObject Boss;
@@ -27,6 +27,7 @@ public class SpawnManager_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine("RandomSpawn");
         Invoke("Stop", spawnStop);
 
@@ -48,7 +49,7 @@ public class SpawnManager_dm : MonoBehaviour
         StartCoroutine("RandomSpawn2");
 
         //30초뒤에 2번째 몬스터 스폰을 멈추기
-        Invoke("Stop2", spawnStop + 20);
+        Invoke("Stop2", spawnStop + 5);
     }
 
     void Stop2()
@@ -63,10 +64,12 @@ public class SpawnManager_dm : MonoBehaviour
 
     IEnumerator RandomSpawn()
     {
+        yield return new WaitForSeconds(5f);
+
         while (swi)
         {
             //1초마다
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(0.7f);
             //x값 랜덤
             float x = Random.Range(ss, es);
             //x값:랜덤값 y값:자기자신값
@@ -81,7 +84,7 @@ public class SpawnManager_dm : MonoBehaviour
         while (swi2)
         {
             //1초마다
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(0.7f);
             //x값 랜덤
             float x = Random.Range(ss, es);
             //x값:랜덤값 y값:자기자신값

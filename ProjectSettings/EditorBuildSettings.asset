@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SJH/SJH/Scenes/SJH.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/SJH/SJH/Scenes/Ending.unity
+    guid: d97b1ee0079bbb54a8ef7a61a7f86549
+  - enabled: 1
+    path: Assets/YJW/Scenes/YJW.unity
+    guid: 0f464d95ef9c20649b855a7fdcc3b237
   m_configObjects: {}

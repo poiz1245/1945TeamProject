@@ -62,15 +62,15 @@ public class LArcEnemySJ : MonoBehaviour
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 

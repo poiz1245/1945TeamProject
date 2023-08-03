@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake instance;
+    AudioSource audioSource;
 
     bool switchLR = true;
     public float speed = 10;
@@ -26,7 +27,7 @@ public class CameraShake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -64,5 +65,10 @@ public class CameraShake : MonoBehaviour
     {
         shakeOnOff = false;
         transform.position = new Vector3(0, 0, transform.position.z);
+    }
+
+    public void AudioPlay()
+    {
+        audioSource.volume = 0;
     }
 }

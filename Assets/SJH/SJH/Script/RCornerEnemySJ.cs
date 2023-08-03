@@ -74,8 +74,8 @@ public class RCornerEnemySJ : MonoBehaviour
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
