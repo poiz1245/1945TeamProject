@@ -11,6 +11,9 @@ public class BossLightning_dm : MonoBehaviour
     float countTime = 8f;
     float curTime = 0;
 
+    [SerializeField]
+    GameObject bossBody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +41,13 @@ public class BossLightning_dm : MonoBehaviour
     private void OnEnable()
     {
         curTime = 0;
+    }
+
+    private void OnDisable()
+    {
+        if (bossBody.activeSelf)
+        {
+            bossBody.GetComponent<Boss_dm>().corBossBulletStart();
+        }
     }
 }

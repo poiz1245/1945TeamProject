@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3011539572415762571}
   - component: {fileID: 5268020973839626018}
-  - component: {fileID: 3317969908328518609}
   - component: {fileID: 7478726941374225847}
   - component: {fileID: 4464944640892064113}
   m_Layer: 0
@@ -157,23 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lazerBodyAnim: {fileID: 3896027421038800151}
   lazerHeadAnim: {fileID: 760117165510814039}
-  isLazer: 1
---- !u!114 &3317969908328518609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7499185460215316022}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a9cc0de0dba2f4582916eab77e4408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lazerBodyAnim: {fileID: 3896027421038800151}
-  lazerHeadAnim: {fileID: 760117165510814039}
-  exprosionPrefab: {fileID: 7628390485918774701, guid: 854b8637ec1a4f94488a4336104e269a, type: 3}
-  playerFireTransform: {fileID: 0}
+  bossBody: {fileID: 0}
   isLazer: 1
 --- !u!61 &7478726941374225847
 BoxCollider2D:

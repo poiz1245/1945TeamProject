@@ -12,7 +12,7 @@ public class Lazer_dm : MonoBehaviour
     GameObject exprosionPrefab;
     public Transform playerFireTransform = null;
     public bool isLazer = true;
-    int attack = 10;
+    int attack = 40;
     float curTime = 0;
 
     // Start is called before the first frame update
@@ -51,8 +51,10 @@ public class Lazer_dm : MonoBehaviour
                     collision.GetComponent<Boss_dm>().Damage(attack);
                 else if (collision.GetComponent<BossArm_dm>() != null)
                     collision.GetComponent<BossArm_dm>().Damage(attack);
-                
-                    
+                else if (collision.GetComponent<Octopus_dm>() != null)
+                    collision.GetComponent<Octopus_dm>().Damage(attack);
+
+                Debug.Log("¼³¸¶?");    
             }
 
         }
