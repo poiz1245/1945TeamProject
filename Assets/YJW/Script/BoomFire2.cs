@@ -35,18 +35,31 @@ public class BoomFire2 : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Monster")
+        if (collision.tag == "Monster")
         {
             collision.gameObject.GetComponent<Monster>().Damage(Attack);
         }
-        else if(collision.tag == "Boss")
+        else if (collision.tag == "Boss")
         {
             collision.gameObject.GetComponent<Boss>().Damage(Attack);
+        }
+        else if (collision.tag == "Boss2")
+        {
+            collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
+        }
+        else if (collision.tag == "BossHelper")
+        {
+            collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
+        }
+        else if (collision.tag == "BossHelper2")
+        {
+            collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
         }
         else if (collision.tag == "BossArm")
         {
             collision.gameObject.GetComponent<BossArmHp>().Damage(Attack);
-        }else if(collision.tag == "EnemyBullet")
+        }
+        else if (collision.tag == "EnemyBullet")
         {
             Destroy(collision.gameObject);
         }

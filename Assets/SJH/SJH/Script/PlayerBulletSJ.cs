@@ -10,9 +10,11 @@ public class PlayerBulletSJ : MonoBehaviour
 
     Vector2 vec2 = Vector2.down;
     public float enegy = 1;
-    
+
+    public GameObject effect; 
+
     GameObject player;
-    float pAtk;
+    public float pAtk;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -53,34 +55,41 @@ public class PlayerBulletSJ : MonoBehaviour
             else if (collision.GetComponent<BossArm_dm>() != null)
             {
                 collision.GetComponent<BossArm_dm>().Damage((int)pAtk);
+
             }
             else if (collision.GetComponent<Boss>() != null)
             {
                 collision.GetComponent<Boss>().Damage(pAtk);
+              
             }
             else if (collision.GetComponent<LastBoss>() != null)
             {
                 collision.GetComponent<LastBoss>().Damage(pAtk);
+              
             }
             else if (collision.GetComponent<HelperBoss>() != null)
             {
                 collision.GetComponent<HelperBoss>().Damage(pAtk);
+               
             }
             else if (collision.GetComponent<HelperBoss2>() != null)
             {
                 collision.GetComponent<HelperBoss2>().Damage(pAtk);
+              
 
             }
             else if (collision.GetComponent<BossArmHp>() != null)
             {
                 collision.GetComponent<BossArmHp>().Damage(pAtk);
-
+               
             }
             else if (collision.GetComponent<Monster>() != null)
             {
                 collision.GetComponent<Monster>().Damage(pAtk);
+               
 
             }
+           // Instantiate(effect, collision.transform.position, Quaternion.identity);
             player.GetComponent<PlayerSJ>().GazyPower(enegy);
             Destroy(gameObject);
 

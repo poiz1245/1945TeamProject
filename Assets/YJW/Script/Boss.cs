@@ -12,6 +12,8 @@ public class Boss : MonoBehaviour
     public GameObject self_destruct;
     public GameObject lazer;
 
+    public GameObject HitedEffect;
+
 
     int speed = 2; //이 오브젝트에 대한 속도 변수
     Vector3 pos; //현재위치
