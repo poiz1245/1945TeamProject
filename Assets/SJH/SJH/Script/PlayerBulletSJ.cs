@@ -13,12 +13,12 @@ public class PlayerBulletSJ : MonoBehaviour
     GameObject player;
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        transform.Translate(vec2 * Speed* Time.deltaTime);
+        transform.Translate(vec2 * Speed * Time.deltaTime);
     }
     public void OnMove(Vector2 vec)
     {
@@ -30,12 +30,29 @@ public class PlayerBulletSJ : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
+        Debug.Log("aaa");
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter") ||
+            collision.CompareTag("Monster"))
         {
-            
+            if (collision.GetComponent<Monster_dm>() != null)
+            {
+                collision.GetComponent<Monster_dm>().Damage(25);
+            }
+            else if (collision.GetComponent<Boss_dm>() != null)
+            {
+                collision.GetComponent<Boss_dm>().Damage(25);
+            }
+            else if (collision.GetComponent<Octopus_dm>() != null)
+            {
+                collision.GetComponent<Octopus_dm>().Damage(25);
+            }
+            else if (collision.GetComponent<BossArm_dm>() != null)
+            {
+                collision.GetComponent<BossArm_dm>().Damage(25);
+            }
             player.GetComponent<PlayerSJ>().GazyPower(enegy);
             Destroy(gameObject);
-            
+
         }
     }
 

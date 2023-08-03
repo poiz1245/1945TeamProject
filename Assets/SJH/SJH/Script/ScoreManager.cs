@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     public GameObject KillScore; // 몬스터 파괴 점수
     public GameObject BonusScore; //보너스 점수, 남은 목숨갯수, 보스킬
     public GameObject TotalScore; //총합 점수
-
+    
     public GameObject stageclear;
     public GameObject killtext;
     public GameObject timetext;
@@ -38,9 +38,12 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
             instance = this;
     }
-
+    private void Update()
+    {
+    }
     public void UpdateScore()
     {
+
         StartCoroutine(Result());
         Kill.GetComponent<TextMeshProUGUI>().text = monsterkill.ToString();
         Time.GetComponent<TextMeshProUGUI>().text = Mathf.FloorToInt(GameManagerSJ.Instance.GameTime).ToString();

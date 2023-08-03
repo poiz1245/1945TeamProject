@@ -99,6 +99,11 @@ public class BossJ : MonoBehaviour
 
         }
     }
-    
+
+    void OnDestroy()
+    {
+        ScoreManagerJw.instance.UpdateScore();
+    }
+
 
 }

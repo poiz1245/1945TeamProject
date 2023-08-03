@@ -13,7 +13,7 @@ public class HomingMissle : MonoBehaviour
     //public GameObject effect;
     private Transform nearestTarget;
     private bool isScanning = true;
-    public float count  = 0;
+    public float count  = 2;
     void Start()
     {
         ScanTargets();
@@ -43,8 +43,8 @@ public class HomingMissle : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject, count );
-            //ScanTargets();
+            /*Destroy(gameObject, count );
+            ScanTargets();*/
             transform.Translate(Vector2.up*Speed*Time.deltaTime);
 
         }
@@ -96,9 +96,25 @@ public class HomingMissle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
-            //Instantiate(effect, transform.position, Quaternion.identity);
+
+        
+        if (collision.gameObject.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter")
+            || collision.gameObject.CompareTag("Monster"))
+        {  
             Destroy(gameObject);
+            if (collision.GetComponent<Monster_dm>() != null)
+            {
+                collision.GetComponent<Monster_dm>().Damage(25);
+            }
+            else if (collision.GetComponent<Boss_dm>() != null)
+            {
+                collision.GetComponent<Boss_dm>().Damage(25);
+            }
+            else if (collision.GetComponent<Octopus_dm>() != null)
+            {
+                collision.GetComponent<Octopus_dm>().Damage(25);
+            }
+        }
     }
     private void OnBecameInvisible()
     {

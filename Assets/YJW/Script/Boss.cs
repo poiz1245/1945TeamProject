@@ -196,7 +196,8 @@ public class Boss : MonoBehaviour
     void Hide()
     {
         //보스 텍스트 객체이름 검색해서 끄기
-        GameObject.Find("TextBossWarning").SetActive(false);
+        GameObject.Find("BossWarning").SetActive(false);
+        //GameObject.Find("TextBossWarning").SetActive(false);
     }
 
     IEnumerator BossMissle()

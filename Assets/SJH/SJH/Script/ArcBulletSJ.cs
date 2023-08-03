@@ -29,7 +29,7 @@ public class ArcBulletSJ : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            GameManagerSJ.Instance.player.Heart--;
+           // GameManagerSJ.Instance.player.Heart--;
         }
     }
     private void OnBecameInvisible()

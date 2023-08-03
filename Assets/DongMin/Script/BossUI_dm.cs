@@ -28,7 +28,7 @@ public class BossUI_dm : MonoBehaviour
 
     [SerializeField]
     GameObject bossUI;
-    float uiMoveSpeed = 120f;
+    float uiMoveSpeed = 5f;
 
     [SerializeField]
     int setMaxCount = 4;
@@ -250,8 +250,9 @@ public class BossUI_dm : MonoBehaviour
 
     public void StageClear()
     {
-        nextStageBtn.SetActive(true);
-        clearText.SetActive(true);
+        //nextStageBtn.SetActive(true);
+        ScoreManager.instance.UpdateScore();
+        //clearText.SetActive(true);
     }
 
     public void NextStage()

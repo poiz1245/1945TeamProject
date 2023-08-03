@@ -25,18 +25,18 @@ public class SpawnJ : MonoBehaviour
     {
         BossWarning.SetActive(false);
         //GameClear.SetActive(false);
-        StartCoroutine(ShowIntroAndHide());
+        //StartCoroutine(ShowIntroAndHide());
     }
 
-    IEnumerator ShowIntroAndHide()
+    /*IEnumerator ShowIntroAndHide()
     {
-        Intro.SetActive(true); // Intro를 보이게 설정
+        //Intro.SetActive(true); // Intro를 보이게 설정
 
         // 5초 대기
-        yield return new WaitForSeconds(3);
+        //yield return new WaitForSeconds(3);
 
-        Intro.SetActive(false); // Intro를 숨기기 설정
-    }
+        //Intro.SetActive(false); // Intro를 숨기기 설정
+    }*/
 
 
     void Start()
@@ -72,17 +72,17 @@ public class SpawnJ : MonoBehaviour
         Vector3 pos = new Vector3(0, 3.0f, 0);
 
         BossWarning.SetActive(true);
-        
+
         //보스출현
         Instantiate(BossJ, pos, Quaternion.identity);
         Invoke("WarningAct", 1.5f);
-        
+
 
 
 
     }
-        //코루틴으로 랜덤하게 생성하기
-        IEnumerator RandomSpawn()
+    //코루틴으로 랜덤하게 생성하기
+    IEnumerator RandomSpawn()
     {
         while (swi)
         {

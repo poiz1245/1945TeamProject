@@ -32,7 +32,11 @@ public class HelperBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Enemy") || collision.CompareTag("InterCepter") || collision.CompareTag("Elite")
+            ||collision.CompareTag("Monster"))
+        {
+            Destroy(gameObject);
+        }
 
         if (collision.tag == "BossArm")
         {
@@ -51,13 +55,15 @@ public class HelperBullet : MonoBehaviour
 
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
-            collision.gameObject.GetComponent<Monster>().Damage(Attack);
+            if (collision.GetComponent<Monster_dm>() == null)
+                collision.gameObject.GetComponent<Monster>().Damage(Attack);
+
 
 
 
 
             //이펙트 생성하기
-           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 

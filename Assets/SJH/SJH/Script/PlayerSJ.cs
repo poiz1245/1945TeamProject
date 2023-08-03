@@ -43,9 +43,19 @@ public class PlayerSJ : MonoBehaviour
     bool check = false;
     bool check2 = false;
 
+    float limitX = 2.529f;
+    float limitY = 4.695f;
+
+    [SerializeField]
+    bool dmScene = false;
+
     private void Start()
     {
-        StartCoroutine(VolumeUp());
+        if (dmScene)
+        {
+
+            StartCoroutine(VolumeUp());
+        }
         gazyStack = 0;
     }
     void Update()
@@ -55,6 +65,14 @@ public class PlayerSJ : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
         transform.Translate(moveHorizontal, moveVertical, 0);
+
+        if (dmScene)
+        {
+            transform.position = new Vector2(
+            Mathf.Clamp(transform.position.x, -limitX, limitX),
+            Mathf.Clamp(transform.position.y, -limitY, limitY));
+        }
+
 
         if (Input.GetKey(KeyCode.Space) && !check)
         {
@@ -190,7 +208,7 @@ public class PlayerSJ : MonoBehaviour
 
         if (Heart < 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Heart = 0;
         }
 
@@ -217,11 +235,11 @@ public class PlayerSJ : MonoBehaviour
         float scaleSpeed = 0.01f;
         yield return new WaitForSeconds(2.5f);
 
-        while (gameObject.transform.localScale.x < 0.45f)
+        while (gameObject.transform.localScale.x < 0.25f)
         {
             yield return new WaitForSeconds(0.1f);
-            gameObject.transform.localScale = new Vector3(0.25f + scaleSpeed,
-                0.25f + scaleSpeed, 0.25f + scaleSpeed);
+            gameObject.transform.localScale = new Vector3(0.15f + scaleSpeed,
+                0.15f + scaleSpeed, 0.15f + scaleSpeed);
             scaleSpeed += 0.01f;
         }
     }

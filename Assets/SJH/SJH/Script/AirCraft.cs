@@ -6,7 +6,7 @@ public class AirCraft : MonoBehaviour
 {
     Rigidbody2D rigid;
 
-
+    public float count = 0;
     public float gravityScale = 0.3f;
     public float startTime = 4;
     
@@ -20,7 +20,8 @@ public class AirCraft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManagerSJ.Instance.GameTime > startTime) 
+        count += Time.deltaTime;
+        if(count > startTime) 
         {
             rigid.gravityScale = gravityScale;
         }

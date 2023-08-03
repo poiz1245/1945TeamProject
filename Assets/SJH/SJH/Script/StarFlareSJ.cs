@@ -45,8 +45,8 @@ public class StarFlareSJ : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.CompareTag("Player"))
-            GameManagerSJ.Instance.player.Heart--;
+        //if (collision.CompareTag("Player"))
+            //GameManagerSJ.Instance.player.Heart--;
 
     }
 }

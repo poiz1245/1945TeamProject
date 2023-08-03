@@ -15,6 +15,7 @@ public class GameManagerSJ : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
+        
     }
 
     // Update is called once per frame

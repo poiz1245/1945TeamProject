@@ -27,10 +27,10 @@ public class SpawnManager_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine("RandomSpawn");
-        //Invoke("Stop", spawnStop);
+        StartCoroutine("RandomSpawn");
+        Invoke("Stop", spawnStop);
 
-        RandomSpawn3();
+        //RandomSpawn3();
     }
 
     // Update is called once per frame
