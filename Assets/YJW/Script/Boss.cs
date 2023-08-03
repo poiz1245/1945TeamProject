@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     public GameObject effect; //이 객체가 파괴 될때마다 호출될 이펙트
     public GameObject lastBoss; //이 객체가 완전히 파괴될때 호출될 오브젝트
     public GameObject self_destruct;
+    public GameObject lazer;
 
 
     int speed = 2; //이 오브젝트에 대한 속도 변수
@@ -33,6 +34,7 @@ public class Boss : MonoBehaviour
     public GameObject mb2;
     public Transform tr;
     public Transform tr2;
+    public Transform lazerZone;
     //보스 통상 패턴에 사용될 위치와 거기에 사용될 탄 오브젝트
 
 
@@ -59,6 +61,8 @@ public class Boss : MonoBehaviour
 
     public bool isHit = false;
 
+
+
     private void Awake()
     {
        
@@ -73,9 +77,9 @@ public class Boss : MonoBehaviour
     {
         pos = transform.position;
         //보스 나타나면 Hide함수 1초뒤 동작
-        Invoke("Hide", 1);
+        //Invoke("Hide", 1);
 
-        
+        BossUI_dm.instance.StartSet_ver2();
 
     }
 
@@ -124,13 +128,19 @@ public class Boss : MonoBehaviour
             if (StartPaze2Conut == 0)
             {
                 Start2Paze();
+                Instantiate(lazer, lazerZone.transform.position, Quaternion.identity);
                 StartPaze2Conut++;
-            }
-            if(timer % 2 ==0 )
-            {
-                StartPaze2Conut = 0;
                 timer = 0;
+                
+              
             }
+
+
+            if (timer % 10 > 9.97f)
+            {
+                Instantiate(lazer, lazerZone.transform.position, Quaternion.identity);
+            }
+
         }
         else if(HP>0 && HP<=1000)
         {
@@ -166,20 +176,26 @@ public class Boss : MonoBehaviour
     {
         HP -= attack;
 
-        Debug.Log("데미지 받았음");
+        BossUI_dm.instance.Damage(BossUI_dm.HP.body, HP);
+
+       // Debug.Log("데미지 받았음");
         StartCoroutine(CoolHit());
 
         if (HP <= 0)
         {
             HP = 0;
 
-            Destroy(gameObject);
+            ScoreManager.instance.Bonus++;
+            ScoreManager.instance.monsterkill++;
+
 
             Instantiate(lastBoss, transform.position, Quaternion.identity);
-
+            BossUI_dm.instance.SetActiveFalseSlider(BossUI_dm.HP.body);
+            BossUI_dm.instance.CorStartSliderSet(BossUI_dm.HP.octopus);
 
             Instantiate(effect, transform.position, Quaternion.identity);
 
+            Destroy(gameObject);
             //    Destroy(effect, 0.5f);
 
         }
@@ -193,11 +209,12 @@ public class Boss : MonoBehaviour
         StartCoroutine(CircleFire()); //코루틴 실행 함수 동작
     }
 
-    void Hide()
+   /* void Hide()
     {
         //보스 텍스트 객체이름 검색해서 끄기
-        GameObject.Find("TextBossWarning").SetActive(false);
-    }
+        GameObject.Find("BossWarning").SetActive(false);
+        //GameObject.Find("TextBossWarning").SetActive(false);
+    }*/
 
     IEnumerator BossMissle()
     {
@@ -310,7 +327,7 @@ public class Boss : MonoBehaviour
 
     void Summons()
     {
-        Debug.Log("소환되었음");
+        //Debug.Log("소환되었음");
         for (int i = 0; i < 4; i++)
         {
             Instantiate(SummonsMon[i], transform.position, Quaternion.identity);

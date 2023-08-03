@@ -64,6 +64,8 @@ public class Boss_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CameraShake.instance.AudioPlay();
+
         transform.GetComponent<BoxCollider2D>().enabled = false;
 
         LazerWarningArea[0].SetActive(false);
@@ -207,7 +209,7 @@ public class Boss_dm : MonoBehaviour
             {
                 StopCoroutine(corBossPattern);
             }
-            //if (corBossBullet != null)
+            if (corBossBullet != null)
             {
                 StopCoroutine(corBossBullet);
             }
@@ -260,21 +262,22 @@ public class Boss_dm : MonoBehaviour
             if (transform.localScale.x <= 0)
             {
                 transform.localScale = new Vector3(0, 0, 1);
+                
                 break;
             }
 
             yield return null;
         }
-
+        ScoreManager.instance.Bonus++;
         BossUI_dm.instance.StageClear();
     }
 
     void Hide()
     {
         //보스 텍스트 객체이름 검색해서 끄기
-        if (GameObject.Find("TextBossWarning") != null)
+        if (GameObject.Find("BossWarning") != null)
         {
-            GameObject.Find("TextBossWarning").SetActive(false);
+            GameObject.Find("BossWarning").SetActive(false);
         }
 
         isBattle = true;

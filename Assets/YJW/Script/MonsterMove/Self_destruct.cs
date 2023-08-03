@@ -9,6 +9,7 @@ public class Self_destruct : MonoBehaviour
     public float HP = 1000;
     public float Speed = 3;
     public float Delay = 1f;
+    public bool isHit = false;
 
     public GameObject bullet;
 
@@ -62,6 +63,7 @@ public class Self_destruct : MonoBehaviour
 
         HP -= attack;
         Debug.Log("데미지 받았음");
+        StartCoroutine(CoolHit());
 
         if (HP <= 0)
         {
@@ -82,6 +84,14 @@ public class Self_destruct : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
+    IEnumerator CoolHit()
+    {
+        var hit = transform.GetComponent<SpriteRenderer>();
+        isHit = true;
+        hit.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        hit.color = Color.white;
+        isHit = false;
+    }
 
 }

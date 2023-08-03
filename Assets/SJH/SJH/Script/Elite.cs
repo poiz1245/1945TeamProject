@@ -16,7 +16,7 @@ public class Elite : MonoBehaviour
     public Transform BossPos;
 
 
-
+    public GameObject dieEffect;
     public GameObject Rintercept;
     public GameObject Lintercept;
     public GameObject Rintercept2;
@@ -51,6 +51,7 @@ public class Elite : MonoBehaviour
     }
     void Start()
     {
+        BossUI_dm.instance.StartSet_ver3(BossUI_dm.HP.body, (int)MaxHp);
         Invoke("Pattern1", 3);
     }
 
@@ -172,14 +173,25 @@ public class Elite : MonoBehaviour
 
         if (currunt_Hp <= 0)
         {
-            Destroy(gameObject);
+            
+            dieEffect.SetActive(true);
+            Destroy(gameObject, 3);
 
             ScoreManager.instance.monsterkill++;
             ScoreManager.instance.Bonus++;
         }
     }
-
-
+    /*  IEnumerator Enemy2Spawn()
+      {
+          while (swi2)
+          {
+              yield return new WaitForSeconds(5);
+              float X = Random.Range(startPos, endPos);
+              Vector2 spawnSpot = new Vector2(X, transform.position.y);
+              GameObject monster = GameManagerSJ.Instance.pool.Get(2);
+              monster.transform.position = spawnSpot;
+          }
+      }*/
     void OnDestroy()
     {
         ScoreManager.instance.UpdateScore();
@@ -192,11 +204,19 @@ public class Elite : MonoBehaviour
             while (check2)
             {
                 yield return new WaitForSeconds(0.1f);
+                GameObject intercepter = GameManagerSJ.Instance.pool.Get(7);
+                GameObject intercepter1 = GameManagerSJ.Instance.pool.Get(8);
+                GameObject intercepter2 = GameManagerSJ.Instance.pool.Get(9);
+                GameObject intercepter3 = GameManagerSJ.Instance.pool.Get(10);
 
-                GameObject clone1 = Instantiate(Rintercept, SpawnPos1.position, Quaternion.identity);
+                intercepter.transform.position = SpawnPos1.position;
+                intercepter1.transform.position = SpawnPos2.position;
+                intercepter2.transform.position = SpawnPos3.position;
+                intercepter3.transform.position = SpawnPos4.position;
+                /*GameObject clone1 = Instantiate(Rintercept, SpawnPos1.position, Quaternion.identity);
                 GameObject clone2 = Instantiate(Lintercept, SpawnPos2.position, Quaternion.identity);
                 GameObject clone3 = Instantiate(Rintercept2, SpawnPos3.position, Quaternion.identity);
-                GameObject clone4 = Instantiate(Lintercept2, SpawnPos4.position, Quaternion.identity);
+                GameObject clone4 = Instantiate(Lintercept2, SpawnPos4.position, Quaternion.identity);*/
 
             }
             yield return new WaitForSeconds(1f);
@@ -287,6 +307,8 @@ public class Elite : MonoBehaviour
             currunt_Hp -= GameManagerSJ.Instance.player.AttackPower;
         if (collision.gameObject.CompareTag("HomingMissle"))
             currunt_Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
+
+        BossUI_dm.instance.Damage(BossUI_dm.HP.body, currunt_Hp);
     }
 
 }

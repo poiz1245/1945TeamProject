@@ -154,13 +154,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f774dc6b45afdda419bf770154ae5365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 150
+  HP: 300
   Speed: 3
   Delay: 1
   bullet: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
+  bullet2: {fileID: 4937309084924726283, guid: 80c35331c3916bd4c87257f7af64936c, type: 3}
   effect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
-  Item: {fileID: 5503971838979896313, guid: aee1b665c477fde4ead450bb7e73e78a, type: 3}
-  SpawnInterval: 0.5
+  Item: {fileID: 3247606516886110032, guid: 5d688874b44df3944b5bcfdc99269d38, type: 3}
+  SpawnInterval: 0.01
   isHit: 0
 --- !u!61 &4315802376258970392
 BoxCollider2D:

@@ -13,7 +13,6 @@ public class ItemSJ : MonoBehaviour
     int dirnoy = 1; 
     void Start()
     {
-      
         float randomval = Random.value;
         movex = (randomval < 0.5f) ? -1 : 1;
         movey = (randomval < 0.5f) ? -1 : 1;

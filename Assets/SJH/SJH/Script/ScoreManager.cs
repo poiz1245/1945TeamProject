@@ -10,7 +10,18 @@ using UnityEditor;
 
 public class ScoreManager : MonoBehaviour
 {
+    enum SceneName
+    {
+        stage1,
+        stage2,
+        stage3
+    };
+
     public static ScoreManager instance;
+
+    [SerializeField]
+    SceneName sceneName;
+
 
     //public float time = 0; // 경과 시간
     public float monsterkill = 0;      // 몬스터 잡은 갯수
@@ -26,7 +37,7 @@ public class ScoreManager : MonoBehaviour
     public GameObject KillScore; // 몬스터 파괴 점수
     public GameObject BonusScore; //보너스 점수, 남은 목숨갯수, 보스킬
     public GameObject TotalScore; //총합 점수
-
+    
     public GameObject stageclear;
     public GameObject killtext;
     public GameObject timetext;
@@ -38,9 +49,12 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
             instance = this;
     }
-
+    private void Update()
+    {
+    }
     public void UpdateScore()
     {
+
         StartCoroutine(Result());
         Kill.GetComponent<TextMeshProUGUI>().text = monsterkill.ToString();
         Time.GetComponent<TextMeshProUGUI>().text = Mathf.FloorToInt(GameManagerSJ.Instance.GameTime).ToString();
@@ -120,7 +134,24 @@ public class ScoreManager : MonoBehaviour
             yield return null;
         }
 
-        current = target;
+
+        if (sceneName == SceneName.stage1)
+        {
+            totalscore = target;
+            PlayerPrefs.SetFloat("Totalscore1", totalscore);
+        }
+        else if (sceneName == SceneName.stage2)
+        {
+            totalscore = target;
+            PlayerPrefs.SetFloat("Totalscore2", totalscore);
+        }
+        else if (sceneName == SceneName.stage3)
+        {
+            totalscore = target;
+            PlayerPrefs.SetFloat("Totalscore3", totalscore);
+        }
+
+
         TotalScore.GetComponent<TextMeshProUGUI>().text = ((int)current).ToString();
     }
 }

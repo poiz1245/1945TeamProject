@@ -10,7 +10,8 @@ public class HelperBoss2 : MonoBehaviour
     public float Delay = 2f;
 
     public GameObject bullet;
-   
+    public GameObject bullet2;
+
     GameObject ms2;
     public GameObject effect;
     public GameObject Item = null;
@@ -56,9 +57,11 @@ public class HelperBoss2 : MonoBehaviour
         {
             //총알 생성
             GameObject temp = Instantiate(bullet, gameObject.transform.position, ms2.transform.rotation);
+            GameObject temp2 = Instantiate(bullet2, gameObject.transform.position, ms2.transform.rotation);
 
             //2초마다 삭제
             Destroy(temp, 2f);
+            Destroy(temp2, 2f);
 
             //총알 생성 위치를 (0,0) 좌표로 한다.
             // temp.transform.position = Vector2.zero;
@@ -66,6 +69,9 @@ public class HelperBoss2 : MonoBehaviour
             //Z에 값이 변해야 회전이 이루어지므로, Z에 i를 대입한다.
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
             temp.transform.rotation = transform.rotation;
+
+            temp2.transform.rotation = Quaternion.Euler(0, 0, i);
+            temp2.transform.rotation = transform.rotation;
 
 
         }
@@ -81,8 +87,8 @@ public class HelperBoss2 : MonoBehaviour
         {
             HP = 0;
 
+            ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
-
             Instantiate(Item, transform.position, Quaternion.identity);
             Instantiate(effect, transform.position, Quaternion.identity);
 
@@ -95,7 +101,7 @@ public class HelperBoss2 : MonoBehaviour
     IEnumerator IsCoolTime()
     {
         isCool = true;
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(SpawnInterval);
         isCool = false;
 
     }

@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 4
   exprosionPrefab: {fileID: 7628390485918774701, guid: 854b8637ec1a4f94488a4336104e269a, type: 3}
   itemPrefab: {fileID: 2407817773535355296, guid: 7c62c098019a1a44a966269bf2a1a875, type: 3}
+  attack: 10
 --- !u!50 &882570449639242500
 Rigidbody2D:
   serializedVersion: 4

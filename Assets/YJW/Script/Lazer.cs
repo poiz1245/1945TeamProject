@@ -6,14 +6,14 @@ public class Lazer : MonoBehaviour
 {
     public GameObject targetPos;
 
-    public int Attack = 2;
+    public float Attack = 0.4f;
 
     public float speed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = GameObject.Find("Player").transform.Find("pos").gameObject;
+        targetPos = GameObject.FindWithTag("Player").transform.Find("Gun").gameObject;
     }
 
     // Update is called once per frame
@@ -22,14 +22,14 @@ public class Lazer : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPos.transform.position, speed);
 
         //미사일 지우기
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 4f);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
 
 
-        if (collision.tag == "Monster")
+        if (collision.CompareTag("Monster"))
         {
 
           
@@ -38,7 +38,7 @@ public class Lazer : MonoBehaviour
 
 
         }
-        else if (collision.tag == "BossArm")
+        else if (collision.CompareTag("BossArm"))
         {
 
             
@@ -47,7 +47,7 @@ public class Lazer : MonoBehaviour
 
 
         }
-        else if (collision.tag == "Boss")
+        else if (collision.CompareTag("Boss"))
         {
 
 
@@ -56,6 +56,24 @@ public class Lazer : MonoBehaviour
 
 
         }
+        else if (collision.CompareTag("Boss2"))
+        {
+
+
+
+            collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
+
+
+        }
+        else if(collision.CompareTag("BossHelper"))
+        {
+            collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
+        }
+        else if(collision.CompareTag("BossHelper2"))
+        {
+            collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
+        }
+
 
         Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();
         rb.sleepMode = RigidbodySleepMode2D.NeverSleep;

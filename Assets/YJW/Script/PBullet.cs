@@ -47,7 +47,7 @@ public class PBullet : MonoBehaviour
             collision.gameObject.GetComponent<BossArmHp>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
 
-            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            Instantiate(effect, transform.position, Quaternion.identity);
             //미사일 지우기
             Destroy(gameObject);
 
@@ -61,11 +61,12 @@ public class PBullet : MonoBehaviour
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Monster>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
 
 
             //이펙트 생성하기
-           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -83,11 +84,12 @@ public class PBullet : MonoBehaviour
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<Boss>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
 
 
             //이펙트 생성하기
-           // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            // GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
             //이펙트 1초뒤에 지우기
             // Destroy(go, 1);
 
@@ -105,6 +107,7 @@ public class PBullet : MonoBehaviour
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
 
 
@@ -124,6 +127,7 @@ public class PBullet : MonoBehaviour
             collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
             //collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
             //미사일 지우기
             Destroy(gameObject);
@@ -134,6 +138,7 @@ public class PBullet : MonoBehaviour
             //collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
             collision.gameObject.GetComponent<HelperBoss2>().Damage(Attack);
             player.GetComponent<Player>().GazyPower(enegy);
+            Instantiate(effect, transform.position, Quaternion.identity);
 
             //미사일 지우기
             Destroy(gameObject);

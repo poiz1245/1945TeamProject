@@ -7,7 +7,7 @@ public class StartButton : MonoBehaviour
 {
     public void GameStart()
     {
-        SceneManager.LoadScene("SJH");
+        SceneManager.LoadScene("DongMinScene 1");
 
     }
 }

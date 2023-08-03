@@ -11,7 +11,8 @@ public class Monster_dm : MonoBehaviour
     public Transform ms2;
     public GameObject bullet;
     //아이템 가져오기
-    public GameObject Item = null;
+    public GameObject Item1 = null;
+    public GameObject Item2 = null;
     public GameObject exprosion;
     //Rigidbody2D rb;
 
@@ -27,6 +28,7 @@ public class Monster_dm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
         //한번 호출
@@ -46,7 +48,7 @@ public class Monster_dm : MonoBehaviour
     {
         curTime += Time.deltaTime;
 
-        if(curTime >= endTime && !end)
+        if (curTime >= endTime && !end)
         {
             //Debug.Log("?????");
             StopCoroutine("startMove");
@@ -63,7 +65,24 @@ public class Monster_dm : MonoBehaviour
     public void ItemDrop()
     {
         //아이템 생성
-        Instantiate(Item, transform.position, Quaternion.identity);
+        int rnd = 0;
+        rnd = Random.Range(0, 16);
+
+        if (rnd >= 0 && rnd < 3)
+        {
+
+            Instantiate(Item1, transform.position, Quaternion.identity);
+        }
+        if (rnd >= 3 && rnd < 6)
+        {
+
+            Instantiate(Item2, transform.position, Quaternion.identity);
+        }
+        if (rnd >= 6 && rnd < 16)
+        {
+
+            return;
+        }
 
     }
 
@@ -77,6 +96,7 @@ public class Monster_dm : MonoBehaviour
         {
             ItemDrop();
             Destroy(Instantiate(exprosion, transform.position, Quaternion.identity), 0.4f);
+            ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
         }
     }
@@ -88,7 +108,7 @@ public class Monster_dm : MonoBehaviour
         while (targetPos != (Vector2)transform.position)
         {
             //Debug.Log(startPos.position + ", " + transform.position);
-            transform.position = Vector2.Lerp(transform.position, targetPos, Time.deltaTime*2);
+            transform.position = Vector2.Lerp(transform.position, targetPos, Time.deltaTime * 2);
             //transform.Translate(Vector2.down * speed * Time.deltaTime);
             yield return null;
         }
@@ -116,20 +136,20 @@ public class Monster_dm : MonoBehaviour
         {
             transform.Translate(new Vector2(x, y) * Time.deltaTime);
             count++;
-            if(count == 10)
+            if (count == 10)
             {
                 x = x * 0.9f;
                 y = y * 1.1f;
                 count = 0;
             }
-            
-            
+
+
             yield return null;
         }
     }
 
     private void OnDestroy()
     {
-        
+
     }
 }

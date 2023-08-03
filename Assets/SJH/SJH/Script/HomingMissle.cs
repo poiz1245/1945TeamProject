@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.GraphicsBuffer;
 
 public class HomingMissle : MonoBehaviour
@@ -8,14 +10,19 @@ public class HomingMissle : MonoBehaviour
     public float Speed = 10;
     public float ScanRange;
     public float rotationSpeed = 5f;
-
+    
     public LayerMask targetLayer;
     //public GameObject effect;
     private Transform nearestTarget;
     private bool isScanning = true;
-    public float count  = 0;
+    public float count  = 2;
+
+    GameObject player;
+    float pAtk;
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        pAtk = player.GetComponent<PlayerSJ>().AttackPower;
         ScanTargets();
     }
 
@@ -40,13 +47,14 @@ public class HomingMissle : MonoBehaviour
             Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
             Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotationSpeed * Time.deltaTime);
             transform.rotation = rotation;
+            Destroy(gameObject, 3);
         }
         else
         {
-            //Destroy(gameObject, count );
-            //ScanTargets();
+            /*Destroy(gameObject, count );
+            ScanTargets();*/
             transform.Translate(Vector2.up*Speed*Time.deltaTime);
-
+            Destroy(gameObject, 3);
         }
 
 
@@ -96,14 +104,63 @@ public class HomingMissle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter"))
-            //Instantiate(effect, transform.position, Quaternion.identity);
+
+
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Elite") || collision.CompareTag("InterCepter") ||
+            collision.CompareTag("Monster") || collision.CompareTag("Boss") || collision.CompareTag("BossArm")
+            || collision.CompareTag("Boss2") || collision.CompareTag("BossHelper") || collision.CompareTag("BossHelper2"))
+        {
+            if (collision.GetComponent<Monster_dm>() != null)
+            {
+                collision.GetComponent<Monster_dm>().Damage((int)pAtk);
+            }
+            else if (collision.GetComponent<Boss_dm>() != null)
+            {
+                collision.GetComponent<Boss_dm>().Damage((int)pAtk);
+            }
+            else if (collision.GetComponent<Octopus_dm>() != null)
+            {
+                collision.GetComponent<Octopus_dm>().Damage((int)pAtk);
+            }
+            else if (collision.GetComponent<BossArm_dm>() != null)
+            {
+                collision.GetComponent<BossArm_dm>().Damage((int)pAtk);
+            }
+            else if (collision.GetComponent<Boss>() != null)
+            {
+                collision.GetComponent<Boss>().Damage(pAtk);
+            }
+            else if (collision.GetComponent<LastBoss>() != null)
+            {
+                collision.GetComponent<LastBoss>().Damage(pAtk);
+            }
+            else if (collision.GetComponent<HelperBoss>() != null)
+            {
+                collision.GetComponent<HelperBoss>().Damage(pAtk);
+            }
+            else if (collision.GetComponent<HelperBoss2>() != null)
+            {
+                collision.GetComponent<HelperBoss2>().Damage(pAtk);
+
+            }
+            else if (collision.GetComponent<BossArmHp>() != null)
+            {
+                collision.GetComponent<BossArmHp>().Damage(pAtk);
+
+            }
+            else if (collision.GetComponent<Monster>() != null)
+            {
+                collision.GetComponent<Monster>().Damage(pAtk);
+
+            }
+
             Destroy(gameObject);
+        }
+      
+
     }
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
-
-
 }

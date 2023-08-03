@@ -6,6 +6,7 @@ public class BossTraceBullet : MonoBehaviour
 {
     public GameObject effect;
     public float Speed = 3f;
+    public GameObject destroyEfffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +23,22 @@ public class BossTraceBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            //플레이어 지우기
-            // Destroy(collision.gameObject);
-            //미사일 지우기
-            // Destroy(gameObject);
+            Instantiate(destroyEfffect, collision.transform.position, Quaternion.identity);
         }
-        else if (collision.tag == "BombAir")
+        else if (collision.CompareTag("BombAir"))
         {
-            Instantiate(effect, collision.transform.position, Quaternion.identity);
+            //Instantiate(effect, collision.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Boom"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Lazer"))
+        {
+
             Destroy(gameObject);
         }
     }

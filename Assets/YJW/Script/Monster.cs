@@ -1,4 +1,4 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,15 +11,17 @@ public class Monster : MonoBehaviour
     public Transform ms;
     public Transform ms2;
     public GameObject bullet;
+    public bool isHit = false;
 
-   
+
     public GameObject effect;
 
-    public GameObject Item = null;
+    public GameObject Item1 = null;
+    public GameObject Item2 = null;
 
     void Start()
     {
-       
+
         //한번 호출
         Invoke("CreateBullet", Delay);
     }
@@ -30,16 +32,21 @@ public class Monster : MonoBehaviour
         Instantiate(bullet, ms2.position, Quaternion.identity);
         Invoke("CreateBullet", Delay);
     }
-    
+
     void Update()
     {
         //아래방향으로 움직여라
-       // transform.Translate(Vector2.down * Speed * Time.deltaTime);
+        // transform.Translate(Vector2.down * Speed * Time.deltaTime);
     }
 
     public void ItemDrop()
     {
-        Instantiate(Item, transform.position, Quaternion.identity);
+        float rnd = 0;
+        rnd = Random.Range(0, 100);
+        if (rnd <= 50)
+            Instantiate(Item1, transform.position, Quaternion.identity);
+        if (rnd >= 50)
+            Instantiate(Item2, transform.position, Quaternion.identity);
     }
 
 
@@ -49,18 +56,19 @@ public class Monster : MonoBehaviour
 
 
         HP -= attack;
-        Debug.Log("데미지 받았음");
-      
+        //Debug.Log("데미지 받았음");
+        StartCoroutine(CoolHit());
         if (HP <= 0)
         {
             HP = 0;
 
+            ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
             ItemDrop();
 
             Instantiate(effect, transform.position, Quaternion.identity);
 
-        //    Destroy(effect, 0.5f);
+            //    Destroy(effect, 0.5f);
 
 
         }
@@ -71,6 +79,15 @@ public class Monster : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator CoolHit()
+    {
+        var hit = transform.GetComponent<SpriteRenderer>();
+        isHit = true;
+        hit.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        hit.color = Color.white;
+        isHit = false;
+    }
 
 
 

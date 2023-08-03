@@ -192,8 +192,10 @@ MonoBehaviour:
   ms: {fileID: 3946409213833183115}
   ms2: {fileID: 5896208066509380209}
   bullet: {fileID: 2672801256838946107, guid: 8dedc62605f290f4787dc660365e00a0, type: 3}
+  isHit: 0
   effect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
-  Item: {fileID: 5503971838979896313, guid: aee1b665c477fde4ead450bb7e73e78a, type: 3}
+  Item1: {fileID: 3247606516886110032, guid: 2c5592cbb0f36244bae4901e47e80c79, type: 3}
+  Item2: {fileID: 7795897562747938050, guid: 6858c719c17ddd944b054b6aaacdaa7d, type: 3}
 --- !u!50 &5968254310868534523
 Rigidbody2D:
   serializedVersion: 4
@@ -278,3 +280,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e4303c0a8558246a8b244e89efa97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 3

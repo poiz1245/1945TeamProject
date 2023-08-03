@@ -36,7 +36,9 @@ public class LArcEnemySJ : MonoBehaviour
         
          else
          {
-             Destroy(gameObject);
+            gameObject.SetActive(false);
+            //gameobject.SetActive(false);
+             //Destroy(gameObject);
          }
     }
     IEnumerator CreatBullet()
@@ -50,7 +52,8 @@ public class LArcEnemySJ : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,12 +62,14 @@ public class LArcEnemySJ : MonoBehaviour
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
+            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
+            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -35,7 +35,8 @@ public class RArcEnemySJ : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
 
     }
@@ -50,7 +51,8 @@ public class RArcEnemySJ : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,12 +61,14 @@ public class RArcEnemySJ : MonoBehaviour
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
+            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
+            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -56,11 +56,13 @@ public class LStopEnemy3SJ : MonoBehaviour
 
         if (moveEnd)
         {
+            //gameObject.SetActive(false);
             Destroy(gameObject, 2);
         }
 
         if (Hp <= 0)
         {
+            //gameObject.SetActive(false);
             Destroy(gameObject);
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
@@ -81,6 +83,7 @@ public class LStopEnemy3SJ : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
+        //gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
@@ -95,5 +98,6 @@ public class LStopEnemy3SJ : MonoBehaviour
             Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
         }
     }
+
 
 }
