@@ -98,6 +98,25 @@ public class BossUI_dm : MonoBehaviour
         }
     }
 
+    public void Damage(HP hpSelect, float hp)
+    {
+        switch (hpSelect)
+        {
+            case HP.body:
+                bodySlider.value = hp / bodyMaxHp;
+                break;
+            case HP.leftArm:
+                leftArmSlider.value = hp / leftMaxHp;
+                break;
+            case HP.rightArm:
+                rightArmSlider.value = hp / rightMaxHp;
+                break;
+            case HP.octopus:
+                octopusSlider.value = hp / octoMaxHp;
+                break;
+        }
+    }
+
     public void SetActiveFalseSlider(HP hpSelect)
     {
         switch (hpSelect)
@@ -147,6 +166,25 @@ public class BossUI_dm : MonoBehaviour
         }
     }
 
+    public void StartSet_ver2()
+    {
+        bodyMaxHp = 4000;
+        bodySlider.value = 0;
+
+        octoMaxHp = 3000;
+        octopusSlider.value = 0;
+
+        StartCoroutine(StartAct_ver2());
+    }
+
+    public void StartSet_ver3(HP hpSelect, int maxHp)
+    {
+        bodyMaxHp = maxHp;
+        bodySlider.value = 0;
+
+        StartCoroutine(StartAct_ver2());
+    }
+
     //public void StartActive()
     //{
     //    StartCoroutine(StartAct());
@@ -174,6 +212,41 @@ public class BossUI_dm : MonoBehaviour
                     startSlider = true;
                     StartCoroutine(StartSliderSet(leftArmSlider));
                     StartCoroutine(StartSliderSet(rightArmSlider));
+                }
+
+                if (rb.velocity.y >= -0.1f)
+                {
+                    rb.velocity = Vector2.zero;
+                    break;
+                }
+            }
+
+            yield return null;
+        }
+
+    }
+
+    IEnumerator StartAct_ver2()
+    {
+        Rigidbody2D rb = bossUI.GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.down * 4, ForceMode2D.Impulse);
+
+        float curTime = 0;
+        bool startSlider = false;
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            if (curTime >= 0.1f)
+            {
+                curTime = 0;
+                rb.velocity = rb.velocity * 0.8f;
+
+                if (rb.velocity.y >= -3f && !startSlider)
+                {
+                    startSlider = true;
+                    StartCoroutine(StartSliderSet(bodySlider));
                 }
 
                 if (rb.velocity.y >= -0.1f)

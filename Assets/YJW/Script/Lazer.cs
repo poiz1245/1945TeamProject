@@ -13,7 +13,7 @@ public class Lazer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = GameObject.Find("Player").transform.Find("pos").gameObject;
+        targetPos = GameObject.FindWithTag("Player").transform.Find("Gun").gameObject;
     }
 
     // Update is called once per frame

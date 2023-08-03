@@ -86,6 +86,7 @@ public class HelperBoss : MonoBehaviour
         {
             HP = 0;
 
+            ScoreManager.instance.monsterkill++;
             Destroy(gameObject);
 
             Instantiate(Item, transform.position, Quaternion.identity);

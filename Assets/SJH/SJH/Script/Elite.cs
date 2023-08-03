@@ -51,6 +51,7 @@ public class Elite : MonoBehaviour
     }
     void Start()
     {
+        BossUI_dm.instance.StartSet_ver3(BossUI_dm.HP.body, (int)MaxHp);
         Invoke("Pattern1", 3);
     }
 
@@ -178,17 +179,17 @@ public class Elite : MonoBehaviour
             ScoreManager.instance.Bonus++;
         }
     }
-  /*  IEnumerator Enemy2Spawn()
-    {
-        while (swi2)
-        {
-            yield return new WaitForSeconds(5);
-            float X = Random.Range(startPos, endPos);
-            Vector2 spawnSpot = new Vector2(X, transform.position.y);
-            GameObject monster = GameManagerSJ.Instance.pool.Get(2);
-            monster.transform.position = spawnSpot;
-        }
-    }*/
+    /*  IEnumerator Enemy2Spawn()
+      {
+          while (swi2)
+          {
+              yield return new WaitForSeconds(5);
+              float X = Random.Range(startPos, endPos);
+              Vector2 spawnSpot = new Vector2(X, transform.position.y);
+              GameObject monster = GameManagerSJ.Instance.pool.Get(2);
+              monster.transform.position = spawnSpot;
+          }
+      }*/
 
     void OnDestroy()
     {
@@ -202,9 +203,9 @@ public class Elite : MonoBehaviour
             while (check2)
             {
                 yield return new WaitForSeconds(0.1f);
-                GameObject intercepter = GameManagerSJ.Instance.pool.Get(7); 
-                GameObject intercepter1 = GameManagerSJ.Instance.pool.Get(8); 
-                GameObject intercepter2= GameManagerSJ.Instance.pool.Get(9); 
+                GameObject intercepter = GameManagerSJ.Instance.pool.Get(7);
+                GameObject intercepter1 = GameManagerSJ.Instance.pool.Get(8);
+                GameObject intercepter2 = GameManagerSJ.Instance.pool.Get(9);
                 GameObject intercepter3 = GameManagerSJ.Instance.pool.Get(10);
 
                 intercepter.transform.position = SpawnPos1.position;
@@ -305,6 +306,8 @@ public class Elite : MonoBehaviour
             currunt_Hp -= GameManagerSJ.Instance.player.AttackPower;
         if (collision.gameObject.CompareTag("HomingMissle"))
             currunt_Hp -= GameManagerSJ.Instance.player.AttackPower * 2;
+
+        BossUI_dm.instance.Damage(BossUI_dm.HP.body, currunt_Hp);
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BossUI_dm;
 
 public class LastBoss : MonoBehaviour
 {
@@ -242,6 +243,7 @@ public class LastBoss : MonoBehaviour
     {
         hp -= attack;
 
+        BossUI_dm.instance.Damage(BossUI_dm.HP.octopus, hp);
         Debug.Log("데미지 받았음");
 
         StartCoroutine(CoolHit());
@@ -250,11 +252,14 @@ public class LastBoss : MonoBehaviour
         {
             hp = 0;
 
-            Destroy(gameObject);
+            ScoreManager.instance.Bonus++;
+            ScoreManager.instance.monsterkill++;
 
 
             Instantiate(effect, transform.position, Quaternion.identity);
 
+            Destroy(gameObject);
+            ScoreManager.instance.UpdateScore();
             //    Destroy(effect, 0.5f);
 
         }

@@ -160,7 +160,7 @@ MonoBehaviour:
   bullet: {fileID: 4937309084924726283, guid: 3e82c02f445f2ad4bbbf937b69f1ac08, type: 3}
   bullet2: {fileID: 4937309084924726283, guid: 80c35331c3916bd4c87257f7af64936c, type: 3}
   effect: {fileID: 1285138125420016908, guid: eddcd9f41304bcb449e278e2ce2f9111, type: 3}
-  Item: {fileID: 5503971838979896313, guid: aee1b665c477fde4ead450bb7e73e78a, type: 3}
+  Item: {fileID: 7795897562747938050, guid: 6858c719c17ddd944b054b6aaacdaa7d, type: 3}
   SpawnInterval: 0
   isHit: 0
 --- !u!61 &-7261494036424789564

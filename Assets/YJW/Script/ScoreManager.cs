@@ -8,20 +8,9 @@ using UnityEngine.UI;
 using UnityEditor;
 
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManagerYJ : MonoBehaviour
 {
-    enum SceneName
-    {
-        stage1,
-        stage2,
-        stage3
-    };
-
-    public static ScoreManager instance;
-
-    [SerializeField]
-    SceneName sceneName;
-
+    public static ScoreManagerYJ instance;
 
     //public float time = 0; // 경과 시간
     public float monsterkill = 0;      // 몬스터 잡은 갯수
@@ -134,24 +123,7 @@ public class ScoreManager : MonoBehaviour
             yield return null;
         }
 
-
-        if (sceneName == SceneName.stage1)
-        {
-            totalscore = target;
-            PlayerPrefs.SetFloat("Totalscore1", totalscore);
-        }
-        else if (sceneName == SceneName.stage2)
-        {
-            totalscore = target;
-            PlayerPrefs.SetFloat("Totalscore2", totalscore);
-        }
-        else if (sceneName == SceneName.stage3)
-        {
-            totalscore = target;
-            PlayerPrefs.SetFloat("Totalscore3", totalscore);
-        }
-
-
+        current = target;
         TotalScore.GetComponent<TextMeshProUGUI>().text = ((int)current).ToString();
     }
 }

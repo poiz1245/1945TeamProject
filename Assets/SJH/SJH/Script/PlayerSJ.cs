@@ -14,6 +14,8 @@ public class PlayerSJ : MonoBehaviour
     public GameObject HomingMissle;
     public GameObject helper;
 
+    public Transform boompos = null;
+
     public Transform gunPos;
     public Transform gunPos2;
     public Transform gunPos3;
@@ -23,10 +25,12 @@ public class PlayerSJ : MonoBehaviour
     public Transform SgunPos4;
     public Transform SgunPos5;
 
-
+    public GameObject boom = null;
+    public GameObject lazer;
     public Image energybar;
     public Image energyStack;
 
+    public int BoomStack = 2;
 
     public int AttackPower = 10;
     public int MaxItemCount = 4;
@@ -194,15 +198,21 @@ public class PlayerSJ : MonoBehaviour
             energybar.fillAmount = 0f;
             energyStack.fillAmount = 0f;
             stack = 0;
-            Instantiate(helper, SgunPos2.position, Quaternion.identity);
             Instantiate(helper, SgunPos3.position, Quaternion.identity);
-            Instantiate(helper, SgunPos4.position, Quaternion.identity);
             Instantiate(helper, SgunPos5.position, Quaternion.identity);
+         
+            Instantiate(lazer, SgunPos1.transform.position, Quaternion.identity);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             stack = 0;
             energyStack.fillAmount = 0f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z) && BoomStack > 0)
+        {
+            BoomStack--;
+            Instantiate(boom, boompos.transform.position, Quaternion.identity);
         }
 
 

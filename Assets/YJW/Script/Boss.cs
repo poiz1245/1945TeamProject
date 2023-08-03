@@ -77,9 +77,9 @@ public class Boss : MonoBehaviour
     {
         pos = transform.position;
         //보스 나타나면 Hide함수 1초뒤 동작
-        Invoke("Hide", 1);
+        //Invoke("Hide", 1);
 
-        
+        BossUI_dm.instance.StartSet_ver2();
 
     }
 
@@ -136,7 +136,7 @@ public class Boss : MonoBehaviour
             }
 
 
-            if (timer % 10 > 9.99f)
+            if (timer % 10 > 9.97f)
             {
                 Instantiate(lazer, lazerZone.transform.position, Quaternion.identity);
             }
@@ -176,6 +176,8 @@ public class Boss : MonoBehaviour
     {
         HP -= attack;
 
+        BossUI_dm.instance.Damage(BossUI_dm.HP.body, HP);
+
        // Debug.Log("데미지 받았음");
         StartCoroutine(CoolHit());
 
@@ -183,13 +185,17 @@ public class Boss : MonoBehaviour
         {
             HP = 0;
 
-            Destroy(gameObject);
+            ScoreManager.instance.Bonus++;
+            ScoreManager.instance.monsterkill++;
+
 
             Instantiate(lastBoss, transform.position, Quaternion.identity);
-
+            BossUI_dm.instance.SetActiveFalseSlider(BossUI_dm.HP.body);
+            BossUI_dm.instance.CorStartSliderSet(BossUI_dm.HP.octopus);
 
             Instantiate(effect, transform.position, Quaternion.identity);
 
+            Destroy(gameObject);
             //    Destroy(effect, 0.5f);
 
         }
@@ -203,12 +209,12 @@ public class Boss : MonoBehaviour
         StartCoroutine(CircleFire()); //코루틴 실행 함수 동작
     }
 
-    void Hide()
+   /* void Hide()
     {
         //보스 텍스트 객체이름 검색해서 끄기
         GameObject.Find("BossWarning").SetActive(false);
         //GameObject.Find("TextBossWarning").SetActive(false);
-    }
+    }*/
 
     IEnumerator BossMissle()
     {
