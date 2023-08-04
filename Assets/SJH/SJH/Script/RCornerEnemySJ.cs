@@ -39,8 +39,8 @@ public class RCornerEnemySJ : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         Vector2 direction = new Vector2(transform.position.x - target.transform.position.x,
@@ -67,8 +67,8 @@ public class RCornerEnemySJ : MonoBehaviour
         {
             ScoreManager.instance.monsterkill++;
             Instantiate(Effect, transform.position, Quaternion.identity);
-            gameObject.SetActive(false);
-            //Destroy(gameObject);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         if (collision.CompareTag("HomingMissle"))
         {

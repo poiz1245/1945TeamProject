@@ -263,6 +263,7 @@ public class PlayerSJ : MonoBehaviour
             if (ItemCount >= MaxItemCount)
             {
                 ItemCount = MaxItemCount;
+                BoomStack++;
             }
         }
 
@@ -273,6 +274,7 @@ public class PlayerSJ : MonoBehaviour
             if (ItemCount2 >= MaxItem2Count)
             {
                 ItemCount2 = MaxItem2Count;
+                BoomStack++;
             }
         }
 

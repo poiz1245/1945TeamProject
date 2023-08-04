@@ -48,9 +48,11 @@ public class Elite : MonoBehaviour
         ranBullet = GameObject.Find("EffBeam").transform.Find("ranBullet").gameObject;
         gliter = GameObject.Find("EffBeam").transform.Find("gliter").gameObject;
         currunt_Hp = MaxHp;
+        
     }
     void Start()
     {
+        CameraSJ.instance.AudioPlay();
         BossUI_dm.instance.StartSet_ver3(BossUI_dm.HP.body, (int)MaxHp);
         Invoke("Pattern1", 3);
     }
