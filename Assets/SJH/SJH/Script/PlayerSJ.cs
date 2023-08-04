@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class PlayerSJ : MonoBehaviour
 {
+    public bool attackOnOff = true;
+
     public float Speed = 1f;
     public GameObject bullet;
     public GameObject HomingMissle;
@@ -64,7 +66,8 @@ public class PlayerSJ : MonoBehaviour
     }
     void Update()
     {
-
+        Debug.Log("플레이어하트" + GameManagerSJ.Instance.player.Heart);
+        Debug.Log("Bonus" + ScoreManager.instance.Bonus);
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
@@ -179,7 +182,9 @@ public class PlayerSJ : MonoBehaviour
             energybar.fillAmount = energybar.fillAmount - 0.19f;
             energyStack.fillAmount = 0f;
             stack = 0;
-            Instantiate(helper, gunPos.position, Quaternion.identity);
+
+            if (attackOnOff)
+                Instantiate(helper, gunPos.position, Quaternion.identity);
 
             // Instantiate(Lazer, pos.transform.position, Quaternion.identity);
         }
@@ -189,8 +194,13 @@ public class PlayerSJ : MonoBehaviour
             energybar.fillAmount = energybar.fillAmount - 0.47f;
             energyStack.fillAmount = 0f;
             stack = 0;
-            Instantiate(helper, gunPos2.position, Quaternion.identity);
-            Instantiate(helper, gunPos3.position, Quaternion.identity);
+
+            if (attackOnOff)
+            {
+                Instantiate(helper, gunPos2.position, Quaternion.identity);
+                Instantiate(helper, gunPos3.position, Quaternion.identity);
+            }
+            
         }
         else if ((Input.GetKeyUp(KeyCode.Space) && gazyStack >= 700 && stack >= 100))
         {
@@ -198,10 +208,15 @@ public class PlayerSJ : MonoBehaviour
             energybar.fillAmount = 0f;
             energyStack.fillAmount = 0f;
             stack = 0;
-            Instantiate(helper, SgunPos3.position, Quaternion.identity);
-            Instantiate(helper, SgunPos5.position, Quaternion.identity);
-         
-            Instantiate(lazer, SgunPos1.transform.position, Quaternion.identity);
+
+            if (attackOnOff)
+            {
+                Instantiate(helper, SgunPos3.position, Quaternion.identity);
+                Instantiate(helper, SgunPos5.position, Quaternion.identity);
+
+                Instantiate(lazer, SgunPos1.transform.position, Quaternion.identity);
+            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -212,7 +227,12 @@ public class PlayerSJ : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Z) && BoomStack > 0)
         {
             BoomStack--;
-            Instantiate(boom, boompos.transform.position, Quaternion.identity);
+
+            if (attackOnOff)
+            {
+                Instantiate(boom, boompos.transform.position, Quaternion.identity);
+            }
+            
         }
 
 

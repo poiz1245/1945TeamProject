@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Button_to_2st : MonoBehaviour
 {
+    public string sceneName = "SJH";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class Button_to_2st : MonoBehaviour
 
     public void NextStage()
     {
-
-        SceneManager.LoadScene("SJH");
+        Debug.Log("?");
+        SceneManager.LoadScene(sceneName);
     }
 }

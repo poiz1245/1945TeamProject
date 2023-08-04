@@ -51,6 +51,7 @@ public class ScoreManager : MonoBehaviour
     }
     private void Update()
     {
+      
     }
     public void UpdateScore()
     {

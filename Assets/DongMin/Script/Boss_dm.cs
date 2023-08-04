@@ -217,7 +217,7 @@ public class Boss_dm : MonoBehaviour
     IEnumerator BossStart()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.down * 11, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.down * 8f, ForceMode2D.Impulse);
 
         float curTime = 0;
 
@@ -309,6 +309,10 @@ public class Boss_dm : MonoBehaviour
         //float curTime = 0;
         CameraShake.instance.ShakeSwitchOff();
 
+        StopCoroutine(corOctoSkill);
+        StopCoroutine(corElectricAttack);
+
+
         yield return new WaitForSeconds(2f);
         exprosion.SetActive(false);
 
@@ -330,6 +334,8 @@ public class Boss_dm : MonoBehaviour
 
         ScoreManager.instance.Bonus++;
         BossUI_dm.instance.StageClear();
+
+        gameObject.SetActive(false);
     }
 
     void Hide()
@@ -455,6 +461,8 @@ public class Boss_dm : MonoBehaviour
         float downTime = 5f;
         float octStartScale = 8.5602f;
         bool warningTextOn = false;
+
+        CameraShake.instance.ShakeSwitchOff();
 
         yield return new WaitForSeconds(2f);
 

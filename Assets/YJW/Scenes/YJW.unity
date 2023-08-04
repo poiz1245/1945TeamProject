@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7993595083218785224, guid: 51b800ca7b7a78948b5514c4e4ff237e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9114199427721406332, guid: 51b800ca7b7a78948b5514c4e4ff237e, type: 3}
       propertyPath: HP
       value: 1000
@@ -4898,7 +4902,7 @@ PrefabInstance:
       objectReference: {fileID: 1297147824}
     - target: {fileID: 2556854338356725695, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
       propertyPath: AttackPower
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2556854338356725695, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
       propertyPath: energyStack
@@ -4930,7 +4934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4420007127888458917, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.69
+      value: -4.08
       objectReference: {fileID: 0}
     - target: {fileID: 4420007127888458917, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4995,7 +4999,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 361e654c25ce8144794888f6076f911b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 406fe6077f47d214889dd92ee024b880, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1

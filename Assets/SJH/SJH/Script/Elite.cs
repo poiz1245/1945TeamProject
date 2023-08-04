@@ -42,13 +42,15 @@ public class Elite : MonoBehaviour
     bool check_starbullet;
     bool check_Lazor;
     public bool check_smallstar;
+
+    bool dead = false;
     private void Awake()
     {
         beam = GameObject.Find("EffBeam").transform.Find("beam").gameObject;
         ranBullet = GameObject.Find("EffBeam").transform.Find("ranBullet").gameObject;
         gliter = GameObject.Find("EffBeam").transform.Find("gliter").gameObject;
         currunt_Hp = MaxHp;
-        
+
     }
     void Start()
     {
@@ -173,13 +175,12 @@ public class Elite : MonoBehaviour
             }
         }
 
-        if (currunt_Hp <= 0)
+        if (currunt_Hp <= 0 && !dead)
         {
-            
+            dead = true;
             dieEffect.SetActive(true);
             Destroy(gameObject, 3);
 
-            ScoreManager.instance.monsterkill++;
             ScoreManager.instance.Bonus++;
         }
     }
