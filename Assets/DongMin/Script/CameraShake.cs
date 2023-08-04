@@ -14,6 +14,7 @@ public class CameraShake : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(600, 1920, true);
         if(instance == null)
         {
             instance = this;

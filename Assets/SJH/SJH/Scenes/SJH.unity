@@ -6365,6 +6365,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2556854338356725695, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
+      propertyPath: attackOnOff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556854338356725695, guid: 7b7f2910bc138674e9b34bc2ed5b1ccb, type: 3}
       propertyPath: energyStack
       value: 
       objectReference: {fileID: 860042932}
