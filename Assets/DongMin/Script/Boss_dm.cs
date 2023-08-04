@@ -50,11 +50,25 @@ public class Boss_dm : MonoBehaviour
     [SerializeField]
     GameObject exprosion;
 
+    [SerializeField]
+    SpriteRenderer electricHead;
+    [SerializeField]
+    GameObject electricBall;
+    [SerializeField]
+    GameObject leftLeg;
+    [SerializeField]
+    GameObject rightLeg;
+
+    [SerializeField]
+    GameObject electricMiniBall;
+
 
     Coroutine corBossBullet;
     Coroutine AttackCoroutine;
     Coroutine corBossPattern;
     Coroutine corOctopusPattern;
+    Coroutine corOctoSkill;
+    Coroutine corElectricAttack;
 
     //[SerializeField]
     //GameObject FireWarningArea;
@@ -118,6 +132,49 @@ public class Boss_dm : MonoBehaviour
             //attackRate 시간만큼 대기
             yield return new WaitForSeconds(attackRate); //3초마다 원형 미사일 발사
         }
+    }
+
+    IEnumerator ElectricAttack()
+    {
+        float attackRate = 1;//공격주기
+        int count = 30;    //발사체 생성 갯수
+        float intervalAngle = 360 / count;  //발사체 사이의 각도
+        float weightAngle = 0; //가중되는 각도 (항상 같은 위치로 발사하지 않도록 설정)
+        int maxAttackCount = 5;
+        int attackCount = 0;
+
+        //원 형태로 방사하는 발사체 생성 (count 개수 만큼)
+        while (attackCount< maxAttackCount)
+        {
+            for (int i = 0; i < count; ++i)
+            {
+                //발사체 생성
+                GameObject clone = Instantiate(electricMiniBall, electricBall.transform.position, Quaternion.identity);
+                //발사체 이동 방향(각도)
+                float angle = weightAngle + intervalAngle * i;
+                //발사체 이동 방향 (벡터)
+                //Cos(각도), 라디안 단위의 각도 표현을 위해 PI/180을 곱함
+                float x = Mathf.Cos(angle * Mathf.PI / 180.0f); // Mathf.PI / 180.0f == Mathf.Deg2Rad
+                //Sin(각도), 라디안 단위의 각도 표현을 위해 PI/180을 곱함
+                float y = Mathf.Sin(angle * Mathf.PI / 180.0f);
+                //발사체 이동 방향 설정
+                clone.GetComponent<MonsterBullet_dm>().Move(new Vector2(x, y));
+            }
+            //발사체가 생성되는 시작 각도 설정을 위한 변수
+            weightAngle += 1;
+
+            attackCount++;
+
+            //attackRate 시간만큼 대기
+            yield return new WaitForSeconds(attackRate); //3초마다 원형 미사일 발사
+        }
+
+        leftLeg.SetActive(false);
+        rightLeg.SetActive(false);
+        electricBall.SetActive(false);
+        leftLeg.SetActive(true);
+        rightLeg.SetActive(true);
+        CameraShake.instance.ShakeSwitchOff();
     }
 
     // Update is called once per frame
@@ -214,8 +271,6 @@ public class Boss_dm : MonoBehaviour
                 StopCoroutine(corBossBullet);
             }
 
-            CameraShake.instance.ShakeSwitchOff();
-
             bossHead.SetActive(false);
             for (int i = 0; i < LazerWarningArea.Length; i++)
             {
@@ -224,6 +279,8 @@ public class Boss_dm : MonoBehaviour
             BossLazer.SetActive(false);
 
             exprosion.SetActive(true);
+
+            CameraShake.instance.ShakeSwitchOff();
 
             //문어괴물 패턴 시작
             corOctopusPattern = StartCoroutine(OctopusPattern());
@@ -250,6 +307,7 @@ public class Boss_dm : MonoBehaviour
     IEnumerator OctopusDead()
     {
         //float curTime = 0;
+        CameraShake.instance.ShakeSwitchOff();
 
         yield return new WaitForSeconds(2f);
         exprosion.SetActive(false);
@@ -268,6 +326,8 @@ public class Boss_dm : MonoBehaviour
 
             yield return null;
         }
+        CameraShake.instance.ShakeSwitchOff();
+
         ScoreManager.instance.Bonus++;
         BossUI_dm.instance.StageClear();
     }
@@ -388,8 +448,8 @@ public class Boss_dm : MonoBehaviour
 
     IEnumerator OctopusPattern()
     {
-        float shadow1Speed = 16f;
-        float shadow2Speed = 10f;
+        float shadow1Speed = 18f;
+        float shadow2Speed = 13f;
         float curTime = 0;
         float color = 0;
         float downTime = 5f;
@@ -479,8 +539,46 @@ public class Boss_dm : MonoBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds(10f);
+        while (true)
+        {
+            corOctoSkill = StartCoroutine(OctoSkill());
 
+            yield return new WaitForSeconds(20f);
+        }
+    }
 
+    IEnumerator OctoSkill()
+    {
+        float curTime = 0;
+        float colorA = 0;
+        float chargeTime = 3f;
+
+        while (true)
+        {
+            curTime += Time.deltaTime;
+
+            colorA = curTime / chargeTime;
+
+            electricHead.color = new Color(electricHead.color.r, electricHead.color.g, electricHead.color.b, colorA);
+
+            if (curTime >= chargeTime)
+            {
+                leftLeg.GetComponent<LegMove2_dm>().isSkill = true;
+                rightLeg.GetComponent<LegMove2_dm>().isSkill = true;
+                electricBall.SetActive(true);
+                CameraShake.instance.ShakeSwitch();
+
+                corElectricAttack = StartCoroutine(ElectricAttack());
+
+                break;
+            }
+
+            yield return null;
+        }
+        yield return new WaitForSeconds(5f);
+        
+        electricHead.color = new Color(electricHead.color.r, electricHead.color.g, electricHead.color.b, 0);
     }
 
     private void OnDisable()

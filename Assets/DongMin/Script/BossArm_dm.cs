@@ -92,7 +92,7 @@ public class BossArm_dm : MonoBehaviour
 
     IEnumerator BossArmPattern()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         while (true)
         {
             //yield return new WaitForSeconds(15f);
@@ -100,7 +100,7 @@ public class BossArm_dm : MonoBehaviour
             if (leftRight == LeftRight.Right)
                 AttackCoroutine = StartCoroutine(boss_dm.AttackWarning(WarningArea, BossAttack));
 
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(12f);
 
             if (leftRight == LeftRight.Left)
                 AttackCoroutine = StartCoroutine(boss_dm.AttackWarning(WarningArea, BossAttack));
