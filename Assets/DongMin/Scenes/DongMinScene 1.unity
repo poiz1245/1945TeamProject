@@ -13778,10 +13778,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_dm
       objectReference: {fileID: 0}
-    - target: {fileID: 7944989516715680669, guid: 991ee4938378b58439628b37a34217d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2279,6 +2279,7 @@ MonoBehaviour:
   electricBall: {fileID: 6665091071906485999}
   leftLeg: {fileID: 980249951220211362}
   rightLeg: {fileID: 753377736931975737}
+  electricMiniBall: {fileID: 1561133081815160534, guid: 2c640ef30656bc74790fb24934cebd4e, type: 3}
 --- !u!61 &2617899343766320280
 BoxCollider2D:
   m_ObjectHideFlags: 0
