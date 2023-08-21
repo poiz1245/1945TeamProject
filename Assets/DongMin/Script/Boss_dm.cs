@@ -217,7 +217,7 @@ public class Boss_dm : MonoBehaviour
     IEnumerator BossStart()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.down * 8f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.down * 11f, ForceMode2D.Impulse);
 
         float curTime = 0;
 
@@ -230,7 +230,8 @@ public class Boss_dm : MonoBehaviour
                 curTime = 0;
                 rb.velocity = rb.velocity * 0.8f;
 
-                if (rb.velocity.y >= -0.01f)
+                //if (rb.velocity.y >= -0.01f)
+                if (transform.position.y <= 2.63)
                 {
                     rb.velocity = Vector2.zero;
                     break;
@@ -280,7 +281,7 @@ public class Boss_dm : MonoBehaviour
 
             exprosion.SetActive(true);
 
-            CameraShake.instance.ShakeSwitchOff();
+            //CameraShake.instance.ShakeSwitchOff();
 
             //문어괴물 패턴 시작
             corOctopusPattern = StartCoroutine(OctopusPattern());
@@ -462,7 +463,7 @@ public class Boss_dm : MonoBehaviour
         float octStartScale = 8.5602f;
         bool warningTextOn = false;
 
-        CameraShake.instance.ShakeSwitchOff();
+        //CameraShake.instance.ShakeSwitchOff();
 
         yield return new WaitForSeconds(2f);
 
@@ -547,12 +548,12 @@ public class Boss_dm : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(7f);
         while (true)
         {
             corOctoSkill = StartCoroutine(OctoSkill());
 
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(15f);
         }
     }
 

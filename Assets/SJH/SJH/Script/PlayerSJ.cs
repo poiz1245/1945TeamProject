@@ -66,8 +66,8 @@ public class PlayerSJ : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("플레이어하트" + GameManagerSJ.Instance.player.Heart);
-        Debug.Log("Bonus" + ScoreManager.instance.Bonus);
+        //Debug.Log("플레이어하트" + GameManagerSJ.Instance.player.Heart);
+        //Debug.Log("Bonus" + ScoreManager.instance.Bonus);
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;

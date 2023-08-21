@@ -207,18 +207,23 @@ public class BossUI_dm : MonoBehaviour
                 curTime = 0;
                 rb.velocity = rb.velocity * 0.8f;
 
-                if (rb.velocity.y >= -7f && !startSlider)
+                //if (rb.velocity.y >= -7f && !startSlider)
+                if (bossUI.GetComponent<RectTransform>().position.y <= 4.87f && !startSlider)
                 {
+                    Debug.Log("UI ½ÇÇà");
+                    rb.velocity = Vector2.zero;
                     startSlider = true;
                     StartCoroutine(StartSliderSet(leftArmSlider));
                     StartCoroutine(StartSliderSet(rightArmSlider));
-                }
-
-                if (rb.velocity.y >= -0.1f)
-                {
-                    rb.velocity = Vector2.zero;
+                    
                     break;
                 }
+
+                //if (rb.velocity.y >= -0.1f)
+                //{
+                //    rb.velocity = Vector2.zero;
+                //    break;
+                //}
             }
 
             yield return null;
@@ -243,17 +248,20 @@ public class BossUI_dm : MonoBehaviour
                 curTime = 0;
                 rb.velocity = rb.velocity * 0.8f;
 
-                if (rb.velocity.y >= -3f && !startSlider)
+                //if (rb.velocity.y >= -3f && !startSlider)
+                if (bossUI.GetComponent<RectTransform>().position.y <= 4.87f && !startSlider)
                 {
                     startSlider = true;
                     StartCoroutine(StartSliderSet(bodySlider));
-                }
-
-                if (rb.velocity.y >= -0.1f)
-                {
                     rb.velocity = Vector2.zero;
                     break;
                 }
+
+                //if (rb.velocity.y >= -0.1f)
+                //{
+                //    rb.velocity = Vector2.zero;
+                //    break;
+                //}
             }
 
             yield return null;
