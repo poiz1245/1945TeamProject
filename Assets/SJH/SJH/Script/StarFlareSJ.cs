@@ -39,7 +39,7 @@ public class StarFlareSJ : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("UpDownWall") || collision.CompareTag("SideWall"))
+        if (collision.CompareTag("UpDownWall"))
         {
             Instantiate(destroyPos, transform.position, Quaternion.identity);
             Destroy(gameObject);

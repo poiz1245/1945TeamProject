@@ -56,7 +56,10 @@ public class HelperBullet : MonoBehaviour
 
             //몬스터 충돌 지우기
             //Destroy(collision.gameObject);
-            if (collision.GetComponent<Monster_dm>() == null)
+            if (collision.GetComponent<Monster_dm>() == null && 
+                collision.GetComponent<Boss_dm>() == null && 
+                collision.GetComponent<BossArm_dm>() == null &&
+                collision.GetComponent<Octopus_dm>() == null)
                 collision.gameObject.GetComponent<Monster>().Damage(Attack);
             Instantiate(effect, transform.position, Quaternion.identity);
 

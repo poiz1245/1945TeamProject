@@ -51,6 +51,7 @@ public class ScoreManager : MonoBehaviour
     }
     private void Update()
     {
+      
     }
     public void UpdateScore()
     {
@@ -74,6 +75,7 @@ public class ScoreManager : MonoBehaviour
         StartCoroutine(BonusCount(Bonus + GameManagerSJ.Instance.player.Heart, Bonus));
         yield return new WaitForSeconds(3);
         totaltext.SetActive(true);
+
         StartCoroutine(TotalCount((timescore + monsterscore) * Bonus, totalscore));
     }
 

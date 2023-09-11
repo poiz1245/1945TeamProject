@@ -284,6 +284,8 @@ MonoBehaviour:
   Speed: 7
   bullet: {fileID: 2471091643015164165, guid: 7d62a42b7fc9b2046a12af4b139dc4ef, type: 3}
   HomingMissle: {fileID: 3842934684830363929, guid: 0112b51d2a897a5449942a5228ad8df9, type: 3}
+  helper: {fileID: 0}
+  boompos: {fileID: 0}
   gunPos: {fileID: 8067550375548562213}
   gunPos2: {fileID: 1956275834669780789}
   gunPos3: {fileID: 827116250386213153}
@@ -292,12 +294,21 @@ MonoBehaviour:
   SgunPos3: {fileID: 5597516425815860356}
   SgunPos4: {fileID: 768567147331151210}
   SgunPos5: {fileID: 8410977404164931242}
+  boom: {fileID: 0}
+  lazer: {fileID: 0}
+  energybar: {fileID: 0}
+  energyStack: {fileID: 0}
+  BoomStack: 2
   AttackPower: 25
   MaxItemCount: 4
   MaxItem2Count: 4
   ItemCount: 0
   ItemCount2: 0
-  Heart: 100
+  Heart: 3
+  gazyStack: 0
+  energyValue: 0
+  stack: 0
+  dmScene: 0
 --- !u!1 &1221387879543604457
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,9 +32,12 @@ public class Lazer : MonoBehaviour
         if (collision.CompareTag("Monster"))
         {
 
-          
 
-            collision.gameObject.GetComponent<Monster>().Damage(Attack);
+            if (collision.GetComponent<Monster_dm>() == null &&
+                collision.GetComponent<Boss_dm>() == null &&
+                collision.GetComponent<BossArm_dm>() == null &&
+                collision.GetComponent<Octopus_dm>() == null)
+                collision.gameObject.GetComponent<Monster>().Damage(Attack);
 
 
         }

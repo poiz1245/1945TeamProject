@@ -10,10 +10,15 @@ public class CameraShake : MonoBehaviour
     bool switchLR = true;
     public float speed = 10;
     public float maxPosX = 0.03f;
-    bool shakeOnOff = false;
+    public bool shakeOnOff = false;
+
+    bool fullScreenOnOff = false;
+    bool onOff = true;
 
     private void Awake()
     {
+        //Screen.SetResolution(600, 1920, true);
+        
         if(instance == null)
         {
             instance = this;
@@ -33,6 +38,18 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //스크린 전체화면 창모드 변경
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            fullScreenOnOff = !fullScreenOnOff;
+            onOff = true;
+        }
+        if (onOff)
+        {
+            Screen.SetResolution(450, 800, fullScreenOnOff);
+            onOff = false;
+        }
+
         if (shakeOnOff)
         {
             if (switchLR)
@@ -57,7 +74,7 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeSwitch()
     {
-        shakeOnOff = !shakeOnOff;
+        shakeOnOff = true;
         transform.position = new Vector3(0, 0, transform.position.z);
     }
 

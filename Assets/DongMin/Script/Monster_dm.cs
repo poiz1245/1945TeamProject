@@ -66,19 +66,19 @@ public class Monster_dm : MonoBehaviour
     {
         //아이템 생성
         int rnd = 0;
-        rnd = Random.Range(0, 16);
+        rnd = Random.Range(0, 100);
 
-        if (rnd >= 0 && rnd < 3)
+        if (rnd >= 0 && rnd < 7)
         {
 
             Instantiate(Item1, transform.position, Quaternion.identity);
         }
-        if (rnd >= 3 && rnd < 6)
+        if (rnd >=7 && rnd < 11)
         {
 
             Instantiate(Item2, transform.position, Quaternion.identity);
         }
-        if (rnd >= 6 && rnd < 16)
+        if (rnd >= 11 && rnd < 100)
         {
 
             return;

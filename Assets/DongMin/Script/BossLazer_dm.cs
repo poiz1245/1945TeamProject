@@ -56,7 +56,7 @@ public class BossLazer_dm : MonoBehaviour
 
     void SetActiveOff()
     {
-        CameraShake.instance.ShakeSwitch();
+        
         gameObject.SetActive(false);
     }
 
@@ -73,5 +73,6 @@ public class BossLazer_dm : MonoBehaviour
         {
             bossBody.GetComponent<Boss_dm>().corBossBulletStart();
         }
+        CameraShake.instance.ShakeSwitchOff();
     }
 }
