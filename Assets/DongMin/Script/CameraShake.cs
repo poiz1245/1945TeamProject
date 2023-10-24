@@ -12,7 +12,7 @@ public class CameraShake : MonoBehaviour
     public float maxPosX = 0.03f;
     public bool shakeOnOff = false;
 
-    bool fullScreenOnOff = false;
+    bool fullScreenOnOff = true;
     bool onOff = true;
 
     private void Awake()
