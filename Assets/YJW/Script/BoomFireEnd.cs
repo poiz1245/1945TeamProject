@@ -28,6 +28,10 @@ public class BoomFireEnd : MonoBehaviour
         {
             collision.gameObject.GetComponent<Boss>().Damage(Attack);
         }
+        else if (collision.tag == "Boss2")
+        {
+            collision.gameObject.GetComponent<LastBoss>().Damage(Attack);
+        }
         else if (collision.tag == "BossHelper")
         {
             collision.gameObject.GetComponent<HelperBoss>().Damage(Attack);
